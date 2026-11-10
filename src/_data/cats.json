@@ -1,0 +1,299 @@
+[
+  {
+    "slug": "sample-cat-1",
+    "name": "[Cat name]",
+    "age_band": "Kitten",
+    "age_text": "[Age]",
+    "sex": "Female",
+    "area": "Stockton",
+    "reserved": false,
+    "colour": "Ginger and white",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "kitten-ginger-white.jpg",
+        "alt": "A ginger-and-white kitten sitting upright against a dark background, looking at the camera",
+        "pos": "50% 62%"
+      }
+    ],
+    "bg": "#EAD3C9"
+  },
+  {
+    "slug": "sample-cat-2",
+    "name": "[Cat name]",
+    "age_band": "Adult",
+    "age_text": "[Age]",
+    "sex": "Female",
+    "area": "Birmingham",
+    "reserved": false,
+    "colour": "Calico",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "cat-calico.jpg",
+        "alt": "A fluffy calico cat with green eyes looking at the camera in warm sunlight",
+        "pos": "50% 45%"
+      }
+    ],
+    "bg": "#E6CDD2"
+  },
+  {
+    "slug": "sample-cat-3",
+    "name": "[Cat name]",
+    "age_band": "Senior",
+    "age_text": "[Age]",
+    "sex": "Male",
+    "area": "Banbury",
+    "reserved": false,
+    "colour": "Brown tabby",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "cat-tabby-folded-ears.jpg",
+        "alt": "A brown tabby cat with folded ears and closed eyes, resting against a white cushion",
+        "pos": "50% 55%"
+      }
+    ],
+    "bg": "#E4C9BF"
+  },
+  {
+    "slug": "sample-cat-4",
+    "name": "[Cat name]",
+    "age_band": "Adult",
+    "age_text": "[Age]",
+    "sex": "Male",
+    "area": "Stockton",
+    "reserved": false,
+    "colour": "Ginger",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "cat-ginger-closeup.jpg",
+        "alt": "Close-up of a ginger cat with bright green eyes",
+        "pos": "0% 50%"
+      }
+    ],
+    "bg": "#EBC9D3"
+  },
+  {
+    "slug": "sample-cat-5",
+    "name": "[Cat name]",
+    "age_band": "Kitten",
+    "age_text": "[Age]",
+    "sex": "Female",
+    "area": "Birmingham",
+    "reserved": true,
+    "colour": "Cream",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "kitten-cream.jpg",
+        "alt": "A pale cream kitten with blue-grey eyes sitting on a patterned blanket",
+        "pos": "50% 50%"
+      }
+    ],
+    "bg": "#E8D4CB"
+  },
+  {
+    "slug": "sample-cat-6",
+    "name": "[Cat name]",
+    "age_band": "Adult",
+    "age_text": "[Age]",
+    "sex": "Male",
+    "area": "Banbury",
+    "reserved": false,
+    "colour": "White with dark markings",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "cat-white-patch.jpg",
+        "alt": "A white cat with a dark patch on its face and bright blue eyes, sitting outdoors",
+        "pos": "50% 40%"
+      }
+    ],
+    "bg": "#E6CDD2"
+  },
+  {
+    "slug": "sample-cat-7",
+    "name": "[Cat name]",
+    "age_band": "Senior",
+    "age_text": "[Age]",
+    "sex": "Female",
+    "area": "Stockton",
+    "reserved": false,
+    "colour": "Black",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "cat-black.jpg",
+        "alt": "A black cat with amber eyes looking at the camera in low light",
+        "pos": "50% 40%"
+      }
+    ],
+    "bg": "#EAD3C9"
+  },
+  {
+    "slug": "sample-cat-8",
+    "name": "[Cat name]",
+    "age_band": "Kitten",
+    "age_text": "[Age]",
+    "sex": "Male",
+    "area": "Banbury",
+    "reserved": false,
+    "colour": "Silver tabby",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "kitten-silver-tabby.jpg",
+        "alt": "A silver tabby kitten with folded ears lying on a white windowsill beside a plant",
+        "pos": "22% 50%"
+      }
+    ],
+    "bg": "#E4C9BF"
+  },
+  {
+    "slug": "sample-cat-9",
+    "name": "[Cat name]",
+    "age_band": "Kitten",
+    "age_text": "[Age]",
+    "sex": "Male",
+    "area": "Stockton",
+    "reserved": false,
+    "colour": "Ginger",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "kitten-ginger-blanket.jpg",
+        "alt": "A ginger kitten nestled in a soft grey blanket, looking up at the camera",
+        "pos": "58% 50%"
+      }
+    ],
+    "bg": "#E4C9BF"
+  },
+  {
+    "slug": "sample-cat-10",
+    "name": "[Cat name]",
+    "age_band": "Adult",
+    "age_text": "[Age]",
+    "sex": "Female",
+    "area": "Birmingham",
+    "reserved": false,
+    "colour": "Black and white",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "cat-tuxedo.jpg",
+        "alt": "A black-and-white tuxedo cat sitting on a wooden floor, looking up",
+        "pos": "50% 38%"
+      }
+    ],
+    "bg": "#E8D4CB"
+  },
+  {
+    "slug": "sample-cat-11",
+    "name": "[Cat name]",
+    "age_band": "Senior",
+    "age_text": "[Age]",
+    "sex": "Male",
+    "area": "Birmingham",
+    "reserved": false,
+    "colour": "Grey",
+    "tagline": "[One line that sums this cat up: for example, a playful, people-loving kitten who would suit a family with other cats.]",
+    "good_with": "[Children, other cats, dogs: add]",
+    "health": "[Neutered, vaccinated, microchipped: confirm]",
+    "donation": "[£ amount]",
+    "story": [
+      "[Cat name] came into our care [when] after [how they arrived: a stray, handed in, rescued from…]. [One sentence on how they were when they arrived and what we did to help.]",
+      "[Cat name] is [personality in a few warm, specific words]. [What they love: toys, laps, window seats.] [What they need: a quiet home, patience, an experienced owner, a family with other cats.]",
+      "[Cat name] is looked after by [a foster carer], so we know them well. If [he/she/they] sounds like a good fit, we would love to hear from you."
+    ],
+    "photos": [
+      {
+        "src": "cat-grey.jpg",
+        "alt": "A grey cat with amber eyes looking at the camera, lying on a cream blanket",
+        "pos": "50% 42%"
+      }
+    ],
+    "bg": "#E6CDD2"
+  }
+]

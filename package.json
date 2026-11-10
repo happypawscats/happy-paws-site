@@ -1,0 +1,16 @@
+{
+  "name": "happy-paws-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Website for Happy Paws Cat Rescue, built with Eleventy",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8"
+  }
+}

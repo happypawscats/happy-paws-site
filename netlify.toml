@@ -1,0 +1,16 @@
+# Used only if the site is hosted on Netlify. Other hosts can ignore this file:
+# build with `npm run build` and publish the _site folder.
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # TEMPORARY: keeps the review site out of search engines. Delete this line on launch day.
+    X-Robots-Tag = "noindex"

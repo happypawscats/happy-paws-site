@@ -1,0 +1,27 @@
+{#- The application form section shared by /apply/ and /foster/apply/.
+    Set these before including it:
+      ap_form   the form's settings from site.json (applications.adoption or applications.foster)
+      ap_title  accessible name of the frame, e.g. "Adoption application form"
+      ap_steps  a list of three short step texts
+      ap_cat    true on the adoption page: shows the cat's name when the address has ?cat=Name
+-#}
+<section id="form" aria-labelledby="ap-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7; scroll-margin-top:72px"><div class="wrap"><div class="ap-grid">
+<div class="ap-side">
+<h2 id="ap-h" class="h2" style="color:#ffffff">Your <br>application</h2>
+{%- if ap_cat %}
+<p class="ap-cat" data-cat-banner hidden>You are applying for <strong data-cat-name></strong>. Please put their name in the form.</p>
+{%- endif %}
+<p style="margin:0; font-size:18px; line-height:1.7; max-width:440px">{{ ap_intro }}</p>
+<div style="max-width:440px">
+{%- for s in ap_steps %}
+<div class="estep"{% if loop.last %} style="border-bottom:1px solid rgba(232,238,247,.4)"{% endif %}><span class="estep-n">{{ loop.index }}</span><span style="font-size:16px; line-height:1.6">{{ s }}</span></div>
+{%- endfor %}
+</div>
+<p style="margin:0; font-size:14px; line-height:1.65; color:#C7D2E6; max-width:440px">The form is provided by Pawlytics, the system we use to look after our cats. We use your answers only to deal with your application. <a href="/privacy/" style="color:inherit; font-weight:500; text-decoration:underline; text-underline-offset:3px">Read our privacy policy.</a></p>
+</div>
+<div class="ap-main">
+<div class="ap-card"><iframe class="airtable-embed airtable-dynamic-height" src="{{ ap_form.embed }}" title="{{ ap_title }}" loading="lazy" width="100%" height="3377" style="display:block; width:100%; border:0; background:transparent"></iframe></div>
+<p class="ap-fallback">Form not showing, or easier to use on its own page? <a href="{{ ap_form.page }}" target="_blank" rel="noopener" style="color:#ffffff; font-weight:500; text-decoration:underline; text-underline-offset:3px">Open the form in a new tab<span class="sr-only"> (opens in a new tab)</span></a>, or email us at <a href="mailto:{{ site.email }}" style="color:#ffffff; font-weight:500; text-decoration:underline; text-underline-offset:3px">{{ site.email }}</a>.</p>
+</div>
+</div></div></section>
+<script src="https://static.airtable.com/js/embed/embed_snippet_v1.js" defer></script>

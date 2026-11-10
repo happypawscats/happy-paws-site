@@ -1,0 +1,39 @@
+/* Styles used only on the cat page. */
+.prof-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch}
+.prof-photo-cell{position:relative;min-height:640px}
+.prof-info{padding:48px 0 80px 72px;display:flex;flex-direction:column;justify-content:center;gap:28px}
+.gal{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:24px;align-items:end}
+.enq-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+@media (max-width:980px){
+  .prof-grid{grid-template-columns:minmax(0,1fr)}
+  .prof-photo-cell{min-height:0;aspect-ratio:4/5}
+  .prof-info{padding:40px 40px 64px}
+  .gal{grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px}
+  .enq-grid{grid-template-columns:minmax(0,1fr);gap:44px}
+}
+@media (max-width:700px){
+  .prof-info{padding:32px 20px 56px;gap:24px}
+  .f2{grid-template-columns:minmax(0,1fr)}
+  .gal{gap:12px}
+}
+.cat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:72px 40px;align-items:start}
+.cat-grid>.cat:nth-child(3n/**/+2){margin-top:96px}
+.cat-grid .cat-img{aspect-ratio:4/5}
+.cat-grid>.cat:nth-child(3n/**/+2) .cat-img{aspect-ratio:1/1}
+.cat-grid>.cat:nth-child(3n/**/+3) .cat-img{aspect-ratio:5/6}
+.cat-row{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin-top:16px}
+.cat-name{font-size:28px;line-height:1.1;font-weight:500;letter-spacing:-0.01em}
+.cat-meta{font-size:15px;color:#4F596B}
+.finder-a{border-top:1px solid #AEB9CC;padding-top:26px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:20px 40px;align-items:end}
+.fa-count{text-align:right;font-size:17px;line-height:1.4;font-weight:500;color:#1F3158}
+@media (max-width:980px){
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 28px}
+  .cat-grid>.cat:nth-child(3n/**/+2){margin-top:0}
+  .cat-grid>.cat:nth-child(2n){margin-top:64px}
+  .cat-grid .cat-img,.cat-grid>.cat:nth-child(3n/**/+2) .cat-img,.cat-grid>.cat:nth-child(3n/**/+3) .cat-img{aspect-ratio:4/5}
+  .cat-grid>.cat:nth-child(3){display:none}
+}
+@media (max-width:700px){
+  .cat-grid{gap:40px 14px}
+  .cat-grid>.cat:nth-child(2n){margin-top:40px}
+}

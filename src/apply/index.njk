@@ -1,0 +1,28 @@
+---
+layout: base.njk
+title: "Apply to adopt"
+description: "Apply to adopt a cat from Happy Paws Cat Rescue. Tell us about yourself and the home you could offer."
+permalink: "/apply/"
+current: "adopt"
+appeal: true
+css: ["pages/apply"]
+js: ["apply"]
+---
+<main id="main">
+<!-- Intro -->
+<section aria-labelledby="pg-h" style="background:#E8EEF7">
+<div class="wrap" style="padding-top:72px; padding-bottom:72px">
+<div class="head-grid">
+<h1 id="pg-h" class="display" style="color:#1F3158">Apply <br><span style="color:#ED217C">to adopt</span></h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:460px"><p class="lede" style="">Tell us a little about yourself and the home you could offer. All adoptions are subject to a home check and an adoption donation.</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">[We usually reply within X days.] Not sure yet? <a class="link-u" href="/adopting/" style="color:#1F3158; font-weight:500">See how adoption works</a> or <a class="link-u" href="/contact/" style="color:#1F3158; font-weight:500">ask us a question</a>.</p></div>
+</div>
+</div>
+</section>
+
+{% set ap_form = site.applications.adoption %}
+{% set ap_title = "Adoption application form" %}
+{% set ap_cat = true %}
+{% set ap_intro = "Fill in the form, including the name of the cat you would like to adopt. You can ask us a question in it too." %}
+{% set ap_steps = ["We reply and answer your questions.", "We chat, and check your home. [Add what this involves.]", "Your new family member comes home."] %}
+{% include "apply-embed.njk" %}
+</main>
