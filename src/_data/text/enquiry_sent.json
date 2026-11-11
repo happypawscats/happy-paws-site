@@ -4,8 +4,8 @@
     "description": "We have your message and will be in touch."
   },
   "s1": {
-    "h1": "Thank you, \n==[First name]==",
-    "p": "We have your message and will reply to [email address] [within X days].",
+    "h1": "Thank you for \ngetting in \n==touch==",
+    "p": "We have your message and will reply by email as soon as we can.",
     "p2": "Here is what happens next.",
     "img": "/images/kitten-silver-tabby.jpg",
     "alt": "A silver tabby kitten with folded ears lying on a white windowsill beside a plant"
@@ -23,7 +23,7 @@
       },
       {
         "h3": "We take it from there",
-        "p": "[Describe the home check and what comes next.]"
+        "p": "Depending on your message, we tell you what happens next."
       }
     ]
   },

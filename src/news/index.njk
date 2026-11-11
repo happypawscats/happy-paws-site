@@ -38,13 +38,13 @@ eleventyComputed:
 <div style="border-top:1px solid #C4CEDD">{% for n in collections.newsLatest %}{% if not loop.first %}{% include "news-row.njk" %}{% endif %}{% endfor %}</div></div></section>
 {% endif %}
 
-<section aria-labelledby="ev-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7; "><div class="wrap"><div class="two-grid">
+{% if text.news.s4.list | length %}<section aria-labelledby="ev-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7; "><div class="wrap"><div class="two-grid">
 <div style="display:flex; flex-direction:column; gap:24px; align-items:flex-start">
 <h2 id="ev-h" class="h2" style="color:#ffffff">{{ text.news.s4.h2 | rich | safe }}</h2>
 <p style="margin:0; font-size:17px; line-height:1.7; max-width:400px">{{ text.news.s4.p }}</p>
 </div>
 <div style="border-top:1px solid rgba(232,238,247,.4)">{% for it in text.news.s4.list %}<div class="ev-row"><span style="font-size:16px; color:#C7D2E6">{{ it.text }}</span><span style="font-size:20px; line-height:1.35; font-weight:500; color:#ffffff">{{ it.text2 }}</span><span style="font-size:16px; color:#E8EEF7">{{ it.text3 }}</span></div>{% endfor %}</div>
-</div></div></section>
+</div></div></section>{% endif %}
 
 <!-- Newsletter -->
 {% include "newsletter.njk" %}

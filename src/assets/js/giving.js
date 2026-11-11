@@ -46,15 +46,13 @@
     if (gtEl) GT = JSON.parse(gtEl.textContent) || {};
   } catch (e) { GT = {}; }
   function gt(key, fallback) { return typeof GT[key] === 'string' ? GT[key] : fallback; }
-  // What a gift of v covers. An empty line in the editor means "show nothing". Words in [square brackets]
-  // are still a reminder to replace them, and show in italics.
+  // What a gift of v covers. An empty line in the editor means "show nothing".
   function coversLine(v, monthly) {
     var group = GT[monthly ? 'monthly' : 'oneoff'];
     if (group && Object.prototype.hasOwnProperty.call(group, String(v)) && typeof group[String(v)] === 'string') return group[String(v)].trim();
     if (!monthly && v === 200) return 'About the average cost of rehoming one cat.';
-    return '[What ' + money(v) + (monthly ? ' a month' : '') + ' covers: add a real cost from Happy Paws]';
+    return '';
   }
-  function isReminder(t) { return t.charAt(0) === '['; }
   var cta = document.querySelector('[data-cta]');
   var ctaLabel = document.querySelector('[data-cta-label]');
   var sumSub = document.querySelector('[data-summary-sub]');
@@ -127,7 +125,7 @@
         var impact = el.querySelector('[data-row-impact]');
         var line = coversLine(v, monthly);
         impact.textContent = line;
-        impact.setAttribute('style', isReminder(line) ? IMPACT_BASE + ' font-style:italic; opacity:.85' : IMPACT_BASE);
+        impact.setAttribute('style', IMPACT_BASE);
         el.querySelector('[data-row-dot]').setAttribute('style', on ? DOT_ON : DOT_OFF);
       } else {
         el.setAttribute('aria-pressed', on ? 'true' : 'false');
@@ -147,7 +145,7 @@
     if (state.freq === 'oneoff' && state.custom === '' && eff === 200) return [gt('home_average', 'That is about the average cost of rehoming one cat.'), '#333333', 'normal'];
     if (state.custom !== '') return [gt('custom', 'Every pound makes a difference, even £1 can help us save a life.'), '#333333', 'normal'];
     var line = coversLine(eff, state.freq === 'monthly');
-    return isReminder(line) ? [line, '#4F596B', 'italic'] : [line, '#333333', 'normal'];
+    return [line, '#333333', 'normal'];
   }
 
   function render() {
@@ -180,6 +178,7 @@
     if (impactBox) {
       var im = homeImpact(eff);
       impactBox.textContent = im[0];
+      impactBox.hidden = !im[0];
       impactBox.style.color = im[1];
       impactBox.style.fontStyle = im[2];
     }

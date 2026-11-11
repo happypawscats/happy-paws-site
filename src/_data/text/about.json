@@ -20,9 +20,9 @@
   "s3": {
     "h2": "What we do",
     "h3": "Rescue",
-    "p": "We take in strays and cats in need. [Add a line on how cats come to us and where.]",
+    "p": "We take in strays and cats in need.",
     "h32": "Rehabilitate",
-    "p2": "We give every cat the care, time and quiet they need to recover. Foster homes are a vital part of this. [Add detail.]",
+    "p2": "We give every cat the care, time and quiet they need to recover. Foster homes are a vital part of this.",
     "link": "About fostering",
     "h33": "Rehome",
     "p3": "We match each cat with the right family, and stay in touch long after they have gone home.",
@@ -31,11 +31,11 @@
   "s4": {
     "h2": "Where we are",
     "h3": "Stockton",
-    "p": "[Area covered, and a line on how we help cats there.]",
+    "p": "Where Happy Paws is based.",
     "h32": "Birmingham",
-    "p2": "[Area covered, and a line on how we help cats there.]",
+    "p2": "We have foster homes here too.",
     "h33": "Banbury",
-    "p3": "[Area covered, and a line on how we help cats there.]"
+    "p3": "We have foster homes here too."
   },
   "s5": {
     "h2": "The people \nbehind it",
@@ -49,17 +49,7 @@
       {
         "text": "Photo to come",
         "p": "Vicki",
-        "p2": "[Role]"
-      },
-      {
-        "text": "Photo to come",
-        "p": "[Name]",
-        "p2": "[Role]"
-      },
-      {
-        "text": "Photo to come",
-        "p": "[Name]",
-        "p2": "[Role]"
+        "p2": "Volunteer"
       }
     ]
   },

@@ -28,11 +28,11 @@
     "text7": "Give once, whenever you like.",
     "text8": "Choose an amount",
     "text9": "£3",
-    "text10": "[What £3 a month covers: add a real cost from Happy Paws]",
+    "text10": "",
     "text11": "£5",
-    "text12": "[What £5 a month covers: add a real cost from Happy Paws]",
+    "text12": "",
     "text13": "£10",
-    "text14": "[What £10 a month covers: add a real cost from Happy Paws]",
+    "text14": "",
     "p3": "Monthly gifts come in set amounts. For any other amount, choose a one-off gift.",
     "text15": "Your gift",
     "text16": "Taken every month",
@@ -44,22 +44,22 @@
   },
   "s2": {
     "h2": "Where your \ndonations go",
-    "p": "Here is what your support makes possible. [Add a short, honest breakdown of how donations are spent.]",
+    "p": "Here is what your support makes possible.",
     "list": [
       {
         "h3": "Food and everyday care",
         "p": "Good food, clean litter and a warm bed for every cat in our care.",
-        "p2": "[What £10 pays for: add a real cost]"
+        "p2": ""
       },
       {
         "h3": "A safe place to stay",
         "p": "Foster homes and shelter give cats somewhere safe to settle while they wait for their forever home.",
-        "p2": "[What £25 pays for: add a real cost]"
+        "p2": ""
       },
       {
         "h3": "Medical care",
-        "p": "Vet checks and treatment for cats who arrive in need of medical attention. [Add what is covered.]",
-        "p2": "[What £50 pays for: add a real cost]"
+        "p": "Vet checks and treatment for cats who arrive in need of medical attention.",
+        "p2": ""
       }
     ]
   },
@@ -69,11 +69,11 @@
     "h3": "Bank transfer or standing order",
     "p2": "Pay straight into our bank account, or set up a regular standing order.",
     "dt": "Account name",
-    "dd": "[add]",
+    "dd": "",
     "dt2": "Sort code",
-    "dd2": "[add]",
+    "dd2": "",
     "dt3": "Account number",
-    "dd3": "[add]",
+    "dd3": "",
     "dt4": "Reference",
     "dd4": "Your name",
     "h32": "Our Amazon wish list",
@@ -96,7 +96,7 @@
       },
       {
         "question": "Can I change or cancel a monthly gift?",
-        "answer": "Yes. Email us at info@happypawscatrescue.org and we will change or cancel it for you. [Once the Stripe customer portal is switched on, add that donors can also do this themselves from the link in their receipt email.]"
+        "answer": "Yes. Email us at info@happypawscatrescue.org and we will change or cancel it for you."
       },
       {
         "question": "Will I get a receipt?",
@@ -105,10 +105,6 @@
       {
         "question": "Who are Happy Paws?",
         "answer": "We're a registered charity run by dedicated volunteers, based in Stockton, with foster homes in Birmingham and Banbury too."
-      },
-      {
-        "question": "Can I give by bank transfer instead?",
-        "answer": "Yes. You'll find our bank details under [Other ways to give](#other)."
       }
     ]
   }

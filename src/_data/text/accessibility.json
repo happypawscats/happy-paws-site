@@ -6,9 +6,9 @@
   "s1": {
     "h1": "Accessibility \n==statement==",
     "p": "How easy this website is to use, and what to do if you have a problem.",
-    "p2": "Last updated: [date]"
+    "p2": "Last updated: 11 November 2026"
   },
-  "draft": "**Draft for Happy Paws to approve.** This was written from the testing the website’s designers have done so far, and says plainly what has and has not been checked. Anything in square brackets can only be filled in by the charity. Update it after any further testing, and delete this box when it is approved.",
+  "draft": "**Draft for Happy Paws to approve.** This was written from the testing the website’s designers have done so far, and says plainly what has and has not been checked. Update it after any further testing, and delete this box when it is approved.",
   "sections": [
     {
       "title": "Our commitment",
@@ -16,19 +16,19 @@
     },
     {
       "title": "How accessible this website is",
-      "body": "### What we have done\n\n- Pages use proper headings, lists, links, buttons and labelled form fields, and every page has a “Skip to main content” link at the top.\n- You can use the menu, the donate amounts and the forms with a keyboard alone. The item you are on is outlined.\n- Pages are laid out for phones as well as larger screens, and fit a narrow phone screen without sideways scrolling.\n- Every photo has a short description. For cats it is written by the charity when the cat is added or, if none is written, built from the cat’s name and colour. It may not describe everything in the photo.\n- There are no videos, audio or PDFs on the site.\n\n### What we have checked\n\nWe ran an automatic accessibility check (axe-core, against WCAG 2.2 level AA) on every page of the site (a cat’s page was checked using sample cats), at desktop and phone sizes, and it found no problems. We also tried the menu, donate amounts and forms with a keyboard in a desktop browser.\n\n### What we have not checked yet\n\n- We have not tested with a screen reader, such as VoiceOver, NVDA or JAWS, or with voice control.\n- We have not tested on real phones or tablets, or in Safari or Firefox. [Update this when it has been done.]\n- Automatic checks find only some problems. A person with a disability has not yet tested the site. [Update this if that changes.]\n\n### Parts run by other companies\n\nThe adoption and foster application forms are provided by Pawlytics and hosted by Airtable. Donations are taken on Stripe’s payment pages. We do not control either, and we have not checked the inside of the application forms. If you cannot use a form, email us and we will take your application another way. [Confirm that Happy Paws can take applications by email or phone.] [Only if the Cats page is switched to the list Pawlytics provides, add: the list of cats is also provided by Pawlytics and has not been checked, and if you cannot use it, email us and we will tell you about our cats another way.]\n\n### Known problems\n\n[List any problems found in testing, and when they will be fixed.]"
+      "body": "### What we have done\n\n- Pages use proper headings, lists, links, buttons and labelled form fields, and every page has a “Skip to main content” link at the top.\n- You can use the menu, the donate amounts and the forms with a keyboard alone. The item you are on is outlined.\n- Pages are laid out for phones as well as larger screens, and fit a narrow phone screen without sideways scrolling.\n- Every photo has a short description. For cats it is written by the charity when the cat is added or, if none is written, built from the cat’s name and colour. It may not describe everything in the photo.\n- There are no videos, audio or PDFs on the site.\n\n### What we have checked\n\nWe ran an automatic accessibility check (axe-core, against WCAG 2.2 level AA) on every page of the site (a cat’s page was checked using sample cats), at desktop and phone sizes, and it found no problems. We also tried the menu, donate amounts and forms with a keyboard in a desktop browser.\n\n### What we have not checked yet\n\n- We have not tested with a screen reader, such as VoiceOver, NVDA or JAWS, or with voice control.\n- We have not tested on real phones or tablets, or in Safari or Firefox.\n- Automatic checks find only some problems. A person with a disability has not yet tested the site.\n\n### Parts run by other companies\n\nThe adoption and foster application forms are provided by Pawlytics and hosted by Airtable. Donations are taken on Stripe’s payment pages. We do not control either, and we have not checked the inside of the application forms. If you cannot use a form, email us and we will take your application another way.\n\n### Known problems\n\nWe have not found any problems in the checks described above. If you find one, please tell us."
     },
     {
       "title": "Feedback and contact information",
-      "body": "If you find something hard to use, or you need information in another format, email [info@happypawscatrescue.org](mailto:info@happypawscatrescue.org). Please tell us the page, what went wrong, and what device or tools you use. [Say how quickly we will reply, for example within five working days, and which formats we can offer.]"
+      "body": "If you find something hard to use, or you need information in another format, email [info@happypawscatrescue.org](mailto:info@happypawscatrescue.org). Please tell us the page, what went wrong, and what device or tools you use."
     },
     {
       "title": "Making a complaint",
-      "body": "If you are not happy with our reply, you can contact the Equality Advisory and Support Service (EASS) at [equalityadvisoryservice.com](https://www.equalityadvisoryservice.com/). It gives advice and help to people who think they have been treated unfairly. [Add the name of the person at Happy Paws to write to if someone is not happy with the first reply.]"
+      "body": "If you are not happy with our reply, you can contact the Equality Advisory and Support Service (EASS) at [equalityadvisoryservice.com](https://www.equalityadvisoryservice.com/). It gives advice and help to people who think they have been treated unfairly."
     },
     {
       "title": "About this statement",
-      "body": "This statement was first drafted in November 2026, by Studio Up, who designed and built the website. It will be updated when the site changes, or when more testing is done. [Add the date it was approved, and the date of the last review.]"
+      "body": "This statement was first drafted in November 2026, by Studio Up, who designed and built the website. It will be updated when the site changes, or when more testing is done."
     }
   ]
 }

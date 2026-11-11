@@ -6,7 +6,7 @@
   "s1": {
     "h1": "Say \n==hello==",
     "p": "We love to hear from our wonderful supporters, so please say “Hello”. Ask us about a cat, about fostering, or anything else.",
-    "p2": "[We usually reply within X days.]"
+    "p2": "We reply as soon as we can."
   },
   "s2": {
     "label": "First name",
@@ -28,13 +28,12 @@
     "dt": "Email",
     "link": "info@happypawscatrescue.org",
     "dt2": "Stockton",
-    "dd": "[Area covered]",
+    "dd": "Where Happy Paws is based.",
     "dt3": "Birmingham",
-    "dd2": "[Area covered]",
+    "dd2": "We have foster homes here too.",
     "dt4": "Banbury",
-    "dd3": "[Area covered]",
+    "dd3": "We have foster homes here too.",
     "dt5": "Follow us",
-    "dd4": "Facebook [add link]\nInstagram [add link]\nTikTok [add link]",
     "img": "/images/cat-black.jpg",
     "alt": "A black cat with amber eyes looking at the camera in low light"
   },
@@ -44,10 +43,6 @@
       {
         "question": "How do I adopt a cat?",
         "answer": "Choose a cat on our cats page and use the Apply button on their page to fill in our application form. [Read how adoption works](/adopting/)."
-      },
-      {
-        "question": "I have found a stray, or a cat in need",
-        "answer": "[Add what to do first, how to reach us urgently, and when to contact a vet or another service.]"
       },
       {
         "question": "Can I volunteer or foster?",

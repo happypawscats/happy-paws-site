@@ -31,6 +31,7 @@ eleventyComputed:
 </section>
 
 <!-- Cats looking for a home -->
+{% if siteCats | length %}
 <section id="cats" aria-labelledby="cats-h" class="sec" style="background:#ffffff; scroll-margin-top:72px">
 <div class="wrap">
 <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 48px; margin-bottom:56px">
@@ -41,28 +42,26 @@ eleventyComputed:
 </div>
 </div>
 <div class="cats-grid">
-<a class="cat" href="/cats/" style="display:block; text-decoration:none; color:#333333">
-<figure class="ph cat-img" style="aspect-ratio:4/5; background:#EAD3C9"><img loading="lazy" decoding="async" src="{{ text.home.s2.img }}" alt="{{ text.home.s2.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 62%; display:block"></figure>
+{% for cat in siteCats %}{% if loop.index <= 2 %}
+<a class="cat{% if loop.index == 2 %} cat-b{% endif %}" href="/cats/{{ cat.slug }}/" style="display:block; text-decoration:none; color:#333333">
+<figure class="ph cat-img" style="aspect-ratio:{% if loop.index == 1 %}4/5{% else %}1/1{% endif %}; background:{{ cat.bg }}"><img loading="lazy" decoding="async" src="/images/{{ cat.photos[0].src }}" alt="{{ cat.photos[0].alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:{{ cat.photos[0].pos }}; display:block"></figure>
 <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-top:16px">
-<span class="cat-name" style="font-size:30px; line-height:1.1; font-weight:500; letter-spacing:-0.01em">{{ text.home.s2.text }}</span>
-<span style="font-size:15px; color:#4F596B">{{ text.home.s2.text2 }}</span>
+<span class="cat-name" style="font-size:30px; line-height:1.1; font-weight:500; letter-spacing:-0.01em">{{ cat.name }}</span>
+<span style="font-size:15px; color:#4F596B">{% if cat.age_text != 'Age not known' %}{{ cat.age_text }}{% else %}{{ cat.age_band }}{% endif %}</span>
 </div>
 </a>
-<a class="cat cat-b" href="/cats/" style="display:block; text-decoration:none; color:#333333">
-<figure class="ph cat-img" style="aspect-ratio:1/1; background:#E6CDD2"><img loading="lazy" decoding="async" src="{{ text.home.s2.img2 }}" alt="{{ text.home.s2.alt2 }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 45%; display:block"></figure>
-<div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-top:16px">
-<span class="cat-name" style="font-size:30px; line-height:1.1; font-weight:500; letter-spacing:-0.01em">{{ text.home.s2.text3 }}</span>
-<span style="font-size:15px; color:#4F596B">{{ text.home.s2.text4 }}</span>
-</div>
-</a>
+{% endif %}{% endfor %}
+{% if siteCats | length > 2 %}
 <div>
 <div style="font-size:15px; font-weight:500; padding-bottom:12px; border-bottom:1px solid #C4CEDD">{{ text.home.s2.text5 }}</div>
-{% for it in text.home.s2.list %}<a class="list-row" href="/cats/"><span class="ln" style="font-size:20px; font-weight:500">{{ it.text }}</span><span style="font-size:14px; color:#4F596B">{{ it.text2 }}</span></a>{% if not loop.last %}
+{% for cat in siteCats %}{% if loop.index > 2 and loop.index <= 7 %}<a class="list-row" href="/cats/{{ cat.slug }}/"><span class="ln" style="font-size:20px; font-weight:500">{{ cat.name }}</span><span style="font-size:14px; color:#4F596B">{% if cat.age_text != 'Age not known' %}{{ cat.age_text }}{% else %}{{ cat.age_band }}{% endif %}</span></a>
 {% endif %}{% endfor %}
 </div>
+{% endif %}
 </div>
 </div>
 </section>
+{% endif %}
 
 <!-- How adoption works -->
 <section id="how" aria-labelledby="how-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7; scroll-margin-top:72px">
@@ -115,7 +114,7 @@ eleventyComputed:
 </div>
 </div>
 <p data-monthly-note="" style="margin:18px 0 0; font-size:14px; line-height:1.6; color:#4F596B">{{ text.home.s4.p2 }}</p>
-<div aria-live="polite" data-impact="" style="border-left:3px solid #CC1264; padding:4px 0 4px 14px; margin:22px 0; min-height:52px; font-size:15px; line-height:1.55; color:#4F596B; font-style:italic">{{ text.home.s4.text }}</div>
+<div aria-live="polite" data-impact=""{% if not text.home.s4.text %} hidden{% endif %} style="border-left:3px solid #CC1264; padding:4px 0 4px 14px; margin:22px 0; min-height:52px; font-size:15px; line-height:1.55; color:#4F596B; font-style:italic">{{ text.home.s4.text }}</div>
 <a class="btn btn-donate btn-block" href="/donate/" data-cta="" style="min-height:58px; font-size:18px"><span data-cta-label="">{{ text.home.s4.text2 }}</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <p style="margin:14px 0 0; font-size:13px; line-height:1.5; color:#4F596B; text-align:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="vertical-align:-3px; margin-right:8px"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>{{ text.home.s4.p3 }}</p>
 </div>

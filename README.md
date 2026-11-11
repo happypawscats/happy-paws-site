@@ -128,14 +128,25 @@ What to know about the widget, because Pawlytics draws it:
 - The code carries a long token for Happy Paws' account. It is meant to sit in a public page, as it does here. If Pawlytics sends new code, paste it over the file.
 - The widget's accessibility has not been tested.
 
+## Sections that appear once they have content
+
+These parts of the site are left out, not shown empty, until the charity gives them something. Each comes back by itself once the wording is added in `/admin/` (or `site.json`).
+
+- **Homepage "Cats looking for a home":** built from the listed cats, so it appears once a cat has a photo. The first two show large and the next five in a list. It is hidden when the Cats page uses the Pawlytics list.
+- **Adopting page:** the donation amounts table (Kitten, Adult, Senior, Pairs) and the line about how payment is taken appear once they are filled in. The "Questions you might have" section appears once it has at least one question and answer.
+- **Donate page:** the bank transfer box appears once all three bank details are filled in (`donate.json`, "Other ways to give"). The line beside each amount, and the line under the amounts on the homepage, show what a gift pays for once written in "What each gift pays for"; empty means nothing shows.
+- **News page:** "Where to find us" appears once there is an event in the list.
+- **Footer and Contact page:** each social link appears once its address is in `site.json`.
+- **About page team:** shows the people listed. Add a person, with a role, in the editor.
+
 ## Before launch
 
 1. Add the real cats: the client finishes the 19 pre-filled drafts and adds any others in the Cats section at `/admin/` (a photo and a story each), or (later) the Pawlytics sync fills `cats.json`. The sample cats in `cats.json` are not published unless the mode is `"sync"`. Before switching the sync on, add its secrets on GitHub, run it once with "Check only", then remove the `#` from the schedule.
 2. Replace the stock photos with the rescue's own, and update the alt text.
-3. Fill in the text in square brackets on the pages (amounts, reply times, addresses, names, dates).
+3. Add what the charity still has to supply (amounts, reply times, addresses, names, dates). `happy-paws-content-needed.pdf` lists the 23 questions. Nothing on the site is in square brackets any more: where an answer is missing the page says nothing about it, and a row or section that would be empty is hidden (see "Sections that appear once they have content" above).
 4. Fill in `src/_data/site.json` (above).
-5. News: the client adds stories at `/admin/` (see "Editing page wording"). Two are in `src/news/items/`: fill in the "[Date]" and "[Author]" reminders on the award story, and check the date of the BBC Banbury story (`2026-02-05` is a guess).
-6. Privacy policy and accessibility statement: both are drafted, with square brackets where only the charity can answer. The charity fills the gaps and approves them, then the pink "Draft" box is deleted from each page. Neither is legal advice. Update the accessibility statement after any further testing (screen reader, real phones, Safari and Firefox have not been tried).
+5. News: the client adds stories at `/admin/` (see "Editing page wording"). Two are in `src/news/items/`. The award story's date comes from the MP's letter and has no author; the BBC Banbury story shows "5 February" with no year, because the year in its `date` (`2026-02-05`) is a guess. Check it, and add the author and a fuller write-up of the award night if the charity wants them.
+6. Privacy policy and accessibility statement: both are drafted, and leave out what only the charity can answer (registered address, how long each kind of information is kept, who provides the email and any newsletter service, who else sees applications, reply times, a named person for complaints; questions 22 and 23 in the list). The charity supplies these and approves the text, then the pink "Draft" box is deleted from each page. If the Cats page is ever switched to the Pawlytics list, add a line about it to both pages (it loads from Pawlytics, so Pawlytics sees the visit, and the list has not been checked for accessibility). Neither is legal advice. Update the accessibility statement after any further testing (screen reader, real phones, Safari and Firefox have not been tried).
 7. Test a payment through Stripe in test mode, then a small real gift (one-off and monthly).
 8. Test the contact form end to end, including where the email arrives. Submit a test adoption and a test foster application on the live site and check they appear in Pawlytics.
 9. Change `site.url` in `site.json` and the `Sitemap:` line in `src/static/robots.txt` if the address will not be www.happypawscatrescue.org.

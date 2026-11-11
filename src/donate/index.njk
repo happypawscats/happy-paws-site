@@ -127,7 +127,7 @@ eleventyComputed:
 {% for it in text.donate.s2.list %}<div class="rule-row">
 <h3>{{ it.h3 }}</h3>
 <p>{{ it.p }}</p>
-<p class="act" style="font-style:italic; color:#4F596B; font-size:14px">{{ it.p2 }}</p>
+{% if it.p2 %}<p class="act" style="font-style:italic; color:#4F596B; font-size:14px">{{ it.p2 }}</p>{% endif %}
 </div>{% if not loop.last %}
 {% endif %}{% endfor %}
 </div>
@@ -142,19 +142,19 @@ eleventyComputed:
 <p class="lede" style="max-width:520px; align-self:end">{{ text.donate.s3.p }}</p>
 </div>
 <div class="rules">
-<div class="rule-row">
+{% if text.donate.s3.dd3 %}<div class="rule-row">
 <h3>{{ text.donate.s3.h3 }}</h3>
 <div>
 <p style="margin-bottom:14px">{{ text.donate.s3.p2 }}</p>
 <dl style="margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 18px; font-size:15px; line-height:1.4">
-<dt style="color:#4F596B">{{ text.donate.s3.dt }}</dt><dd style="margin:0; font-style:italic; color:#4F596B">{{ text.donate.s3.dd }}</dd>
-<dt style="color:#4F596B">{{ text.donate.s3.dt2 }}</dt><dd style="margin:0; font-style:italic; color:#4F596B">{{ text.donate.s3.dd2 }}</dd>
-<dt style="color:#4F596B">{{ text.donate.s3.dt3 }}</dt><dd style="margin:0; font-style:italic; color:#4F596B">{{ text.donate.s3.dd3 }}</dd>
+<dt style="color:#4F596B">{{ text.donate.s3.dt }}</dt><dd style="margin:0">{{ text.donate.s3.dd }}</dd>
+<dt style="color:#4F596B">{{ text.donate.s3.dt2 }}</dt><dd style="margin:0">{{ text.donate.s3.dd2 }}</dd>
+<dt style="color:#4F596B">{{ text.donate.s3.dt3 }}</dt><dd style="margin:0">{{ text.donate.s3.dd3 }}</dd>
 <dt style="color:#4F596B">{{ text.donate.s3.dt4 }}</dt><dd style="margin:0">{{ text.donate.s3.dd4 }}</dd>
 </dl>
 </div>
 <span></span>
-</div>
+</div>{% endif %}
 <div class="rule-row">
 <h3>{{ text.donate.s3.h32 }}</h3>
 <p>{{ text.donate.s3.p3 }}</p>

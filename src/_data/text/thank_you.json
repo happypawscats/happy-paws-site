@@ -5,7 +5,7 @@
   },
   "s1": {
     "h1": "Thank you for \nhelping cats \n==in need==",
-    "p": "Your gift of **[£5 a month]** means we can keep rescuing, rehabilitating and rehoming cats who need us. [Add a line on what this gift does.]",
+    "p": "Your gift means we can keep rescuing, rehabilitating and rehoming cats who need us.",
     "p2": "A receipt is on its way to your inbox.",
     "btn": "Meet our cats",
     "btn2": "Back to the homepage",
@@ -13,18 +13,18 @@
     "alt": "A ginger kitten nestled in a soft grey blanket, looking up at the camera"
   },
   "s2": {
-    "p2": "Tell your friends and family about Happy Paws. Every share helps a cat find help.",
-    "p3": "Get rescue stories and adoption updates in your inbox. We'll only email you if you sign up here. [Short privacy note.]",
-    "p4": "A cake sale, car boot, quiz night or coffee morning. We'd be overjoyed to hear your idea.",
-    "h32": "Stay in the loop",
-    "h33": "Fundraise for us",
     "h2": "Three more \nways to help",
-    "h3": "Spread the word",
     "p": "Your gift matters. If you'd like to do a little more, here are some easy next steps.",
-    "button": "Sign up",
-    "label": "Email address",
+    "h3": "Spread the word",
+    "p2": "Tell your friends and family about Happy Paws. Every share helps a cat find help.",
+    "btn": "Facebook",
     "btn2": "WhatsApp",
-    "link": "Fundraising ideas",
-    "btn": "Facebook"
+    "h32": "Stay in the loop",
+    "p3": "Get rescue stories and adoption updates in your inbox. We'll only email you if you sign up here.",
+    "label": "Email address",
+    "button": "Sign up",
+    "h33": "Fundraise for us",
+    "p4": "A cake sale, car boot, quiz night or coffee morning. We'd be overjoyed to hear your idea.",
+    "link": "Fundraising ideas"
   }
 }
