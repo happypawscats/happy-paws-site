@@ -32,7 +32,7 @@
     "note": "Adoption and foster applications use the forms in the charity's Pawlytics account (Pawlytics, Forms). embed is the address inside the page; page is the same form on its own page, used for the link under it. If Pawlytics ever changes a form, copy the new addresses from Pawlytics, Forms."
   },
   "forms": {
-    "endpoint": "",
+    "endpoint": "/",
     "note": "Where the contact and newsletter forms send their answers. Leave empty while testing: forms then go straight to the thank-you page and send nothing. On Netlify, set this to / to use Netlify Forms. Adoption and foster applications do not use this: they go through the Pawlytics forms (see applications)."
   },
   "social": {
