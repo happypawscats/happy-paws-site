@@ -1,53 +1,4 @@
 {
-  "meta": {
-    "title": "Helping cats in need",
-    "description": "Happy Paws Cat Rescue is a registered charity that rescues, rehabilitates and rehomes cats across Stockton, Birmingham and Banbury."
-  },
-  "s1": {
-    "h1": "Helping cats \n==in need==",
-    "p": "Happy Paws Cat Rescue is dedicated to rescuing, rehabilitating and rehoming homeless cats, and giving every one of them a second chance.",
-    "btn": "Meet our cats",
-    "btn2": "Donate",
-    "p2": "All adoptions are subject to a home check and an adoption donation. [See how it works](/adopting/)",
-    "img": "/images/cat-grey.jpg",
-    "alt": "A grey cat with amber eyes looking at the camera, lying on a cream blanket"
-  },
-  "s2": {
-    "h2": "Cats looking \nfor a home",
-    "p": "These are some of our beautiful cats and kittens looking for their forever homes. Choose a cat to read their story.",
-    "link": "See all cats",
-    "img": "/images/kitten-ginger-white.jpg",
-    "alt": "A ginger-and-white kitten sitting upright against a dark background, looking at the camera",
-    "text": "[Cat name]",
-    "text2": "[Age]",
-    "img2": "/images/cat-calico.jpg",
-    "alt2": "A fluffy calico cat with green eyes looking at the camera in warm sunlight",
-    "text3": "[Cat name]",
-    "text4": "[Age]",
-    "text5": "Also looking for a home",
-    "list": [
-      {
-        "text": "[Cat name]",
-        "text2": "[Age]"
-      },
-      {
-        "text": "[Cat name]",
-        "text2": "[Age]"
-      },
-      {
-        "text": "[Cat name]",
-        "text2": "[Age]"
-      },
-      {
-        "text": "[Cat name]",
-        "text2": "[Age]"
-      },
-      {
-        "text": "[Cat name]",
-        "text2": "[Age]"
-      }
-    ]
-  },
   "s3": {
     "h2": "How adoption \nworks",
     "p": "Four simple steps from meeting a cat to bringing them home.",
@@ -72,37 +23,37 @@
     ]
   },
   "s4": {
-    "img": "/images/cat-tuxedo.jpg",
-    "alt": "A black-and-white tuxedo cat sitting on a wooden floor, looking up",
-    "h2": "Help us save \na life today",
-    "p": "Every donation brings us one step closer to rescuing and rehabilitating cats in need. Your support helps provide food, shelter and medical care to the most vulnerable.",
-    "h3": "Give to Happy Paws",
-    "button": "Monthly",
     "button2": "One-off",
     "button3": "£3",
-    "button4": "£5",
-    "button5": "£10",
     "p2": "Monthly gifts come in set amounts. For any other amount, choose One-off.",
-    "text": "[What £5 a month covers: add a real cost from Happy Paws]",
-    "text2": "Give £5 a month",
+    "button4": "£5",
     "p3": "You'll complete your gift on a secure payment page.",
-    "p4": "**£200** is what it costs, on average, to rehome one cat. Cats who need medical attention can cost considerably more. Prefer another way to give? Try a [bank transfer or standing order](/ways-to-help/), our [Amazon wish list](/ways-to-help/) or [fundraising](/ways-to-help/)."
+    "button5": "£10",
+    "img": "/images/cat-tuxedo.jpg",
+    "p4": "**£200** is what it costs, on average, to rehome one cat. Cats who need medical attention can cost considerably more. Prefer another way to give? Try a [bank transfer or standing order](/ways-to-help/), our [Amazon wish list](/ways-to-help/) or [fundraising](/ways-to-help/).",
+    "text2": "Give £5 a month",
+    "alt": "A black-and-white tuxedo cat sitting on a wooden floor, looking up",
+    "h2": "Help us save \na life today",
+    "h3": "Give to Happy Paws",
+    "text": "[What £5 a month covers: add a real cost from Happy Paws]",
+    "p": "Every donation brings us one step closer to rescuing and rehabilitating cats in need. Your support helps provide food, shelter and medical care to the most vulnerable.",
+    "button": "Monthly"
   },
   "s5": {
-    "h2": "More ways \nto help",
-    "p": "Adoption isn't the only way to support our rescue. If you can't adopt, there are plenty of other ways to make a difference.",
-    "h3": "Foster a cat",
     "p2": "Fostering is the vital stepping stone in our work. It gives cats a safe place to settle while they wait for their forever home.",
-    "link": "Find out about fostering",
-    "h32": "Fundraise for us",
     "p3": "A cake sale, car boot, quiz night or coffee morning. We'd be overjoyed to hear your idea.",
-    "link2": "Fundraising ideas",
-    "h33": "Our wish list",
     "p4": "We're always in need of supplies. Our Amazon wish list makes it easy to donate exactly what we need.",
-    "link3": "Open the wish list",
-    "h34": "Volunteer",
     "p5": "Join our team and make a difference in the lives of cats in need.",
-    "link4": "Get involved"
+    "h32": "Fundraise for us",
+    "h33": "Our wish list",
+    "h34": "Volunteer",
+    "h2": "More ways \nto help",
+    "h3": "Foster a cat",
+    "p": "Adoption isn't the only way to support our rescue. If you can't adopt, there are plenty of other ways to make a difference.",
+    "link2": "Fundraising ideas",
+    "link3": "Open the wish list",
+    "link4": "Get involved",
+    "link": "Find out about fostering"
   },
   "s6": {
     "img": "/images/story-woman-with-cat.jpg",
@@ -117,16 +68,20 @@
     "text": "Kathleen Lily Arnold",
     "link": "Read more from our adopters and supporters"
   },
+  "meta": {
+    "title": "Helping cats in need Shiv",
+    "description": "Happy Paws Cat Rescue is a registered charity that rescues, rehabilitates and rehomes cats across Stockton, Birmingham and Banbury."
+  },
   "s8": {
-    "p": "A word from our MP",
-    "h2": "Our MP has written to congratulate us",
     "p2": "Happy Paws was Highly Commended in the BBC Radio Tees Make A Difference Awards, and Chris McDonald MP wrote to thank our volunteers.",
-    "img": "/images/mp-letter.jpg",
-    "alt": "Letter from Chris McDonald MP, Member of Parliament for Stockton North, to Happy Paws Cat Rescue, dated 14 October 2026. It congratulates the rescue on being Highly Commended in the BBC Radio Tees Make A Difference Awards.",
-    "caption": "Letter from Chris McDonald MP\n14 October 2026",
-    "quote": "“…dedication to such a worthwhile cause is absolutely invaluable.”",
     "p3": "Chris McDonald MP\nMember of Parliament for Stockton North",
-    "link": "Read the full letter== (opens in a new tab)=="
+    "img": "/images/mp-letter.jpg",
+    "caption": "Letter from Chris McDonald MP\n14 October 2026",
+    "alt": "Letter from Chris McDonald MP, Member of Parliament for Stockton North, to Happy Paws Cat Rescue, dated 14 October 2026. It congratulates the rescue on being Highly Commended in the BBC Radio Tees Make A Difference Awards.",
+    "h2": "Our MP has written to congratulate us",
+    "p": "A word from our MP",
+    "link": "Read the full letter== (opens in a new tab)==",
+    "quote": "“…dedication to such a worthwhile cause is absolutely invaluable.”"
   },
   "s9": {
     "h2": "Stay connected \nwith Happy Paws",
@@ -134,5 +89,50 @@
     "label": "Email address",
     "button": "Sign up",
     "p2": "[Short privacy note: how we'll use your email and how to unsubscribe.]"
+  },
+  "s1": {
+    "h1": "Helping cats \n==in need==",
+    "p": "Happy Paws Cat Rescue is dedicated to rescuing, rehabilitating and rehoming homeless cats, and giving every one of them a second chance.",
+    "btn": "Meet our cats",
+    "btn2": "Donate",
+    "p2": "All adoptions are subject to a home check and an adoption donation. [See how it works](/adopting/)",
+    "img": "/images/cat-grey.jpg",
+    "alt": "A grey cat with amber eyes looking at the camera, lying on a cream blanket"
+  },
+  "s2": {
+    "img": "/images/kitten-ginger-white.jpg",
+    "text2": "[Age]",
+    "text3": "[Cat name]",
+    "text4": "[Age]",
+    "text5": "Also looking for a home",
+    "alt": "A ginger-and-white kitten sitting upright against a dark background, looking at the camera",
+    "alt2": "A fluffy calico cat with green eyes looking at the camera in warm sunlight",
+    "h2": "Cats looking \nfor a home",
+    "text": "[Cat name]",
+    "img2": "/images/cat-calico.jpg",
+    "p": "These are some of our beautiful cats and kittens looking for their forever homes. Choose a cat to read their story.",
+    "link": "See all cats",
+    "list": [
+      {
+        "text": "[Cat name]",
+        "text2": "[Age]"
+      },
+      {
+        "text": "[Cat name]",
+        "text2": "[Age]"
+      },
+      {
+        "text": "[Cat name]",
+        "text2": "[Age]"
+      },
+      {
+        "text": "[Cat name]",
+        "text2": "[Age]"
+      },
+      {
+        "text": "[Cat name]",
+        "text2": "[Age]"
+      }
+    ]
   }
 }
