@@ -1,0 +1,65 @@
+---
+layout: base.njk
+permalink: "/adopting/"
+current: "adopt"
+appeal: true
+css: []
+js: []
+eleventyComputed:
+  title: "{{ text.adopting.meta.title }}"
+  description: "{{ text.adopting.meta.description }}"
+---
+<main id="main">
+<!-- Hero -->
+<section aria-labelledby="pg-h" class="ih">
+<div class="ih-copy pad-l">
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.adopting.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:520px"><p class="lede" style="">{{ text.adopting.s1.p }}</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">{{ text.adopting.s1.p2 }}</p></div>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/cats/" >{{ text.adopting.s1.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline" href="/contact/" >{{ text.adopting.s1.btn2 }}</a></div>
+</div>
+<div class="ih-photo"><figure class="ph " style="height:100%; background:#E6CDD2; position:absolute; inset:0"><img fetchpriority="high" decoding="async" src="{{ text.adopting.s1.img }}" alt="{{ text.adopting.s1.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:44% 50%; display:block"></figure></div>
+</section>
+
+<section aria-labelledby="steps-h" class="sec" style="background:#ffffff; "><div class="wrap"><div class="two-grid" style="margin-bottom:56px; align-items:end">
+<h2 id="steps-h" class="h2" style="color:#ED217C">{{ text.adopting.s2.h2 | rich | safe }}</h2>
+<p class="lede" style="max-width:520px">{{ text.adopting.s2.p }}</p>
+</div>
+<ol style="list-style:none; margin:0; padding:0; border-top:1px solid #C4CEDD"><li class="as-row" style="list-style:none"><span class="as-n">1</span><h3>{{ text.adopting.s2.h3 }}</h3><div><p>{{ text.adopting.s2.p2 }}</p><div class="as-act" style="margin-top:14px"><a class="link" href="/cats/">{{ text.adopting.s2.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></li><li class="as-row" style="list-style:none"><span class="as-n">2</span><h3>{{ text.adopting.s2.h32 }}</h3><div><p>{{ text.adopting.s2.p3 }}</p></div></li><li class="as-row" style="list-style:none"><span class="as-n">3</span><h3>{{ text.adopting.s2.h33 }}</h3><div><p>{{ text.adopting.s2.p4 }}</p></div></li><li class="as-row" style="list-style:none"><span class="as-n">4</span><h3>{{ text.adopting.s2.h34 }}</h3><div><p>{{ text.adopting.s2.p5 }}</p></div></li><li class="as-row" style="list-style:none"><span class="as-n">5</span><h3>{{ text.adopting.s2.h35 }}</h3><div><p>{{ text.adopting.s2.p6 }}</p></div></li></ol></div></section>
+
+<section aria-labelledby="don-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7; "><div class="wrap"><div class="two-grid">
+<h2 id="don-h" class="h2" style="color:#ffffff">{{ text.adopting.s3.h2 | rich | safe }}</h2>
+<div style="display:flex; flex-direction:column; gap:28px; max-width:640px">
+<p style="margin:0; font-size:18px; line-height:1.7">{{ text.adopting.s3.p }}</p>
+{% if text.adopting.s3.list | length %}<dl style="margin:0; border-top:1px solid rgba(232,238,247,.4)">
+{% for it in text.adopting.s3.list %}<div class="fact-d"><dt>{{ it.dt }}</dt><dd>{{ it.dd }}</dd></div>{% if not loop.last %}
+{% endif %}{% endfor %}
+</dl>{% endif %}
+{% if text.adopting.s3.p2 %}<p style="margin:0; font-size:15px; line-height:1.6; color:#C7D2E6">{{ text.adopting.s3.p2 }}</p>{% endif %}
+</div>
+</div></div></section>
+
+<section class="sec sec-t" style="background:#E8EEF7; "><div class="wrap"><div class="qq">
+<blockquote class="big-q" style="margin:0; color:#1F3158; max-width:760px">{{ text.adopting.s4.quote }}</blockquote>
+<div style="display:flex; flex-direction:column; gap:18px; align-items:flex-start">
+<p style="margin:0; font-size:16px; line-height:1.6">{{ text.adopting.s4.p | rich({strong: {'style': 'font-weight:700' } }) | safe }}</p>
+<a class="link" href="/testimonials/">{{ text.adopting.s4.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+</div></div></section>
+
+{% if text.adopting.s5.list | length %}<section aria-labelledby="faq-h" class="sec" style="background:#ffffff; "><div class="wrap"><div class="two-grid">
+<h2 id="faq-h" class="h2" style="color:#ED217C">{{ text.adopting.s5.h2 | rich | safe }}</h2>
+<div style="border-top:1px solid #C4CEDD">{% for it in text.adopting.s5.list %}<details class="faq"><summary>{{ it.question }}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class=chev><path d="M6 9l6 6 6-6"/></svg></summary><p class="faq-a">{{ it.answer }}</p></details>{% endfor %}</div>
+</div></div></section>{% endif %}
+
+<section aria-labelledby="help-h" class="sec" style="background:#F5CDD6; padding-top:80px; padding-bottom:80px">
+<div class="wrap">
+<div class="two-grid" style="align-items:center">
+<h2 id="help-h" class="h2" style="color:#1F3158; font-size:clamp(30px,3.6vw,50px)">{{ text.adopting.s6.h2 | rich | safe }}</h2>
+<div style="display:flex; flex-direction:column; gap:26px; align-items:flex-start; max-width:680px">
+<p class="lede" style="font-size:18px; max-width:560px">{{ text.adopting.s6.p }}</p>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/cats/" >{{ text.adopting.s6.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline" href="/contact/" >{{ text.adopting.s6.btn2 }}</a></div>
+</div>
+</div>
+</div>
+</section>
+</main>

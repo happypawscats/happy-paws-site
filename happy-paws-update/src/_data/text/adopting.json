@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "How adoption works",
+    "description": "How adopting a cat from Happy Paws works: choose a cat, apply, a home check, and welcoming them home."
+  },
+  "s1": {
+    "h1": "How adoption \n==works==",
+    "p": "Every cat in our care is looked after by our volunteers until the right home comes along. Here is what to expect when you adopt from Happy Paws.",
+    "p2": "All adoptions are subject to a home check and an adoption donation.",
+    "btn": "See our cats",
+    "btn2": "Ask us a question",
+    "img": "/images/story-woman-with-cat.jpg",
+    "alt": "A woman sitting on a rug holding a dark cat, with a second cat walking along the sofa behind her"
+  },
+  "s2": {
+    "h2": "Five steps to \na new family \nmember",
+    "p": "We take our time to match every cat with the right home, so nobody is rushed or pressured.",
+    "h3": "Choose a cat",
+    "p2": "Browse our cats and kittens. When someone catches your eye, open their page to read their story.",
+    "link": "See our cats",
+    "h32": "Apply to adopt",
+    "p3": "Use the Apply button on the cat's page to fill in our application form, with a little about yourself and the home you could offer. You can ask us a question there too.",
+    "h33": "Chat with us",
+    "p4": "We get to know you and the kind of cat who would be happy in your home.",
+    "h34": "Home check",
+    "p5": "Every adoption is subject to a home check. A volunteer checks that your home is safe and suitable.",
+    "h35": "Welcome them home",
+    "p6": "Once the home check is approved and the adoption donation is paid, your cat can come home. We stay in touch afterwards, and love to hear how they are settling in."
+  },
+  "s3": {
+    "h2": "The adoption \ndonation",
+    "p": "Every adoption comes with an adoption donation. It helps towards the cost of caring for the cat while they are with us. It costs us, on average, £200 to rehome a cat, and considerably more if they need medical attention.",
+    "list": [],
+    "p2": ""
+  },
+  "s4": {
+    "quote": "“Throughout this process, we were never rushed or pressured and so now feel confident that we can give these girls a happy long life.”",
+    "p": "**Lucca Addy**\nAdopted Kitty and Rosie",
+    "link": "Read more kind words"
+  },
+  "s5": {
+    "h2": "Questions you \nmight have",
+    "list": []
+  },
+  "s6": {
+    "h2": "Ready to meet \nyour cat?",
+    "p": "Browse the cats and kittens looking for a home, or get in touch if you would like to talk it through first.",
+    "btn": "See our cats",
+    "btn2": "Contact us"
+  }
+}

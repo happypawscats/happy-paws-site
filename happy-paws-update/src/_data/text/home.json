@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "Helping cats in need",
+    "description": "Happy Paws Cat Rescue is a registered charity that rescues, rehabilitates and rehomes cats across Stockton, Birmingham and Banbury."
+  },
+  "s1": {
+    "h1": "Helping cats \n==in need==",
+    "p": "Happy Paws Cat Rescue is dedicated to rescuing, rehabilitating and rehoming homeless cats, and giving every one of them a second chance.",
+    "btn": "Meet our cats",
+    "btn2": "Donate",
+    "p2": "All adoptions are subject to a home check and an adoption donation. [See how it works](/adopting/)",
+    "img": "/images/cat-grey.jpg",
+    "alt": "A grey cat with amber eyes looking at the camera, lying on a cream blanket"
+  },
+  "s2": {
+    "h2": "Cats looking \nfor a home",
+    "p": "These are some of our beautiful cats and kittens looking for their forever homes. Choose a cat to read their story.",
+    "link": "See all cats",
+    "text5": "Also looking for a home"
+  },
+  "s3": {
+    "h2": "How adoption \nworks",
+    "p": "Four simple steps from meeting a cat to bringing them home.",
+    "btn": "Ask about a cat",
+    "list": [
+      {
+        "h3": "Choose a cat",
+        "p": "Browse our cats and kittens and find someone who catches your eye."
+      },
+      {
+        "h3": "Apply to adopt",
+        "p": "Use the Apply button on the cat's page to fill in our application form, with a little about yourself and the home you could offer."
+      },
+      {
+        "h3": "Home check",
+        "p": "All adoptions are subject to a home check."
+      },
+      {
+        "h3": "Welcome them home",
+        "p": "Pay the adoption donation and take your new family member home."
+      }
+    ]
+  },
+  "s4": {
+    "img": "/images/cat-tuxedo.jpg",
+    "alt": "A black-and-white tuxedo cat sitting on a wooden floor, looking up",
+    "h2": "Help us save \na life today",
+    "p": "Every donation brings us one step closer to rescuing and rehabilitating cats in need. Your support helps provide food, shelter and medical care to the most vulnerable.",
+    "h3": "Give to Happy Paws",
+    "button": "Monthly",
+    "button2": "One-off",
+    "button3": "£3",
+    "button4": "£5",
+    "button5": "£10",
+    "p2": "Monthly gifts come in set amounts. For any other amount, choose One-off.",
+    "text": "",
+    "text2": "Give £5 a month",
+    "p3": "You'll complete your gift on a secure payment page.",
+    "p4": "**£200** is what it costs, on average, to rehome one cat. Cats who need medical attention can cost considerably more. Prefer another way to give? Try a [bank transfer or standing order](/ways-to-help/), our [Amazon wish list](/ways-to-help/) or [fundraising](/ways-to-help/)."
+  },
+  "s5": {
+    "h2": "More ways \nto help",
+    "p": "Adoption isn't the only way to support our rescue. If you can't adopt, there are plenty of other ways to make a difference.",
+    "h3": "Foster a cat",
+    "p2": "Fostering is the vital stepping stone in our work. It gives cats a safe place to settle while they wait for their forever home.",
+    "link": "Find out about fostering",
+    "h32": "Fundraise for us",
+    "p3": "A cake sale, car boot, quiz night or coffee morning. We'd be overjoyed to hear your idea.",
+    "link2": "Fundraising ideas",
+    "h33": "Our wish list",
+    "p4": "We're always in need of supplies. Our Amazon wish list makes it easy to donate exactly what we need.",
+    "link3": "Open the wish list",
+    "h34": "Volunteer",
+    "p5": "Join our team and make a difference in the lives of cats in need.",
+    "link4": "Get involved"
+  },
+  "s6": {
+    "img": "/images/story-woman-with-cat.jpg",
+    "alt": "A woman sitting on a rug holding a dark cat, with a second cat walking along the sofa behind her",
+    "h2": "Happy Paws Cat Rescue began with a simple mission: to give every cat a second chance at life.",
+    "p": "It was founded by Katrina, who has wanted to help cats in need ever since she was a little girl, and it has grown from a small effort in Stockton into a team of dedicated volunteers. Whether it's a kitten in need of a warm place or an older cat looking for a forever home, we're here to help.",
+    "p2": "Stockton · Birmingham · Banbury",
+    "btn": "Read our full story"
+  },
+  "s7": {
+    "quote": "Being with the this rescue and adopting our new family member was amazing. They were able to help us find an amazing addition to the family and we couldn't be any more grateful. Thank you!",
+    "text": "Kathleen Lily Arnold",
+    "link": "Read more from our adopters and supporters"
+  },
+  "s8": {
+    "p": "A word from our MP",
+    "h2": "Our MP has written to congratulate us",
+    "p2": "Happy Paws was Highly Commended in the BBC Radio Tees Make A Difference Awards, and Chris McDonald MP wrote to thank our volunteers.",
+    "img": "/images/mp-letter.jpg",
+    "alt": "Letter from Chris McDonald MP, Member of Parliament for Stockton North, to Happy Paws Cat Rescue, dated 14 October 2026. It congratulates the rescue on being Highly Commended in the BBC Radio Tees Make A Difference Awards.",
+    "caption": "Letter from Chris McDonald MP\n14 October 2026",
+    "quote": "“…dedication to such a worthwhile cause is absolutely invaluable.”",
+    "p3": "Chris McDonald MP\nMember of Parliament for Stockton North",
+    "link": "Read the full letter== (opens in a new tab)=="
+  },
+  "s9": {
+    "h2": "Stay connected \nwith Happy Paws",
+    "p": "Join our newsletter to receive heartwarming rescue stories, adoption updates, and ways you can help cats in need, right in your inbox.",
+    "label": "Email address",
+    "button": "Sign up",
+    "p2": "We only use your email address to send the newsletter, and you can stop it at any time."
+  }
+}

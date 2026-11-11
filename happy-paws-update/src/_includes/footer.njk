@@ -1,0 +1,53 @@
+<footer class="on-dark" style="background:#1F3158; color:#E8EEF7">
+<div class="wrap" style="padding-top:72px; padding-bottom:28px">
+<div style="display:flex; flex-wrap:wrap; gap:36px 48px">
+<div style="flex:1 1 280px; min-width:0; display:flex; flex-direction:column; gap:14px; max-width:340px">
+<img width="260" height="154" src="{{ text.footer.s1.img }}" alt="{{ text.footer.s1.alt }}" style="height:76px; width:auto; align-self:flex-start; filter:brightness(0) invert(1)">
+<p style="margin:0; font-size:15px; line-height:1.65; color:#F5CDD6">{{ text.footer.s1.p }}</p>
+<a href="mailto:info@happypawscatrescue.org" style="color:#ffffff; font-weight:500; font-size:16px; text-decoration:underline; text-underline-offset:4px; min-height:44px; display:inline-flex; align-items:center">{{ text.footer.s1.link }}</a>
+</div>
+<div style="flex:1 1 140px; min-width:0">
+<div style="font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#F5CDD6; margin-bottom:6px">{{ text.footer.s1.text }}</div>
+<div style="display:flex; flex-direction:column">
+<a class="foot-a" href="/cats/">{{ text.footer.s1.link2 }}</a>
+<a class="foot-a" href="/adopting/">{{ text.footer.s1.link3 }}</a>
+<a class="foot-a" href="/contact/">{{ text.footer.s1.link4 }}</a>
+</div>
+</div>
+<div style="flex:1 1 140px; min-width:0">
+<div style="font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#F5CDD6; margin-bottom:6px">{{ text.footer.s1.text2 }}</div>
+<div style="display:flex; flex-direction:column">
+<a class="foot-a" href="/donate/">{{ text.footer.s1.link5 }}</a>
+<a class="foot-a" href="/donate/#other">{{ text.footer.s1.link6 }}</a>
+<a class="foot-a" href="/foster/">{{ text.footer.s1.link7 }}</a>
+<a class="foot-a" href="/ways-to-help/">{{ text.footer.s1.link8 }}</a>
+</div>
+</div>
+<div style="flex:1 1 140px; min-width:0">
+<div style="font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#F5CDD6; margin-bottom:6px">{{ text.footer.s1.text3 }}</div>
+<div style="display:flex; flex-direction:column">
+<a class="foot-a" href="/about/">{{ text.footer.s1.link9 }}</a>
+<a class="foot-a" href="/testimonials/">{{ text.footer.s1.link10 }}</a>
+<a class="foot-a" href="/news/">{{ text.footer.s1.link11 }}</a>
+<a class="foot-a" href="/contact/">{{ text.footer.s1.link12 }}</a>
+</div>
+</div>
+{% if site.social.facebook or site.social.instagram or site.social.tiktok %}<div style="flex:1 1 140px; min-width:0">
+<div style="font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#F5CDD6; margin-bottom:6px">{{ text.footer.s1.text4 }}</div>
+<div style="display:flex; flex-direction:column">
+{% if site.social.facebook %}<a class="foot-a" href="{{ site.social.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
+{% if site.social.instagram %}<a class="foot-a" href="{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+{% if site.social.tiktok %}<a class="foot-a" href="{{ site.social.tiktok }}" target="_blank" rel="noopener">TikTok</a>{% endif %}
+</div>
+</div>
+{% endif %}
+</div>
+<div style="margin-top:40px; padding-top:18px; border-top:1px solid rgba(232,238,247,.3); display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 24px; font-size:14px; color:#F5CDD6">
+<div style="min-height:44px; display:flex; align-items:center">{{ text.footer.s1.text5 }}</div>
+<div style="display:flex; flex-wrap:wrap; gap:0 22px">
+<a class="foot-a" href="/privacy/" style="font-size:14px">{{ text.footer.s1.link13 }}</a>
+<a class="foot-a" href="/accessibility/" style="font-size:14px">{{ text.footer.s1.link14 }}</a>
+</div>
+</div>
+</div>
+</footer>

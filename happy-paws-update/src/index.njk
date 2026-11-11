@@ -1,0 +1,232 @@
+---
+layout: base.njk
+permalink: "/"
+current: ""
+appeal: true
+css: []
+js: ["giving"]
+eleventyComputed:
+  title: "{{ text.home.meta.title }}"
+  description: "{{ text.home.meta.description }}"
+---
+<main id="main">
+<!-- Hero -->
+<section class="hero-sec" aria-labelledby="hero-h" style="background:#E8EEF7">
+<div class="hero-grid">
+<div class="pad-l" style="padding-top:88px; padding-bottom:88px; padding-right:56px; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:32px">
+<h1 id="hero-h" class="display" style="color:#1F3158">{{ text.home.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<p class="lede" style="max-width:480px">{{ text.home.s1.p }}</p>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:14px">
+<a class="btn btn-primary" href="/cats/">{{ text.home.s1.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-outline" href="/donate/">{{ text.home.s1.btn2 }}</a>
+</div>
+<p style="margin:0; font-size:15px; line-height:1.6; color:#4F596B; max-width:440px">{{ text.home.s1.p2 | rich({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' } }) | safe }}</p>
+</div>
+<div class="hero-photo" style="position:relative">
+<figure class="ph" style="aspect-ratio:4/5; background:#E4C9BF">
+<img fetchpriority="high" decoding="async" src="{{ text.home.s1.img }}" alt="{{ text.home.s1.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 42%; display:block">
+</figure>
+</div>
+</div>
+</section>
+
+<!-- Cats looking for a home -->
+{% if siteCats | length %}
+<section id="cats" aria-labelledby="cats-h" class="sec" style="background:#ffffff; scroll-margin-top:72px">
+<div class="wrap">
+<div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 48px; margin-bottom:56px">
+<h2 id="cats-h" class="h2" style="color:#ED217C">{{ text.home.s2.h2 | rich | safe }}</h2>
+<div style="max-width:400px; display:flex; flex-direction:column; align-items:flex-start; gap:6px">
+<p style="margin:0; font-size:17px; line-height:1.65">{{ text.home.s2.p }}</p>
+<a class="link" href="/cats/">{{ text.home.s2.link }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+<div class="cats-grid">
+{% for cat in siteCats %}{% if loop.index <= 2 %}
+<a class="cat{% if loop.index == 2 %} cat-b{% endif %}" href="/cats/{{ cat.slug }}/" style="display:block; text-decoration:none; color:#333333">
+<figure class="ph cat-img" style="aspect-ratio:{% if loop.index == 1 %}4/5{% else %}1/1{% endif %}; background:{{ cat.bg }}"><img loading="lazy" decoding="async" src="/images/{{ cat.photos[0].src }}" alt="{{ cat.photos[0].alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:{{ cat.photos[0].pos }}; display:block"></figure>
+<div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-top:16px">
+<span class="cat-name" style="font-size:30px; line-height:1.1; font-weight:500; letter-spacing:-0.01em">{{ cat.name }}</span>
+<span style="font-size:15px; color:#4F596B">{% if cat.age_text != 'Age not known' %}{{ cat.age_text }}{% else %}{{ cat.age_band }}{% endif %}</span>
+</div>
+</a>
+{% endif %}{% endfor %}
+{% if siteCats | length > 2 %}
+<div>
+<div style="font-size:15px; font-weight:500; padding-bottom:12px; border-bottom:1px solid #C4CEDD">{{ text.home.s2.text5 }}</div>
+{% for cat in siteCats %}{% if loop.index > 2 and loop.index <= 7 %}<a class="list-row" href="/cats/{{ cat.slug }}/"><span class="ln" style="font-size:20px; font-weight:500">{{ cat.name }}</span><span style="font-size:14px; color:#4F596B">{% if cat.age_text != 'Age not known' %}{{ cat.age_text }}{% else %}{{ cat.age_band }}{% endif %}</span></a>
+{% endif %}{% endfor %}
+</div>
+{% endif %}
+</div>
+</div>
+</section>
+{% endif %}
+
+<!-- How adoption works -->
+<section id="how" aria-labelledby="how-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7; scroll-margin-top:72px">
+<div class="wrap">
+<div class="how-grid">
+<div style="display:flex; flex-direction:column; align-items:flex-start; gap:24px">
+<h2 id="how-h" class="h2" style="color:#E8EEF7">{{ text.home.s3.h2 | rich | safe }}</h2>
+<p class="lede" style="max-width:380px">{{ text.home.s3.p }}</p>
+<a class="btn btn-light" href="/contact/">{{ text.home.s3.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<ol style="list-style:none; margin:0; padding:0; border-bottom:1px solid rgba(232,238,247,.45)">
+{% for it in text.home.s3.list %}<li class="step"><span class="step-n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span><div><h3 style="font-size:26px; line-height:1.2; margin-bottom:8px">{{ it.h3 }}</h3><p style="margin:0; font-size:17px; line-height:1.65">{{ it.p }}</p></div></li>{% if not loop.last %}
+{% endif %}{% endfor %}
+</ol>
+</div>
+</div>
+</section>
+
+<!-- Donate -->
+<section id="donate" aria-labelledby="donate-h" class="sec" style="background:#F5CDD6; scroll-margin-top:72px">
+<div class="wrap">
+<div class="don-grid">
+<figure class="ph don-photo" style="aspect-ratio:4/5.4; background:#EBB9C7">
+<img loading="lazy" decoding="async" src="{{ text.home.s4.img }}" alt="{{ text.home.s4.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 38%; display:block">
+</figure>
+<div style="display:flex; flex-direction:column; gap:28px">
+<h2 id="donate-h" class="h2" style="color:#1F3158">{{ text.home.s4.h2 | rich | safe }}</h2>
+<p class="lede">{{ text.home.s4.p }}</p>
+
+<div style="background:#ffffff; border:1px solid rgba(31,49,88,.3); border-radius:4px; padding:28px">
+<h3 style="font-size:22px; line-height:1.2; margin-bottom:18px">{{ text.home.s4.h3 }}</h3>
+<div role="group" aria-label="How often" style="display:flex; gap:28px; border-bottom:1px solid #C4CEDD; margin-bottom:22px">
+<button type="button" aria-pressed="true" data-freq="monthly" style="background:none; border:0; padding:12px 0; min-height:48px; margin-bottom:-1.5px; font-family:inherit; font-size:17px; font-weight:500; cursor:pointer; color:#1F3158;border-bottom:4px solid #1F3158">{{ text.home.s4.button }}</button>
+<button type="button" aria-pressed="false" data-freq="oneoff" style="background:none; border:0; padding:12px 0; min-height:48px; margin-bottom:-1.5px; font-family:inherit; font-size:17px; font-weight:500; cursor:pointer; color:#4F596B;border-bottom:4px solid transparent">{{ text.home.s4.button2 }}</button>
+</div>
+<div role="group" aria-label="Choose an amount" data-ladder="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(86px,1fr)); gap:10px">
+
+<button type="button" class="choice" aria-pressed="false" data-amount="3" style="min-height:60px; font-size:22px; font-weight:500; background:#ffffff;color:#333333;border:1.5px solid #76829A">{{ text.home.s4.button3 }}</button>
+
+<button type="button" class="choice" aria-pressed="true" data-amount="5" style="min-height:60px; font-size:22px; font-weight:500; background:#1F3158;color:#E8EEF7;border:1.5px solid #1F3158">{{ text.home.s4.button4 }}</button>
+
+<button type="button" class="choice" aria-pressed="false" data-amount="10" style="min-height:60px; font-size:22px; font-weight:500; background:#ffffff;color:#333333;border:1.5px solid #76829A">{{ text.home.s4.button5 }}</button>
+
+</div>
+<div style="margin-top:18px" data-custom-wrap="" hidden="">
+<label for="custom-amt" style="display:block; margin-bottom:8px; font-size:14px; font-weight:500; color:#4F596B">Or enter your own amount</label>
+<div class="field" style="display:flex; align-items:center; gap:8px; padding:0 16px; min-height:56px">
+<span aria-hidden="true" style="font-weight:500; font-size:20px; color:#1F3158">£</span>
+<input id="custom-amt" type="text" inputmode="decimal" placeholder="Other amount" value="" data-custom="" style="flex:1; min-width:0; min-height:48px; border:0; outline:none; background:transparent; font-family:Montserrat,system-ui,sans-serif; font-size:18px; font-weight:500; color:#333333">
+</div>
+</div>
+<p data-monthly-note="" style="margin:18px 0 0; font-size:14px; line-height:1.6; color:#4F596B">{{ text.home.s4.p2 }}</p>
+<div aria-live="polite" data-impact=""{% if not text.home.s4.text %} hidden{% endif %} style="border-left:3px solid #CC1264; padding:4px 0 4px 14px; margin:22px 0; min-height:52px; font-size:15px; line-height:1.55; color:#4F596B; font-style:italic">{{ text.home.s4.text }}</div>
+<a class="btn btn-donate btn-block" href="/donate/" data-cta="" style="min-height:58px; font-size:18px"><span data-cta-label="">{{ text.home.s4.text2 }}</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p style="margin:14px 0 0; font-size:13px; line-height:1.5; color:#4F596B; text-align:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="vertical-align:-3px; margin-right:8px"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>{{ text.home.s4.p3 }}</p>
+</div>
+
+<p style="margin:0; font-size:15px; line-height:1.7">{{ text.home.s4.p4 | rich({a: {'class': 'link-u', 'style': 'font-weight:500' }, strong: {'style': 'font-weight:500; color:#1F3158' } }) | safe }}</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- More ways to help -->
+<section id="help" aria-labelledby="help-h" class="sec" style="background:#ffffff; scroll-margin-top:72px">
+<div class="wrap">
+<div class="two-grid" style="margin-bottom:56px">
+<h2 id="help-h" class="h2" style="color:#ED217C">{{ text.home.s5.h2 | rich | safe }}</h2>
+<p class="lede" style="max-width:520px; align-self:end">{{ text.home.s5.p }}</p>
+</div>
+<div class="rules">
+<div class="rule-row">
+<h3>{{ text.home.s5.h3 }}</h3>
+<p>{{ text.home.s5.p2 }}</p>
+<a class="link act" href="/contact/">{{ text.home.s5.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div class="rule-row">
+<h3>{{ text.home.s5.h32 }}</h3>
+<p>{{ text.home.s5.p3 }}</p>
+<a class="link act" href="/contact/">{{ text.home.s5.link2 }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div class="rule-row">
+<h3>{{ text.home.s5.h33 }}</h3>
+<p>{{ text.home.s5.p4 }}</p>
+<a class="link act" href="/ways-to-help/">{{ text.home.s5.link3 }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+</div>
+<div class="rule-row">
+<h3>{{ text.home.s5.h34 }}</h3>
+<p>{{ text.home.s5.p5 }}</p>
+<a class="link act" href="/contact/">{{ text.home.s5.link4 }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Our story -->
+<section id="story" aria-labelledby="story-h" class="on-dark" style="background:#CC1264; color:#ffffff; scroll-margin-top:72px">
+<div class="story-grid">
+<figure class="ph story-img" style="background:#E9B3C3">
+<img loading="lazy" decoding="async" src="{{ text.home.s6.img }}" alt="{{ text.home.s6.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:44% 50%; display:block">
+</figure>
+<div class="story-copy pad-r" style="display:flex; flex-direction:column; align-items:flex-start; gap:26px">
+<h2 id="story-h" style="font-size:clamp(28px,3.3vw,46px); line-height:1.15; letter-spacing:-0.02em">{{ text.home.s6.h2 }}</h2>
+<p style="margin:0; font-size:17px; line-height:1.7; max-width:560px">{{ text.home.s6.p }}</p>
+<p style="margin:0; font-size:15px; font-weight:500; letter-spacing:0.04em">{{ text.home.s6.p2 }}</p>
+<a class="btn btn-light" href="/about/">{{ text.home.s6.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</section>
+
+<!-- Testimonial -->
+<section aria-label="What adopters say" class="sec" style="background:#ffffff">
+<div class="wrap">
+<div style="max-width:1000px">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="#ED217C" aria-hidden="true" focusable="false"><path d="M4 18v-5.2C4 8.7 6 6.3 9.5 6v2.4C7.8 8.7 7 9.8 7 11.2h2.5V18H4zm10 0v-5.2c0-4.1 2-6.5 5.5-6.8v2.4c-1.7.3-2.5 1.4-2.5 2.8h2.5V18H14z"></path></svg>
+<blockquote class="pull" style="margin:20px 0 0; font-size:clamp(26px,3.4vw,44px); line-height:1.25; font-weight:500; letter-spacing:-0.015em; color:#333333">{{ text.home.s7.quote }}</blockquote>
+<div style="margin-top:32px; display:flex; align-items:center; gap:16px; font-size:17px; font-weight:500"><span style="width:48px; height:1.5px; background:#333333"></span>{{ text.home.s7.text }}</div>
+<a class="link" href="/about/" style="margin-top:16px">{{ text.home.s7.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</section>
+
+<!-- Trust: letter from our MP -->
+<section aria-labelledby="trust-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7">
+<div class="wrap">
+<div class="trust-grid">
+<div class="t-copy" style="gap:22px">
+<p style="margin:0; font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#F5CDD6">{{ text.home.s8.p }}</p>
+<h2 id="trust-h" style="font-size:clamp(28px,3.3vw,46px); line-height:1.15; letter-spacing:-0.02em; color:#ffffff">{{ text.home.s8.h2 }}</h2>
+<p style="margin:0; font-size:17px; line-height:1.7; max-width:560px">{{ text.home.s8.p2 }}</p>
+</div>
+<figure class="t-letter">
+<a class="letter-link" href="/images/mp-letter-full.jpg" target="_blank" rel="noopener" aria-label="Read the full letter from Chris McDonald MP (opens in a new tab)"><img loading="lazy" decoding="async" class="letter-img" src="{{ text.home.s8.img }}" alt="{{ text.home.s8.alt }}" width="320" height="451"></a>
+<figcaption style="font-size:14px; line-height:1.5; color:#C4CEDD">{{ text.home.s8.caption | rich | safe }}</figcaption>
+</figure>
+<div class="t-quote" style="gap:18px">
+<blockquote style="margin:0; padding-left:24px; border-left:4px solid #F5CDD6; font-size:clamp(22px,2.2vw,28px); line-height:1.4; font-weight:500; color:#ffffff; max-width:620px">{{ text.home.s8.quote }}</blockquote>
+<p style="margin:0; padding-left:28px; font-size:16px; line-height:1.55">{{ text.home.s8.p3 | rich | safe }}</p>
+<a class="link-w" href="/images/mp-letter-full.jpg" target="_blank" rel="noopener" style="margin-left:28px">{{ text.home.s8.link | rich({hl: 'position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap' }) | safe }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Newsletter -->
+<section aria-labelledby="news-h" class="sec" style="background:#E8EEF7; padding-top:80px; padding-bottom:80px">
+<div class="wrap">
+<div class="two-grid" style="align-items:center">
+<div>
+<h2 id="news-h" style="font-size:clamp(28px,3vw,40px); line-height:1.1; letter-spacing:-0.02em; color:#1F3158; margin-bottom:14px">{{ text.home.s9.h2 | rich | safe }}</h2>
+<p style="margin:0; font-size:17px; line-height:1.65; max-width:460px">{{ text.home.s9.p }}</p>
+</div>
+<form method="post" name="newsletter" data-form="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap:12px; max-width:560px" onsubmit="(e) =&gt; { if (e &amp;&amp; e.preventDefault) e.preventDefault(); }"><input type="hidden" name="form-name" value="newsletter"><p hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<label for="news-email" style="font-size:15px; font-weight:500">{{ text.home.s9.label }}</label>
+<div class="stack-sm" style="display:flex; gap:12px">
+<div class="field" style="flex:1; min-width:0; display:flex; align-items:center; padding:0 18px; min-height:56px">
+<input id="news-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" style="flex:1; min-width:0; min-height:48px; border:0; outline:none; background:transparent; font-family:Montserrat,system-ui,sans-serif; font-size:17px; font-weight:500; color:#333333">
+</div>
+<button class="btn btn-primary" type="submit" style="min-height:56px">{{ text.home.s9.button }}</button>
+</div>
+<p style="margin:0; font-size:13px; line-height:1.5; color:#4F596B">{{ text.home.s9.p2 }}</p>
+</form>
+</div>
+</div>
+</section>
+
+{% include "giving-text.njk" %}
+</main>

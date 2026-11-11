@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Foster a cat",
+    "description": "Foster a cat with Happy Paws and give a rescue cat a safe, loving place while they wait for a home."
+  },
+  "s1": {
+    "h1": "Foster \n==a cat==",
+    "p": "Fostering is the vital stepping stone in our work. It gives our cats the chance to feel safe during what can be a very stressful time for them.",
+    "p2": "Cats are sensitive creatures and not all settle in the rescue. Foster homes, where they can stay until they find their forever homes, are so important.",
+    "btn": "Apply to foster",
+    "img": "/images/cat-tabby-folded-ears.jpg",
+    "alt": "A brown tabby cat with folded ears and closed eyes, resting against a white cushion"
+  },
+  "s2": {
+    "h2": "What fostering \ninvolves",
+    "p": "You give a cat a safe, calm place to be themselves while we find their forever home. We are with you at every step.",
+    "list": [
+      {
+        "dt": "You provide",
+        "dd": "A safe, calm place, time and kindness."
+      },
+      {
+        "dt": "Where",
+        "dd": "Stockton, Birmingham and Banbury."
+      }
+    ]
+  },
+  "s3": {
+    "quote": "“The care that the cats have had with their fosterer before reaching us has been super and we were spoilt by regular photos and videos.”",
+    "p": "**Lucca Addy**\nAdopted Kitty and Rosie"
+  },
+  "s4": {
+    "h2": "Interested? \nLet’s talk",
+    "p": "If you would like to help us by fostering, please fill in our application. We would love to talk to you.",
+    "btn": "Apply to foster",
+    "p2": "Would you rather talk first? [Get in touch](/contact/).",
+    "text": "You tell us a little about your home.",
+    "text2": "We chat, and get to know you.",
+    "text3": "You meet your first foster cat."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "monthly": {
+    "3": "",
+    "5": "",
+    "10": ""
+  },
+  "oneoff": {
+    "10": "",
+    "25": "",
+    "50": "",
+    "200": "About the average cost of rehoming one cat."
+  },
+  "home_average": "That is about the average cost of rehoming one cat.",
+  "custom": "Every pound makes a difference, even £1 can help us save a life.",
+  "none": "Choose an amount to see what it can do."
+}

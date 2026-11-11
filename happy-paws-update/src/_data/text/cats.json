@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Cats looking for a home",
+    "description": "Cats and kittens looking for a home with Happy Paws in Stockton, Birmingham and Banbury. Choose an age, then read their story and apply to adopt. We can transport a cat anywhere for the right home."
+  },
+  "s1": {
+    "h1": "Cats looking for a home",
+    "p": "Cats and kittens looking for a home in Stockton, Birmingham and Banbury. Choose a cat to read their story and apply to adopt.",
+    "transport": "**Not near us?** We can transport a cat anywhere for the right home.",
+    "text2": "Age",
+    "button5": "Any",
+    "button6": "Kitten",
+    "button7": "Adult",
+    "button8": "Senior",
+    "p2": "All adoptions are subject to a home check and an adoption donation. [See how adoption works](#how)"
+  },
+  "s2": {
+    "text": "Reserved",
+    "text2": "Can't see the right cat?",
+    "btn": "Tell us what you're looking for",
+    "text3": "or [sign up for updates](/news/#news-email) when someone new comes in"
+  },
+  "widget": {
+    "note": "This list comes live from Pawlytics, the system we use to look after our cats. It is loaded from Pawlytics' own servers, so Pawlytics can see that you visited this page."
+  },
+  "empty": {
+    "h2": "No cats are listed here right now",
+    "p": "Cats arrive and find homes all the time. [Sign up for updates](/news/#news-email) or [tell us what you're looking for](/contact/) and we will let you know when someone new comes in."
+  },
+  "s3": {
+    "h2": "Adopting from Happy Paws",
+    "p": "Four steps from meeting a cat to bringing them home. Here is what happens and what to expect at each one.",
+    "list": [
+      {
+        "h3": "1. Choose a cat",
+        "p": "Browse our cats and kittens and find someone who catches your eye.",
+        "p2": "Use the age choices to narrow the list."
+      },
+      {
+        "h3": "2. Apply to adopt",
+        "p": "Use the Apply button on the cat's page to fill in our application form, with a little about yourself and the home you could offer.",
+        "p2": "You can ask us a question there too."
+      },
+      {
+        "h3": "3. Home check",
+        "p": "A volunteer checks that your home is safe and suitable.",
+        "p2": "All adoptions are subject to a home check."
+      },
+      {
+        "h3": "4. Welcome them home",
+        "p": "Pay the adoption donation and take your new family member home.",
+        "p2": "Every adoption comes with an adoption donation."
+      }
+    ],
+    "btn": "Read the full guide"
+  }
+}
