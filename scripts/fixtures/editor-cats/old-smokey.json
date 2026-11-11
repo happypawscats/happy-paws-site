@@ -1,0 +1,10 @@
+{
+  "name": "Old Smokey",
+  "age_band": "Senior",
+  "age_text": "About 12 years",
+  "sex": "Male",
+  "reserved": true,
+  "story": "Smokey is a gentle old boy who wants a quiet home.",
+  "listed": "2026-11-09",
+  "photos": [ { "image": "/images/cat-photos/smokey.jpg" } ]
+}

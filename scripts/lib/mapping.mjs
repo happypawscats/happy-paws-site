@@ -4,7 +4,7 @@
 // in yet. Run `npm run sync:explore` once you have the login (see scripts/README.md), then:
 //   1. write PETS_QUERY: a query that lists the pets with the fields below,
 //   2. write fromApi(): turn the whole reply into a list of pets in the simple shape below.
-// Everything else (age bands, Reserved, the area, photos, safety checks) is already built and tested.
+// Everything else (age bands, Reserved, photos, safety checks) is already built and tested.
 //
 // The simple shape every pet must be turned into:
 //   {
@@ -21,8 +21,6 @@
 //     description:  string   the story, plain text, blank line between paragraphs
 //     goodWith:     { dogs, cats, children }   each true, false or null
 //     health:       { altered, vaccinated, microchipped }   each true, false or null
-//     area:         string   an area tag, if Pawlytics has one (optional): Stockton, Birmingham or Banbury
-//     location:     string   the foster carer's name. PRIVATE. Used only to look up the area, never published
 //     photos:       string[] or [{ url }]   in the order they should show
 //     listedAt:     string   when the pet came in (optional), used to put newer cats first
 //   }

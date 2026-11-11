@@ -136,7 +136,6 @@
     "dateOfBirth": "2020-09-09",
     "adoptionFee": 60,
     "description": "A second cat who is also called Poppy.",
-    "area": "Banbury",
     "location": "Test Foster Four",
     "photos": [
       "file:src/images/kitten-silver-tabby.jpg"

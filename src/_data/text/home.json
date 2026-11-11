@@ -19,32 +19,32 @@
     "img": "/images/kitten-ginger-white.jpg",
     "alt": "A ginger-and-white kitten sitting upright against a dark background, looking at the camera",
     "text": "[Cat name]",
-    "text2": "[Age] · [Area]",
+    "text2": "[Age]",
     "img2": "/images/cat-calico.jpg",
     "alt2": "A fluffy calico cat with green eyes looking at the camera in warm sunlight",
     "text3": "[Cat name]",
-    "text4": "[Age] · [Area]",
+    "text4": "[Age]",
     "text5": "Also looking for a home",
     "list": [
       {
         "text": "[Cat name]",
-        "text2": "[Age] · [Area]"
+        "text2": "[Age]"
       },
       {
         "text": "[Cat name]",
-        "text2": "[Age] · [Area]"
+        "text2": "[Age]"
       },
       {
         "text": "[Cat name]",
-        "text2": "[Age] · [Area]"
+        "text2": "[Age]"
       },
       {
         "text": "[Cat name]",
-        "text2": "[Age] · [Area]"
+        "text2": "[Age]"
       },
       {
         "text": "[Cat name]",
-        "text2": "[Age] · [Area]"
+        "text2": "[Age]"
       }
     ]
   },

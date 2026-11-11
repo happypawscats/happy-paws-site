@@ -2,13 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
-  ageBand, ageText, areaFor, buildAreaLookup, colourText, donationText, goodWithText, healthText,
+  ageBand, ageText, colourText, donationText, goodWithText, healthText,
   slugify, statusInfo, storyParagraphs, transformPets, assignSlugs,
 } from '../lib/transform.mjs';
 
 const NOW = new Date('2026-11-10T12:00:00Z');
 const fixture = async () => JSON.parse(await readFile(new URL('../fixtures/pets.sample.json', import.meta.url), 'utf8'));
-const areas = async () => JSON.parse(await readFile(new URL('../fixtures/areas.sample.json', import.meta.url), 'utf8'));
 
 test('age bands follow the client\'s rule: kitten under a year, senior over ten', () => {
   assert.equal(ageBand('2026-06-02', null, NOW), 'Kitten');
@@ -63,16 +62,6 @@ test('story is split into paragraphs and stripped of markup', () => {
   assert.deepEqual(storyParagraphs('One.\n\nTwo <b>bold</b>.\nStill two.', 'X'), ['One.', 'Two bold . Still two.']);
   assert.match(storyParagraphs('', 'Mia')[0], /Mia is looking for a loving home/);
 });
-test('area: a given area wins, then the private lookup, otherwise none', async () => {
-  const { map } = buildAreaLookup(await areas());
-  assert.equal(areaFor({ area: 'banbury', location: 'Test Foster One' }, map), 'Banbury');
-  assert.equal(areaFor({ location: '  TEST foster   one ' }, map), 'Stockton');
-  assert.equal(areaFor({ location: 'Somebody Else' }, map), '');
-  assert.equal(areaFor({ location: null }, map), '');
-  assert.equal(areaFor({ area: 'Mars', location: 'Test Foster Two' }, map), 'Birmingham');
-  const bad = buildAreaLookup({ 'Test Foster Four': 'Nowhere' });
-  assert.equal(bad.invalid, 1);
-});
 test('slugs: a cat keeps its address, a clash gets a suffix', () => {
   const pets = [{ id: 'a-11111', name: 'Poppy' }, { id: 'b-22222', name: 'Poppy' }];
   const first = assignSlugs(pets, []);
@@ -83,10 +72,9 @@ test('slugs: a cat keeps its address, a clash gets a suffix', () => {
   assert.equal(kept.get('b-22222'), 'poppy');
   assert.equal(kept.get('a-11111'), 'poppy-11111');
 });
-test('the whole transform: statuses, reserved, areas, no foster names anywhere', async () => {
+test('the whole transform: statuses, reserved, no area, no foster names anywhere', async () => {
   const pets = await fixture();
-  const lookup = await areas();
-  const { cats, report } = transformPets(pets, { now: NOW, areaLookup: lookup });
+  const { cats, report } = transformPets(pets, { now: NOW });
   assert.equal(report.received, 7);
   assert.equal(report.notPublished, 1);                          // Ghost, "In foster"
   assert.equal(cats.length, 6);
@@ -94,11 +82,8 @@ test('the whole transform: statuses, reserved, areas, no foster names anywhere',
   const bramble = cats.find((c) => c.name === 'Bramble');
   assert.equal(bramble.reserved, true);
   assert.equal(cats.at(-1).name, 'Bramble');                      // reserved cats come last
-  assert.equal(cats.find((c) => c.name === 'Poppy' && c.age_band === 'Kitten').area, 'Stockton');
-  assert.equal(cats.find((c) => c.name === 'Old Smokey').area, 'Banbury');
   assert.equal(cats.find((c) => c.name === 'Old Smokey').age_band, 'Senior');
-  assert.equal(cats.find((c) => c.name === 'Mystery').area, '');
-  assert.deepEqual(report.areaUnknown, ['Mystery']);
+  assert.ok(cats.every((c) => !('area' in c)), 'no cat carries an area');
   assert.deepEqual(report.noPhotoUrls, ['Camera Shy']);
   assert.equal(new Set(cats.map((c) => c.slug)).size, cats.length);
   // The foster carers' names (and the raw location field) must not appear in anything published.

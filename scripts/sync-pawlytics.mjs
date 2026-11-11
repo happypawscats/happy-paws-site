@@ -26,13 +26,6 @@ async function loadSharp() {
 }
 
 async function main() {
-  let areaLookup = {};
-  try { areaLookup = process.env.AREA_LOOKUP_JSON ? JSON.parse(process.env.AREA_LOOKUP_JSON) : {}; } catch {
-    throw new Error('AREA_LOOKUP_JSON is not valid JSON. It should look like {"Name of foster": "Stockton"}.');
-  }
-  const areaFile = valueOf('--area-file');
-  if (areaFile) areaLookup = JSON.parse(await readFile(areaFile, 'utf8'));
-
   let fetchPets;
   let downloadPhoto;
   if (fixture) {
@@ -65,7 +58,7 @@ async function main() {
   const processImage = async (buf) => sharp(buf).rotate().resize({ width: 1600, withoutEnlargement: true }).webp({ quality: 78 }).toBuffer();
 
   const report = await runSync({
-    fetchPets, downloadPhoto, processImage, areaLookup, options,
+    fetchPets, downloadPhoto, processImage, options,
     catsJsonPath: path.join(root, 'src/_data/cats.json'),
     imagesDir: path.join(root, 'src/images'),
   });
@@ -75,9 +68,7 @@ async function main() {
   console.log(`Pawlytics sent ${report.received} pets. Published ${report.published} (${report.reserved} reserved). Not published (other statuses): ${report.notPublished}.`);
   list('No photo, so not published', report.noPhoto);
   list('Could not use a photo', report.photoProblems);
-  list('Area not worked out', report.areaUnknown);
   list('No date of birth', report.ageUnknown);
-  if (report.invalidAreaEntries) console.log(`${report.invalidAreaEntries} entries in the area lookup do not name Stockton, Birmingham or Banbury and were ignored.`);
   console.log(options.dryRun ? `Dry run: nothing was written. cats.json ${report.changed ? 'would change' : 'would stay the same'}.` : `cats.json ${report.changed ? 'updated' : 'unchanged'}. Photos added: ${report.imagesAdded}, removed: ${report.imagesRemoved}.`);
 }
 

@@ -65,3 +65,7 @@
   .l-tn{font-size:18px}
   .l-flag{top:10px;font-size:11px;padding:4px 8px 4px 10px}
 }
+.l-widget{min-height:240px}
+.l-widget-note{margin:28px 0 0;max-width:640px;font-size:14px;line-height:1.6;color:#4F596B}
+.l-none{max-width:640px;border-top:1px solid #C4CEDD;border-bottom:1px solid #D8DFEA;padding:32px 0}
+.l-none-p{margin:16px 0 0;font-size:17px;line-height:1.6}

@@ -10,6 +10,7 @@
     "sync:explore": "node --env-file=.env scripts/pawlytics-explore.mjs",
     "test:sync": "node --test scripts/test/pawlytics.test.mjs scripts/test/sync.test.mjs scripts/test/transform.test.mjs",
     "test:cms": "node --test scripts/test/cms.test.mjs",
+    "test:cats": "node --test scripts/test/cats.test.mjs scripts/test/listing.test.mjs",
     "cms:local": "npx --yes decap-server@3.11.6",
     "test": "node --test scripts/test/*.test.mjs"
   },

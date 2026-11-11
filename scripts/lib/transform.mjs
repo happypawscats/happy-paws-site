@@ -1,8 +1,8 @@
 // Turns Pawlytics pets (already in the simple shape described in scripts/README.md) into the cats
 // the site shows. Pure functions: no network, no files. Everything the site must never publish
-// (above all the foster carer's name, which Pawlytics keeps in "Location") is dropped here.
+// (above all the foster carer's name, which Pawlytics keeps in "Location") is dropped here: the
+// cats are built from a short list of fields, so anything not named below is never published.
 
-export const AREAS = ['Stockton', 'Birmingham', 'Banbury'];
 export const MAX_PHOTOS = 6;
 
 const norm = (s) => String(s ?? '').normalize('NFKC').trim().toLowerCase().replace(/\s+/g, ' ');
@@ -114,29 +114,11 @@ export function storyParagraphs(description, name) {
   const paras = text.split(/\n\s*\n/).map((p) => p.replace(/\s*\n\s*/g, ' ').trim()).filter(Boolean).slice(0, 8);
   return paras.length ? paras : [`${name} is looking for a loving home. Get in touch to find out more about ${name}.`];
 }
-function taglineFrom(story, band) {
+export function taglineFrom(story, band) {
   const first = story[0] || '';
   const sentence = first.match(/^.*?[.!?](\s|$)/)?.[0].trim() || first;
   const cut = sentence.length > 150 ? `${sentence.slice(0, 147).trimEnd()}…` : sentence;
   return cut || `A ${band.toLowerCase()} looking for a loving home.`;
-}
-
-// ---- area ---------------------------------------------------------------------------------
-// Where a cat is looked after. Never the foster's name. Order: an area Pawlytics gives us (a tag or
-// field), then a private lookup from the foster's name to an area, otherwise no area.
-export function buildAreaLookup(raw) {
-  const map = new Map();
-  let invalid = 0;
-  for (const [fosterName, area] of Object.entries(raw || {})) {
-    const match = AREAS.find((a) => norm(a) === norm(area));
-    if (match) map.set(norm(fosterName), match); else invalid += 1;
-  }
-  return { map, invalid };
-}
-export function areaFor(pet, lookup) {
-  const direct = AREAS.find((a) => norm(a) === norm(pet.area));
-  if (direct) return direct;
-  return (lookup && lookup.get(norm(pet.location))) || '';
 }
 
 // ---- slugs --------------------------------------------------------------------------------
@@ -160,9 +142,8 @@ export function assignSlugs(pets, previous = []) {
 }
 
 // ---- the whole transform ------------------------------------------------------------------
-export function transformPets(pets, { now = new Date(), areaLookup = {}, previous = [] } = {}) {
-  const { map: lookup, invalid } = buildAreaLookup(areaLookup);
-  const report = { received: pets.length, notPublished: 0, published: 0, reserved: 0, areaUnknown: [], ageUnknown: [], noPhotoUrls: [], invalidAreaEntries: invalid };
+export function transformPets(pets, { now = new Date(), previous = [] } = {}) {
+  const report = { received: pets.length, notPublished: 0, published: 0, reserved: 0, ageUnknown: [], noPhotoUrls: [] };
   const eligible = [];
   for (const p of pets) {
     const st = statusInfo(p.status);
@@ -174,10 +155,8 @@ export function transformPets(pets, { now = new Date(), areaLookup = {}, previou
     const name = plainText(pet.name) || 'Unnamed cat';
     const band = ageBand(pet.dateOfBirth, pet.stage, now);
     const colour = colourText(pet.colours);
-    const area = areaFor(pet, lookup);
     const story = storyParagraphs(pet.description, name);
     const photoUrls = (pet.photos || []).map((p) => (typeof p === 'string' ? p : p && p.url)).filter(Boolean).slice(0, MAX_PHOTOS);
-    if (!area) report.areaUnknown.push(name);
     if (!parseDate(pet.dateOfBirth)) report.ageUnknown.push(name);
     if (!photoUrls.length) report.noPhotoUrls.push(name);
     const altBase = colour === 'Not recorded' ? `${name}, a cat looking for a home` : `${name}, ${aOrAn(colour)} ${colour.toLowerCase()} cat`;
@@ -188,7 +167,6 @@ export function transformPets(pets, { now = new Date(), areaLookup = {}, previou
       age_band: band,
       age_text: ageText(pet.dateOfBirth, pet.ageText, now),
       sex: sexText(pet.sex),
-      area,
       reserved,
       colour,
       tagline: taglineFrom(story, band),

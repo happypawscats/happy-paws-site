@@ -17,7 +17,6 @@ export async function runSync({
   processImage,         // async (Buffer) => Buffer (resize, convert to WebP)
   catsJsonPath,         // src/_data/cats.json
   imagesDir,            // src/images
-  areaLookup = {},
   now = new Date(),
   options = {},         // { allowEmpty, force, dryRun, skipPhotos }
   log = () => {},
@@ -26,7 +25,7 @@ export async function runSync({
   const pets = await fetchPets();
   if (!Array.isArray(pets)) throw new Error('Pawlytics did not return a list of pets. Nothing was changed.');
 
-  const { cats, report } = transformPets(pets, { now, areaLookup, previous });
+  const { cats, report } = transformPets(pets, { now, previous });
 
   // ---- photos ---------------------------------------------------------------------------
   const wanted = new Map();       // relative path -> Buffer | null (null: already on disk)

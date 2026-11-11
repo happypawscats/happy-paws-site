@@ -1,0 +1,10 @@
+{
+  "name": "Mittens",
+  "age_band": "Adult",
+  "age_text": "3 years",
+  "sex": "Female",
+  "colour": "Black and white",
+  "story": "",
+  "listed": "2026-10-20",
+  "photos": [ { "image": "/images/cat-photos/mittens.jpg", "alt": "Mittens in the sun", "focus": "bottom" } ]
+}

@@ -1,6 +1,7 @@
-# Settings for the page editor at /admin/. Each file listed below is one JSON file in src/_data/text/,
+# Settings for the page editor at /admin/. Most files listed below are one JSON file in src/_data/text/,
 # and each field's name must match a key in that file (npm run test:cms checks this).
 # To make more wording editable, add the key to the JSON file and a field here. See README.md, "Editing page wording".
+# The Cats section is different: one small JSON file per cat in src/cats/items/, read by lib/cats.js.
 backend:
   name: github
   repo: happypawscats/happy-paws-site
@@ -19,6 +20,139 @@ slug:
   encoding: ascii
   clean_accents: true
 collections:
+- name: cats
+  label: Cats
+  label_singular: Cat
+  description: A cat shows on the Cats page, with a page of its own, once it has a photo. The cats from the Pawlytics list are already here, so open one and finish it rather than adding it again. When a cat has found a home, delete it. The list on the Cats page must be set to use these cats (see "Which cat list is shown").
+  folder: src/cats/items
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{slug}}'
+  identifier_field: name
+  summary: '{{name}}'
+  media_folder: /src/images/cat-photos
+  public_folder: /images/cat-photos
+  sortable_fields:
+  - name
+  - listed
+  fields:
+  - label: Name
+    name: name
+    widget: string
+    hint: If two cats share a name, add a word to tell them apart (for example Poppy the tabby), because the name makes the cat's web address.
+  - label: Age group
+    name: age_band
+    widget: select
+    options:
+    - label: Kitten (under a year)
+      value: Kitten
+    - label: Adult
+      value: Adult
+    - label: Senior (about ten or over)
+      value: Senior
+  - label: How old
+    name: age_text
+    widget: string
+    hint: 'In words, for example “8 months” or “About 3 years”.'
+  - label: Sex
+    name: sex
+    widget: select
+    options:
+    - Female
+    - Male
+  - label: Colour
+    name: colour
+    widget: string
+    required: false
+    hint: 'For example “Black and white” or “Tortoiseshell”.'
+  - label: Reserved
+    name: reserved
+    widget: boolean
+    default: false
+    hint: Switch on when an adopter has been lined up. The cat stays on the list, after the others, with a Reserved tag.
+  - label: One line about them
+    name: tagline
+    widget: string
+    required: false
+    hint: Shown under their name. Leave empty to use the first sentence of their story.
+  - label: Their story
+    name: story
+    widget: text
+    hint: Plain paragraphs, with a blank line between each. Who they are, how they came to us, what they love and the sort of home that would suit them. Up to eight paragraphs.
+  - label: Good with
+    name: good_with
+    widget: string
+    required: false
+    hint: 'For example “Children and other cats. Not tested with dogs.” If you leave it empty the page says “Ask us”.'
+  - label: Health
+    name: health
+    widget: string
+    required: false
+    hint: 'For example “Neutered, vaccinated and microchipped”. If you leave it empty the page says “Ask us”.'
+  - label: Adoption donation
+    name: donation
+    widget: string
+    required: false
+    hint: 'For example “£60”. If you leave it empty the page says “Ask us”.'
+  - label: Date they came to us
+    name: listed
+    widget: datetime
+    date_format: YYYY-MM-DD
+    time_format: false
+    format: YYYY-MM-DD
+    picker_utc: true
+    default: '{{now}}'
+    hint: Newest cats are shown first. It is filled in with today's date when you add a cat.
+  - label: Photos
+    name: photos
+    widget: list
+    min: 1
+    max: 6
+    collapsed: false
+    label_singular: photo
+    summary: '{{fields.alt}}'
+    hint: The first photo is the main one. Add up to six. Use photos under 1 MB if you can (the editing guide shows how to shrink one).
+    fields:
+    - label: Photo
+      name: image
+      widget: image
+      choose_url: false
+    - label: Describe the photo
+      name: alt
+      widget: string
+      required: false
+      hint: One short sentence saying what is in the photo, for people who cannot see it. If you leave it empty the page uses the cat's name and colour.
+    - label: Keep this part of the photo
+      name: focus
+      widget: select
+      default: middle
+      options:
+      - label: The top
+        value: top
+      - label: The middle
+        value: middle
+      - label: The bottom
+        value: bottom
+      hint: The photo is cropped on the Cats page. Choose the part that shows the cat's face.
+- name: cats_list
+  label: Which cat list is shown
+  description: Chooses what the Cats page shows. Change it only if you need to.
+  files:
+  - name: cats_list
+    label: The list on the Cats page
+    file: src/_data/catsListing.json
+    fields:
+    - label: Show on the Cats page
+      name: mode
+      widget: select
+      options:
+      - label: The cats added in the Cats section (recommended)
+        value: editor
+      - label: The list from Pawlytics (only the cats marked Adoptable there)
+        value: pawlytics
+      hint: Cats you add in the Cats section do not show while the Pawlytics list is chosen.
 - name: pages
   label: Pages
   description: The wording on each page of the website.
@@ -96,7 +230,7 @@ collections:
       - label: 'Text: “Cat name”'
         name: text
         widget: string
-      - label: 'Text 2: “Age · Area”'
+      - label: 'Text 2: “Age”'
         name: text2
         widget: string
       - label: 'Photo 2: “A fluffy calico cat with green eye…”'
@@ -111,7 +245,7 @@ collections:
       - label: 'Text 3: “Cat name”'
         name: text3
         widget: string
-      - label: 'Text 4: “Age · Area”'
+      - label: 'Text 4: “Age”'
         name: text4
         widget: string
       - label: 'Text 5: “Also looking for a home”'
@@ -811,6 +945,27 @@ collections:
         widget: string
       - label: 'Text 3: “or sign up for updates when someone ne…”'
         name: text3
+        widget: text
+        hint: Links are written as [words to click](https://address).
+    - label: Note under the Pawlytics cat list (only shown if the site is set to use it)
+      name: widget
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Note: “This list comes live from Pawlytics, the system…”'
+        name: note
+        widget: text
+        hint: Links are written as [words to click](https://address).
+    - label: What shows when there are no cats
+      name: empty
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “No cats are listed here right now”'
+        name: h2
+        widget: string
+      - label: 'Paragraph: “Cats arrive and find homes all the time…”'
+        name: p
         widget: text
         hint: Links are written as [words to click](https://address).
     - label: How adopting works (strip at the bottom)
@@ -2192,16 +2347,13 @@ collections:
       - label: 'Label 3: “Colour”'
         name: dt3
         widget: string
-      - label: 'Label 4: “Area”'
-        name: dt4
-        widget: string
-      - label: 'Label 5: “Good with”'
+      - label: 'Label 4: “Good with”'
         name: dt5
         widget: string
-      - label: 'Label 6: “Health”'
+      - label: 'Label 5: “Health”'
         name: dt6
         widget: string
-      - label: 'Label 7: “Adoption donation”'
+      - label: 'Label 6: “Adoption donation”'
         name: dt7
         widget: string
       - label: 'Button: “Apply to adopt {name}”'

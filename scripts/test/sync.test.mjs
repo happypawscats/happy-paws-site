@@ -11,7 +11,6 @@ const run = promisify(execFile);
 const root = path.resolve(new URL('../..', import.meta.url).pathname);
 const NOW = new Date('2026-11-10T12:00:00Z');
 const pets = JSON.parse(await readFile(path.join(root, 'scripts/fixtures/pets.sample.json'), 'utf8'));
-const areas = JSON.parse(await readFile(path.join(root, 'scripts/fixtures/areas.sample.json'), 'utf8'));
 let sharp = null;
 try { sharp = (await import('sharp')).default; } catch { /* photo tests are skipped without it */ }
 
@@ -22,7 +21,7 @@ async function workspace() {
 }
 const fakeProcess = async (buf) => Buffer.from(`webp:${buf.toString()}`);
 const fakeDownload = async (url) => { if (url.includes('broken')) throw new Error('HTTP 404'); return Buffer.from(url); };
-const base = (w, extra = {}) => ({ fetchPets: async () => pets, downloadPhoto: fakeDownload, processImage: fakeProcess, areaLookup: areas, now: NOW, catsJsonPath: w.catsJsonPath, imagesDir: w.imagesDir, ...extra });
+const base = (w, extra = {}) => ({ fetchPets: async () => pets, downloadPhoto: fakeDownload, processImage: fakeProcess, now: NOW, catsJsonPath: w.catsJsonPath, imagesDir: w.imagesDir, ...extra });
 
 test('a first run writes cats.json and the photos, leaves out cats with no photo', async () => {
   const w = await workspace();
@@ -120,11 +119,10 @@ test('the command line works end to end on the sample data, with real image conv
   await run('cp', ['-r', path.join(root, 'scripts'), path.join(w.dir, 'scripts')]);
   await run('cp', [path.join(root, 'src/images/kitten-ginger-white.jpg'), path.join(root, 'src/images/kitten-silver-tabby.jpg'), path.join(w.dir, 'src/images/')]);
   await run('ln', ['-s', path.join(root, 'node_modules'), path.join(w.dir, 'node_modules')]);
-  const cli = ['scripts/sync-pawlytics.mjs', '--fixture', 'scripts/fixtures/pets.sample.json', '--area-file', 'scripts/fixtures/areas.sample.json'];
+  const cli = ['scripts/sync-pawlytics.mjs', '--fixture', 'scripts/fixtures/pets.sample.json'];
   const first = await run('node', cli, { cwd: w.dir });
   assert.match(first.stdout, /Published 5 \(1 reserved\)/);
   assert.match(first.stdout, /No photo, so not published: Camera Shy/);
-  assert.match(first.stdout, /Area not worked out: Mystery/);
   assert.ok(!/test foster/i.test(first.stdout + first.stderr), 'the output names no foster carer');
   const files = await readdir(path.join(w.dir, 'src/images/cats'));
   assert.ok(files.length >= 5 && files.every((f) => f.endsWith('.webp')));

@@ -20,6 +20,13 @@
     "btn": "Tell us what you're looking for",
     "text3": "or [sign up for updates](/news/#news-email) when someone new comes in"
   },
+  "widget": {
+    "note": "This list comes live from Pawlytics, the system we use to look after our cats. It is loaded from Pawlytics' own servers, so Pawlytics can see that you visited this page."
+  },
+  "empty": {
+    "h2": "No cats are listed here right now",
+    "p": "Cats arrive and find homes all the time. [Sign up for updates](/news/#news-email) or [tell us what you're looking for](/contact/) and we will let you know when someone new comes in."
+  },
   "s3": {
     "h2": "Adopting from Happy Paws",
     "p": "Four steps from meeting a cat to bringing them home. Here is what happens and what to expect at each one.",

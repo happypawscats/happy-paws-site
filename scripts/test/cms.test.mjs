@@ -25,7 +25,8 @@ const config = yaml.load(await readFile(path.join(root, 'src/static/admin/config
 const textDir = path.join(root, 'src/_data/text');
 const texts = {};
 for (const f of await readdir(textDir)) if (f.endsWith('.json')) texts[f.slice(0, -5)] = JSON.parse(await readFile(path.join(textDir, f), 'utf8'));
-const fileEntries = config.collections.flatMap((c) => c.files || []);
+// Wording files only. The cat list setting (src/_data/catsListing.json) and the cats folder are checked in cats.test.mjs.
+const fileEntries = config.collections.flatMap((c) => c.files || []).filter((f) => f.file.startsWith('src/_data/text/'));
 
 test('rich: links, bold, colour and line breaks keep the design attributes from the template', () => {
   const html = rich('Hello **there**, ==pink== [click](https://a.example/x?y=1&z=2)\nnext', {

@@ -6,7 +6,7 @@ This copies the cats that are **Adoptable** or **Pending adoption** in Pawlytics
 
 | Part | State |
 | --- | --- |
-| Turning Pawlytics data into the site's `cats.json` (ages, Reserved, area, slugs, text) | Written and tested on made-up cats |
+| Turning Pawlytics data into the site's `cats.json` (ages, Reserved, slugs, text) | Written and tested on made-up cats |
 | Photos: download, resize, convert to WebP, tidy up old ones | Written and tested |
 | Safety checks (never publish an empty list, never cut it by more than half) | Written and tested |
 | Pawlytics sign-in (Auth0 password sign-in) | Written and tested against a pretend server. **Not tried against the real one.** |
@@ -35,18 +35,18 @@ npm run test:sync           # the tests (no Pawlytics login needed)
 Try it without Pawlytics, on made-up cats:
 
 ```
-node scripts/sync-pawlytics.mjs --fixture scripts/fixtures/pets.sample.json \
-  --area-file scripts/fixtures/areas.sample.json --dry-run
+node scripts/sync-pawlytics.mjs --fixture scripts/fixtures/pets.sample.json --dry-run
 ```
 
 `.env` is ignored by git. Never commit it, and never paste the password into chat or an issue.
 
 ## Running it on GitHub
 
-1. In the repository: Settings, Secrets and variables, Actions, **New repository secret**. Add `AUTH0_DOMAIN`, `AUTH0_AUDIENCE`, `AUTH0_CLIENT_ID`, `PAWLYTICS_USERNAME`, `PAWLYTICS_PASSWORD`, and `AREA_LOOKUP_JSON` if the area comes from a lookup (below).
+1. In the repository: Settings, Secrets and variables, Actions, **New repository secret**. Add `AUTH0_DOMAIN`, `AUTH0_AUDIENCE`, `AUTH0_CLIENT_ID`, `PAWLYTICS_USERNAME`, and `PAWLYTICS_PASSWORD`.
 2. Actions tab, **Sync cats from Pawlytics**, **Run workflow**. Tick "Check only" the first time.
 3. When that looks right, run it again without the tick. It saves the changes, and Netlify rebuilds the site.
 4. Switch the schedule on by removing the two `#` marks in `.github/workflows/sync-pawlytics.yml`.
+5. Make `/cats/` show the synced cats: set `mode` to `"sync"` in `src/_data/catsListing.json`. Until then the page shows the cats typed in the editor (or the Pawlytics list), and `cats.json` is not published. Then take the `cats` and `cats_list` collections out of `src/static/admin/config.yml` and delete `src/cats/items/`, so nobody types cats that the sync would overwrite.
 
 Two things to know about scheduled runs on GitHub:
 
@@ -58,17 +58,11 @@ Two things to know about scheduled runs on GitHub:
 - Published: Adoptable cats, and Pending adoption cats as **Reserved**. Any other status, including In foster, is left out. The sync does not look at species, because Pawlytics calls some cats "Animal".
 - A cat with no usable photo is not published (and is named in the report so a volunteer can add one).
 - **Age band** comes from the date of birth: under 1 year is Kitten, over 10 years is Senior, otherwise Adult. With no date of birth the sync uses Pawlytics' stage (Baby or Kitten, Senior, otherwise Adult) and, if there is no age text either, the page says "Age not known".
-- **Never published:** Pawlytics' Location field. It holds foster carers' names, and sometimes the adopting family. The sync reads it only to work out an area, and does not write it anywhere. The reports it prints name cats, never people.
+- **Never published:** Pawlytics' Location field. It holds foster carers' names, and sometimes the adopting family. The sync ignores it and does not write it anywhere. The reports it prints name cats, never people.
 
 ## The area
 
-The site shows Stockton, Birmingham or Banbury. Pawlytics does not hold that directly (see `features/client-answers` in the project notes), so the sync looks for it in this order:
-
-1. An area on the cat itself, if Pawlytics offers a tag or custom field and the mapping uses it.
-2. A private lookup from the foster carer's name to an area, in the `AREA_LOOKUP_JSON` secret: `{"Name of foster": "Stockton", "Another foster": "Banbury"}`. Names are matched ignoring capitals and extra spaces. Entries that do not name one of the three areas are ignored, with a note in the report.
-3. Nothing. The cat shows without an area and still appears under "All".
-
-Whoever adds a foster in Pawlytics must add them to the lookup too, which is why option 1 is better if the account can do it. It is an open decision.
+The site no longer shows where a cat is looked after. The area filter was removed on 11 November 2026 and the cat tiles and pages followed, so the sync reads no area and needs no lookup. The cats page says instead that the charity can transport a cat anywhere for the right home.
 
 ## Safety checks
 

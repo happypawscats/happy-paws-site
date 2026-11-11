@@ -1,0 +1,18 @@
+{
+  "name": "Poppy",
+  "age_band": "Kitten",
+  "age_text": "8 months",
+  "sex": "Female",
+  "colour": "Tortoiseshell",
+  "reserved": false,
+  "tagline": "",
+  "story": "Poppy came to us as a stray. She is playful and loves a lap.\n\nShe would suit a family with other cats.",
+  "good_with": "Children and other cats",
+  "health": "Neutered, vaccinated and microchipped",
+  "donation": "£60",
+  "listed": "2026-11-05",
+  "photos": [
+    { "image": "/images/cat-photos/poppy-1.jpg", "alt": "Poppy asleep on a blanket", "focus": "top" },
+    { "image": "/images/cat-photos/poppy-2.jpg", "alt": "", "focus": "middle" }
+  ]
+}
