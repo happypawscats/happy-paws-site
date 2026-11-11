@@ -1,0 +1,31 @@
+---
+layout: base.njk
+permalink: "/accessibility/"
+current: ""
+appeal: true
+css: ["pages/privacy"]
+js: []
+eleventyComputed:
+  title: "{{ text.accessibility.meta.title }}"
+  description: "{{ text.accessibility.meta.description }}"
+---
+<main id="main">
+<section aria-labelledby="pg-h" style="background:#E8EEF7">
+<div class="wrap" style="padding-top:72px; padding-bottom:72px">
+<div class="head-grid">
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.accessibility.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:460px"><p class="lede" style="">{{ text.accessibility.s1.p }}</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">{{ text.accessibility.s1.p2 }}</p></div>
+</div>
+</div>
+</section>
+<section class="sec" style="background:#ffffff; padding-top:72px"><div class="wrap"><div class="pol-grid">
+<nav aria-label="On this page"><div class="toc">{% for s in text.accessibility.sections %}<a href="#{{ s.title | slugify }}">{{ s.title }}</a>{% endfor %}</div></nav>
+<div class="pol" style="max-width:720px">
+{% if text.accessibility.draft %}<p class="draft">{{ text.accessibility.draft | rich({strong: {'style': 'font-weight:700' } }) | safe }}</p>{% endif %}
+
+{% for s in text.accessibility.sections %}<section id="{{ s.title | slugify }}"><h2>{{ s.title }}</h2>
+{{ s.body | markdown({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' }, strong: {'style': 'font-weight:700' } }) | safe }}</section>
+
+{% endfor %}</div>
+</div></div></section>
+</main>

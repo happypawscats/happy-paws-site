@@ -205,7 +205,6 @@ collections:
         hint: Describe the photo in one short sentence, for people who cannot see it.
     - label: 'Section 2: Cats looking for a home'
       name: s2
-      hint: 'The cats shown here come from the Cats section. The first two with photos appear large and the next five are listed beside them. This whole section is hidden until a cat has a photo.'
       widget: object
       collapsed: true
       fields:
@@ -219,9 +218,53 @@ collections:
       - label: 'Link: “See all cats”'
         name: link
         widget: string
+      - label: 'Photo: “A ginger-and-white kitten sitting…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Text: “Cat name”'
+        name: text
+        widget: string
+      - label: 'Text 2: “Age”'
+        name: text2
+        widget: string
+      - label: 'Photo 2: “A fluffy calico cat with green eye…”'
+        name: img2
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers) 2
+        name: alt2
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Text 3: “Cat name”'
+        name: text3
+        widget: string
+      - label: 'Text 4: “Age”'
+        name: text4
+        widget: string
       - label: 'Text 5: “Also looking for a home”'
         name: text5
         widget: string
+      - label: Rows
+        name: list
+        widget: list
+        fields:
+        - label: Text
+          name: text
+          widget: string
+        - label: Text 2
+          name: text2
+          widget: string
+        summary: '{{fields.text}}'
+        allow_add: true
+        label_singular: row
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
     - label: 'Section 3: How adoption works'
       name: s3
       widget: object
@@ -295,8 +338,6 @@ collections:
         widget: string
       - label: 'Text: “What £5 a month covers: add a real cos…”'
         name: text
-        required: false
-        hint: 'Shown under the amounts. Leave empty to show nothing until an amount has a line in "What each gift pays for".'
         widget: string
       - label: 'Text 2: “Give £5 a month”'
         name: text2
@@ -768,7 +809,6 @@ collections:
         widget: text
       - label: Facts
         name: list
-        required: false
         widget: list
         fields:
         - label: Label
@@ -783,8 +823,6 @@ collections:
         hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
       - label: 'Paragraph 2: “How we take the payment: method. Add r…”'
         name: p2
-        required: false
-        hint: 'Leave empty to leave this line out.'
         widget: string
     - label: 'Section 4: “Throughout this process, we were never '
       name: s4
@@ -812,7 +850,6 @@ collections:
         hint: A new line starts a new line on the page.
       - label: Questions and answers
         name: list
-        required: false
         widget: list
         fields:
         - label: Question
@@ -1350,24 +1387,18 @@ collections:
         widget: string
       - label: 'Text 10: “What £3 a month covers: add a real cos…”'
         name: text10
-        required: false
-        hint: 'Shown beside the amount when the page loads, before the lines in "What each gift pays for" take over. Leave it empty.'
         widget: string
       - label: 'Text 11: “£5”'
         name: text11
         widget: string
       - label: 'Text 12: “What £5 a month covers: add a real cos…”'
         name: text12
-        required: false
-        hint: 'Shown beside the amount when the page loads, before the lines in "What each gift pays for" take over. Leave it empty.'
         widget: string
       - label: 'Text 13: “£10”'
         name: text13
         widget: string
       - label: 'Text 14: “What £10 a month covers: add a real co…”'
         name: text14
-        required: false
-        hint: 'Shown beside the amount when the page loads, before the lines in "What each gift pays for" take over. Leave it empty.'
         widget: string
       - label: 'Paragraph 3: “Monthly gifts come in set amounts. For…”'
         name: p3
@@ -1417,7 +1448,6 @@ collections:
           widget: string
         - label: Paragraph 2
           name: p2
-          required: false
           widget: string
         summary: '{{fields.h3}}'
         allow_add: true
@@ -1446,22 +1476,18 @@ collections:
         widget: string
       - label: 'Text: “add”'
         name: dd
-        required: false
         widget: string
       - label: 'Label 2: “Sort code”'
         name: dt2
         widget: string
       - label: 'Text 2: “add”'
         name: dd2
-        required: false
         widget: string
       - label: 'Label 3: “Account number”'
         name: dt3
         widget: string
       - label: 'Text 3: “add”'
         name: dd3
-        required: false
-        hint: 'Fill in all three bank details to show the bank transfer box on the Donate page. It stays hidden while the account number is empty.'
         widget: string
       - label: 'Label 4: “Reference”'
         name: dt4
@@ -1768,7 +1794,6 @@ collections:
         widget: text
       - label: Events
         name: list
-        required: false
         widget: list
         fields:
         - label: Text
@@ -1895,6 +1920,10 @@ collections:
       - label: 'Label 5: “Follow us”'
         name: dt5
         widget: string
+      - label: 'Text 4: “Facebook add link Instagram add link T…”'
+        name: dd4
+        widget: text
+        hint: A new line starts a new line on the page.
       - label: 'Photo: “A black cat with amber eyes lookin…”'
         name: img
         widget: image
@@ -2233,19 +2262,19 @@ collections:
       fields:
       - label: 'Monthly gift of £3: what it pays for'
         name: '3'
-        required: false
         widget: string
-        hint: 'Shown beside the amount. Leave it empty to show nothing.'
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
       - label: 'Monthly gift of £5: what it pays for'
         name: '5'
-        required: false
         widget: string
-        hint: 'Shown beside the amount. Leave it empty to show nothing.'
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
       - label: 'Monthly gift of £10: what it pays for'
         name: '10'
-        required: false
         widget: string
-        hint: 'Shown beside the amount. Leave it empty to show nothing.'
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
     - label: One-off gifts
       name: oneoff
       widget: object
@@ -2253,23 +2282,24 @@ collections:
       fields:
       - label: 'One-off gift of £10: what it pays for'
         name: '10'
-        required: false
         widget: string
-        hint: 'Shown beside the amount. Leave it empty to show nothing.'
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
       - label: 'One-off gift of £25: what it pays for'
         name: '25'
-        required: false
         widget: string
-        hint: 'Shown beside the amount. Leave it empty to show nothing.'
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
       - label: 'One-off gift of £50: what it pays for'
         name: '50'
-        required: false
         widget: string
-        hint: 'Shown beside the amount. Leave it empty to show nothing.'
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
       - label: 'One-off gift of £200: what it pays for'
         name: '200'
         widget: string
-        hint: 'Shown beside the amount. Leave it empty to show nothing.'
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
     - label: 'Homepage box: line for a one-off £200'
       name: home_average
       widget: string

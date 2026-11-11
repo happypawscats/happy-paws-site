@@ -1,13 +1,13 @@
 {
   "monthly": {
-    "3": "",
-    "5": "",
-    "10": ""
+    "3": "[What £3 a month covers: add a real cost from Happy Paws]",
+    "5": "[What £5 a month covers: add a real cost from Happy Paws]",
+    "10": "[What £10 a month covers: add a real cost from Happy Paws]"
   },
   "oneoff": {
-    "10": "",
-    "25": "",
-    "50": "",
+    "10": "[What £10 covers: add a real cost from Happy Paws]",
+    "25": "[What £25 covers: add a real cost from Happy Paws]",
+    "50": "[What £50 covers: add a real cost from Happy Paws]",
     "200": "About the average cost of rehoming one cat."
   },
   "home_average": "That is about the average cost of rehoming one cat.",

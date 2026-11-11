@@ -45,7 +45,7 @@ eleventyComputed:
 <div class="fact"><dt>{{ text.contact.s2.dt2 }}</dt><dd>{{ text.contact.s2.dd }}</dd></div>
 <div class="fact"><dt>{{ text.contact.s2.dt3 }}</dt><dd>{{ text.contact.s2.dd2 }}</dd></div>
 <div class="fact"><dt>{{ text.contact.s2.dt4 }}</dt><dd>{{ text.contact.s2.dd3 }}</dd></div>
-{% if site.social.facebook or site.social.instagram or site.social.tiktok %}<div class="fact"><dt>{{ text.contact.s2.dt5 }}</dt><dd>{% if site.social.facebook %}<a class="link-u" href="{{ site.social.facebook }}" target="_blank" rel="noopener" style="color:#1F3158; display:block">Facebook</a>{% endif %}{% if site.social.instagram %}<a class="link-u" href="{{ site.social.instagram }}" target="_blank" rel="noopener" style="color:#1F3158; display:block">Instagram</a>{% endif %}{% if site.social.tiktok %}<a class="link-u" href="{{ site.social.tiktok }}" target="_blank" rel="noopener" style="color:#1F3158; display:block">TikTok</a>{% endif %}</dd></div>{% endif %}
+<div class="fact"><dt>{{ text.contact.s2.dt5 }}</dt><dd>{{ text.contact.s2.dd4 | rich | safe }}</dd></div>
 </dl>
 <figure class="ph " style="aspect-ratio:4/3; background:#EAD3C9; "><img fetchpriority="high" decoding="async" src="{{ text.contact.s2.img }}" alt="{{ text.contact.s2.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 40%; display:block"></figure>
 </div>

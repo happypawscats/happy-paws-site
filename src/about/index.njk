@@ -1,0 +1,88 @@
+---
+layout: base.njk
+permalink: "/about/"
+current: "about"
+appeal: true
+css: ["pages/about"]
+js: []
+eleventyComputed:
+  title: "{{ text.about.meta.title }}"
+  description: "{{ text.about.meta.description }}"
+---
+<main id="main">
+<!-- Hero -->
+<section aria-labelledby="pg-h" class="ih">
+<div class="ih-copy pad-l">
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.about.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:520px"><p class="lede" style="">{{ text.about.s1.p }}</p></div>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/cats/" >{{ text.about.s1.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline" href="/ways-to-help/" >{{ text.about.s1.btn2 }}</a></div>
+</div>
+<div class="ih-photo"><figure class="ph " style="height:100%; background:#E6CDD2; position:absolute; inset:0"><img fetchpriority="high" decoding="async" src="{{ text.about.s1.img }}" alt="{{ text.about.s1.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:44% 50%; display:block"></figure></div>
+</section>
+
+<section aria-labelledby="story-h" class="sec" style="background:#ffffff; "><div class="wrap"><div class="two-grid">
+<h2 id="story-h" class="h2" style="color:#ED217C">{{ text.about.s2.h2 }}</h2>
+<div style="display:flex; flex-direction:column; gap:22px; max-width:640px">
+<p style="margin:0; font-size:20px; line-height:1.65; font-weight:500">{{ text.about.s2.p }}</p>
+<p style="margin:0; font-size:16px; font-weight:700; color:#1F3158">{{ text.about.s2.p2 }}</p>
+<p style="margin:12px 0 0; font-size:17px; line-height:1.75">{{ text.about.s2.p3 }}</p>
+</div>
+</div></div></section>
+
+<section aria-labelledby="what-h" class="sec" style="background:#E8EEF7; "><div class="wrap"><h2 id="what-h" class="h2" style="color:#ED217C; margin-bottom:48px">{{ text.about.s3.h2 }}</h2>
+<div class="rules">
+<div class="rule-row"><h3>{{ text.about.s3.h3 }}</h3><p>{{ text.about.s3.p }}</p><div class="act"></div></div>
+<div class="rule-row"><h3>{{ text.about.s3.h32 }}</h3><p>{{ text.about.s3.p2 }}</p><div class="act"><a class="link" href="/foster/">{{ text.about.s3.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+<div class="rule-row"><h3>{{ text.about.s3.h33 }}</h3><p>{{ text.about.s3.p3 }}</p><div class="act"><a class="link" href="/adopting/">{{ text.about.s3.link2 }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+</div></div></section>
+
+<section aria-labelledby="br-h" class="sec" style="background:#ffffff; "><div class="wrap"><h2 id="br-h" class="h2" style="color:#ED217C; margin-bottom:48px">{{ text.about.s4.h2 }}</h2>
+<div class="rules">
+<div class="rule-row"><h3>{{ text.about.s4.h3 }}</h3><p>{{ text.about.s4.p }}</p></div>
+<div class="rule-row"><h3>{{ text.about.s4.h32 }}</h3><p>{{ text.about.s4.p2 }}</p></div>
+<div class="rule-row"><h3>{{ text.about.s4.h33 }}</h3><p>{{ text.about.s4.p3 }}</p></div>
+</div></div></section>
+
+<section aria-labelledby="team-h" class="sec" style="background:#ffffff; padding-top:0"><div class="wrap"><div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 48px; margin-bottom:56px">
+<h2 id="team-h" class="h2" style="color:#ED217C">{{ text.about.s5.h2 | rich | safe }}</h2>
+<p class="lede" style="max-width:400px">{{ text.about.s5.p }}</p>
+</div>
+<div class="team-grid">
+{% for it in text.about.s5.list %}<div><figure class="ph" style="aspect-ratio:4/5; background:#E8EEF7"><span class="ph-tag">{{ it.text }}</span></figure><p style="margin:14px 0 0; font-size:22px; line-height:1.2; font-weight:500">{{ it.p }}</p><p style="margin:4px 0 0; font-size:15px; color:#4F596B">{{ it.p2 }}</p></div>{% if not loop.last %}
+{% endif %}{% endfor %}
+</div></div></section>
+
+<section aria-labelledby="kind-h" class="sec" style="background:#ffffff; padding-top:0"><div class="wrap"><div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 48px; margin-bottom:48px">
+<h2 id="kind-h" class="h2" style="color:#ED217C">{{ text.about.s6.h2 }}</h2>
+<a class="link" href="/testimonials/">{{ text.about.s6.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+<div class="q-cols">
+{% for it in text.about.s6.list %}<figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">{{ it.quote }}</blockquote><figcaption class="q-name">{{ it.caption }}</figcaption></figure>{% if not loop.last %}
+{% endif %}{% endfor %}
+</div></div></section>
+
+<!-- Trust: letter from our MP -->
+<section aria-labelledby="trust-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7">
+<div class="wrap">
+<div class="trust-grid">
+<div class="t-copy" style="gap:22px">
+<p style="margin:0; font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#F5CDD6">{{ text.about.s7.p }}</p>
+<h2 id="trust-h" style="font-size:clamp(28px,3.3vw,46px); line-height:1.15; letter-spacing:-0.02em; color:#ffffff">{{ text.about.s7.h2 }}</h2>
+<p style="margin:0; font-size:17px; line-height:1.7; max-width:560px">{{ text.about.s7.p2 }}</p>
+</div>
+<figure class="t-letter">
+<a class="letter-link" href="/images/mp-letter-full.jpg" target="_blank" rel="noopener" aria-label="Read the full letter from Chris McDonald MP (opens in a new tab)"><img loading="lazy" decoding="async" class="letter-img" src="{{ text.about.s7.img }}" alt="{{ text.about.s7.alt }}" width="320" height="451"></a>
+<figcaption style="font-size:14px; line-height:1.5; color:#C4CEDD">{{ text.about.s7.caption | rich | safe }}</figcaption>
+</figure>
+<div class="t-quote" style="gap:18px">
+<blockquote style="margin:0; padding-left:24px; border-left:4px solid #F5CDD6; font-size:clamp(22px,2.2vw,28px); line-height:1.4; font-weight:500; color:#ffffff; max-width:620px">{{ text.about.s7.quote }}</blockquote>
+<p style="margin:0; padding-left:28px; font-size:16px; line-height:1.55">{{ text.about.s7.p3 | rich | safe }}</p>
+<a class="link-w" href="/images/mp-letter-full.jpg" target="_blank" rel="noopener" style="margin-left:28px">{{ text.about.s7.link | rich({hl: 'position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap' }) | safe }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Newsletter -->
+{% include "newsletter.njk" %}
+</main>

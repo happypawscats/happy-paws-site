@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "Ways to help",
+    "description": "Other ways to help Happy Paws Cat Rescue: foster a cat, fundraise, give from our wish list or volunteer."
+  },
+  "s1": {
+    "h1": "Ways to \n==help==",
+    "p": "Adoption isn’t the only way you can support our rescue.",
+    "p2": "If you would like to help us but are not in a position to adopt, here are some alternatives.",
+    "btn": "Donate",
+    "btn2": "Foster a cat",
+    "img": "/images/cat-tuxedo.jpg",
+    "alt": "A black-and-white tuxedo cat sitting on a wooden floor, looking up"
+  },
+  "s2": {
+    "h2": "Four ways \nto give",
+    "h3": "Donate",
+    "p": "It costs, on average, £200 to rehome a cat. Donations help us to keep helping the cats that need us. Give once, or every month.",
+    "btn": "Donate",
+    "h32": "Foster",
+    "p2": "Fostering is the vital stepping stone in our work. It gives our cats the chance to feel safe during what can be a very stressful time for them.",
+    "link": "About fostering",
+    "h33": "Fundraise",
+    "p3": "As a registered charity we rely on fundraising and donations. If you fancy holding a fundraising event for us, we would be overjoyed. A cake sale, car boot sale, quiz night or coffee morning would all be wonderful.",
+    "link2": "Talk to us",
+    "h34": "Wish list",
+    "p4": "We are always in need of supplies, so we have set up a Wish List on Amazon. It is an easy way for our supporters to donate the products we really need.",
+    "link3": "Open our Wish List"
+  },
+  "s3": {
+    "h2": "==£200 is ==what it costs us, on average, to rehome one cat",
+    "p": "If a cat needs medical attention, it can cost considerably more. Whatever you can give goes straight to the cats in our care.",
+    "btn": "Donate now"
+  }
+}

@@ -19,19 +19,36 @@
     "p2": "Browse our cats and kittens. When someone catches your eye, open their page to read their story.",
     "link": "See our cats",
     "h32": "Apply to adopt",
-    "p3": "Use the Apply button on the cat's page to fill in our application form, with a little about yourself and the home you could offer. You can ask us a question there too.",
+    "p3": "Use the Apply button on the cat's page to fill in our application form, with a little about yourself and the home you could offer. You can ask us a question there too. [We reply within X days.]",
     "h33": "Chat with us",
-    "p4": "We get to know you and the kind of cat who would be happy in your home.",
+    "p4": "We get to know you and the kind of cat who would be happy in your home. [Confirm: video chats for adopters who live a long way away.]",
     "h34": "Home check",
-    "p5": "Every adoption is subject to a home check. A volunteer checks that your home is safe and suitable.",
+    "p5": "Every adoption is subject to a home check. [Describe what we look at, and whether it is done in person or by video.]",
     "h35": "Welcome them home",
-    "p6": "Once the home check is approved and the adoption donation is paid, your cat can come home. We stay in touch afterwards, and love to hear how they are settling in."
+    "p6": "Once the home check is approved and the adoption donation is paid, your cat can come home. We stay in touch afterwards, and love to hear how they are settling in. [Confirm what comes with each cat: food, bed, insurance.]"
   },
   "s3": {
     "h2": "The adoption \ndonation",
-    "p": "Every adoption comes with an adoption donation. It helps towards the cost of caring for the cat while they are with us. It costs us, on average, £200 to rehome a cat, and considerably more if they need medical attention.",
-    "list": [],
-    "p2": ""
+    "p": "Every adoption comes with an adoption donation. It helps towards the cost of caring for the cat while they are with us. [List what is covered: vaccinations, neutering, microchip, flea and worming treatment. Confirm.] It costs us, on average, £200 to rehome a cat, and considerably more if they need medical attention.",
+    "list": [
+      {
+        "dt": "Kitten",
+        "dd": "[£ amount]"
+      },
+      {
+        "dt": "Adult",
+        "dd": "[£ amount]"
+      },
+      {
+        "dt": "Senior",
+        "dd": "[£ amount]"
+      },
+      {
+        "dt": "Pairs",
+        "dd": "[£ amount, if different]"
+      }
+    ],
+    "p2": "How we take the payment: [method]. [Add refund and return policy.]"
   },
   "s4": {
     "quote": "“Throughout this process, we were never rushed or pressured and so now feel confident that we can give these girls a happy long life.”",
@@ -40,7 +57,32 @@
   },
   "s5": {
     "h2": "Questions you \nmight have",
-    "list": []
+    "list": [
+      {
+        "question": "Can I adopt if I rent my home?",
+        "answer": "[Add: whether we ask for the landlord’s permission, and what we ask to see.]"
+      },
+      {
+        "question": "Do you rehome to flats, or to homes without a garden?",
+        "answer": "[Add: our policy on indoor-only cats and outdoor access.]"
+      },
+      {
+        "question": "Can I adopt more than one cat?",
+        "answer": "[Add: pairs, siblings and bonded cats.]"
+      },
+      {
+        "question": "Will you bring the cat to me?",
+        "answer": "[Confirm: how cats travel to their new homes, and how far we cover.]"
+      },
+      {
+        "question": "How long does it take?",
+        "answer": "[Add the usual timescale from enquiry to homecoming.]"
+      },
+      {
+        "question": "What if it does not work out?",
+        "answer": "[Add our return and ongoing support policy.]"
+      }
+    ]
   },
   "s6": {
     "h2": "Ready to meet \nyour cat?",

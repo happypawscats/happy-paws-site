@@ -38,18 +38,18 @@
       },
       {
         "h3": "2. Apply to adopt",
-        "p": "Use the Apply button on the cat's page to fill in our application form, with a little about yourself and the home you could offer.",
-        "p2": "You can ask us a question there too."
+        "p": "Use the Apply button on the cat's page to fill in our application form, with a little about yourself and the home you could offer. You can ask us a question there too.",
+        "p2": "[We aim to reply within X days.]"
       },
       {
         "h3": "3. Home check",
-        "p": "A volunteer checks that your home is safe and suitable.",
-        "p2": "All adoptions are subject to a home check."
+        "p": "A volunteer checks that your home is safe and suitable. All adoptions are subject to a home check.",
+        "p2": "[What to expect, and roughly how long it takes.]"
       },
       {
         "h3": "4. Welcome them home",
         "p": "Pay the adoption donation and take your new family member home.",
-        "p2": "Every adoption comes with an adoption donation."
+        "p2": "Adoption donation: [£ amount]. [What it covers.]"
       }
     ],
     "btn": "Read the full guide"

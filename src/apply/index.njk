@@ -1,0 +1,29 @@
+---
+layout: base.njk
+permalink: "/apply/"
+current: "adopt"
+appeal: true
+css: ["pages/apply"]
+js: ["apply"]
+eleventyComputed:
+  title: "{{ text.apply.meta.title }}"
+  description: "{{ text.apply.meta.description }}"
+---
+<main id="main">
+<!-- Intro -->
+<section aria-labelledby="pg-h" style="background:#E8EEF7">
+<div class="wrap" style="padding-top:72px; padding-bottom:72px">
+<div class="head-grid">
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.apply.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:460px"><p class="lede" style="">{{ text.apply.s1.p }}</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">{{ text.apply.s1.p2 | rich({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' } }) | safe }}</p></div>
+</div>
+</div>
+</section>
+
+{% set ap_form = site.applications.adoption %}
+{% set ap_title = "Adoption application form" %}
+{% set ap_cat = true %}
+{% set ap_intro = text.apply.form.intro %}
+{% set ap_steps = text.apply.form.steps %}
+{% include "apply-embed.njk" %}
+</main>

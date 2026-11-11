@@ -1,0 +1,70 @@
+---
+layout: base.njk
+permalink: "/thank-you/"
+current: ""
+appeal: false
+css: []
+js: []
+noindex: true
+eleventyComputed:
+  title: "{{ text.thank_you.meta.title }}"
+  description: "{{ text.thank_you.meta.description }}"
+---
+<main id="main">
+<!-- Thank you -->
+<section aria-labelledby="ty-h" style="background:#E8EEF7">
+<div class="hero-grid">
+<div class="pad-l" style="padding-top:88px; padding-bottom:88px; padding-right:56px; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:30px">
+<h1 id="ty-h" class="display" style="color:#1F3158; font-size:clamp(40px,5.4vw,80px)">{{ text.thank_you.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<p class="lede" style="max-width:500px">{{ text.thank_you.s1.p | rich({strong: {'style': 'font-weight:500; color:#1F3158' } }) | safe }}</p>
+<p style="margin:0; display:flex; align-items:center; gap:12px; font-size:16px; line-height:1.5; padding:14px 0; border-top:1px solid #C4CEDD; border-bottom:1px solid #C4CEDD; max-width:500px; width:100%"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CC1264" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex:none"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7.5 12 13l8.5-5.5"/></svg>{{ text.thank_you.s1.p2 }}</p>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:14px">
+<a class="btn btn-primary" href="/cats/">{{ text.thank_you.s1.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="btn btn-outline" href="/">{{ text.thank_you.s1.btn2 }}</a>
+</div>
+</div>
+<div style="position:relative">
+<figure class="ph" style="aspect-ratio:4/5; background:#E4C9BF">
+<img fetchpriority="high" decoding="async" src="{{ text.thank_you.s1.img }}" alt="{{ text.thank_you.s1.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:58% 50%; display:block">
+</figure>
+</div>
+</div>
+</section>
+
+<!-- What next -->
+<section aria-labelledby="next-h" class="sec" style="background:#ffffff">
+<div class="wrap">
+<div class="two-grid" style="margin-bottom:56px">
+<h2 id="next-h" class="h2" style="color:#ED217C">{{ text.thank_you.s2.h2 | rich | safe }}</h2>
+<p class="lede" style="max-width:520px; align-self:end">{{ text.thank_you.s2.p }}</p>
+</div>
+<div class="rules">
+<div class="rule-row">
+<h3>{{ text.thank_you.s2.h3 }}</h3>
+<p>{{ text.thank_you.s2.p2 }}</p>
+<div class="act" style="display:flex; flex-wrap:wrap; gap:10px">
+<a class="btn btn-outline btn-sm" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.happypawscatrescue.org%2F" target="_blank" rel="noopener">{{ text.thank_you.s2.btn }}</a>
+<a class="btn btn-outline btn-sm" href="https://wa.me/?text=Happy%20Paws%20Cat%20Rescue%20https%3A%2F%2Fwww.happypawscatrescue.org%2F" target="_blank" rel="noopener">{{ text.thank_you.s2.btn2 }}</a>
+</div>
+</div>
+<div class="rule-row">
+<h3>{{ text.thank_you.s2.h32 }}</h3>
+<p>{{ text.thank_you.s2.p3 }}</p>
+<form method="post" name="newsletter" data-form="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" class="act" style="display:flex; flex-direction:column; gap:10px; width:100%"><input type="hidden" name="form-name" value="newsletter"><p hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<label for="ty-email" style="font-size:14px; font-weight:500">{{ text.thank_you.s2.label }}</label>
+<div class="field" style="display:flex; align-items:center; padding:0 16px; min-height:52px">
+<input id="ty-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" style="flex:1; min-width:0; min-height:46px; border:0; outline:none; background:transparent; font-family:Montserrat,system-ui,sans-serif; font-size:16px; font-weight:500; color:#333333">
+</div>
+<button class="btn btn-primary btn-sm" type="submit">{{ text.thank_you.s2.button }}</button>
+</form>
+</div>
+<div class="rule-row">
+<h3>{{ text.thank_you.s2.h33 }}</h3>
+<p>{{ text.thank_you.s2.p4 }}</p>
+<a class="link act" href="/ways-to-help/">{{ text.thank_you.s2.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+</main>

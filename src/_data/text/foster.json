@@ -16,12 +16,24 @@
     "p": "You give a cat a safe, calm place to be themselves while we find their forever home. We are with you at every step.",
     "list": [
       {
+        "dt": "How long",
+        "dd": "[A few weeks to a few months: confirm]"
+      },
+      {
+        "dt": "We provide",
+        "dd": "[Food, litter, vet care and support: confirm]"
+      },
+      {
         "dt": "You provide",
-        "dd": "A safe, calm place, time and kindness."
+        "dd": "[A quiet room, time and kindness]"
+      },
+      {
+        "dt": "Who can foster",
+        "dd": "[Requirements: age, space, other pets, experience]"
       },
       {
         "dt": "Where",
-        "dd": "Stockton, Birmingham and Banbury."
+        "dd": "[Stockton, Birmingham, Banbury and nearby]"
       }
     ]
   },
@@ -35,7 +47,7 @@
     "btn": "Apply to foster",
     "p2": "Would you rather talk first? [Get in touch](/contact/).",
     "text": "You tell us a little about your home.",
-    "text2": "We chat, and get to know you.",
+    "text2": "We chat, and [describe the home visit or check].",
     "text3": "You meet your first foster cat."
   }
 }

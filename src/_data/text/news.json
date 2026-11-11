@@ -18,6 +18,22 @@
   "s4": {
     "h2": "Where to \nfind us",
     "p": "We are always holding events to raise awareness of our rescue. These are some of the ones we will be at over the next few months.",
-    "list": []
+    "list": [
+      {
+        "text": "[Date]",
+        "text2": "[Event name]",
+        "text3": "[Place · Area]"
+      },
+      {
+        "text": "[Date]",
+        "text2": "[Event name]",
+        "text3": "[Place · Area]"
+      },
+      {
+        "text": "[Date]",
+        "text2": "[Event name]",
+        "text3": "[Place · Area]"
+      }
+    ]
   }
 }

@@ -1,0 +1,99 @@
+---
+layout: base.njk
+permalink: "/cats/"
+current: "adopt"
+appeal: true
+css: ["pages/cats"]
+js: ["cats"]
+eleventyComputed:
+  title: "{{ text.cats.meta.title }}"
+  description: "{{ text.cats.meta.description }}"
+---
+<main id="main">
+<!-- Hero and cat finder -->
+<section aria-labelledby="cats-h" class="l-hero">
+<div class="wrap">
+<div class="l-head">
+<h1 id="cats-h" class="l-h1">{{ text.cats.s1.h1 }}</h1>
+<div>
+<p class="l-lede">{{ text.cats.s1.p }}</p>
+<p class="l-transport">{{ text.cats.s1.transport | rich({strong: {'style': 'font-weight:700' } }) | safe }}</p>
+</div>
+</div>
+{% set hasCats = siteCats | length %}
+{% if not listing.widget and hasCats %}
+<div class="l-finder" role="group" aria-label="Find a cat">
+<div>
+<span class="l-fl" id="lbl-age">{{ text.cats.s1.text2 }}</span>
+<div class="chips" role="group" aria-labelledby="lbl-age">
+<button type="button" class="chip" data-filter="age" data-value="Any" aria-pressed="true" style="background:#1F3158;color:#E8EEF7;border:1.5px solid #1F3158">{{ text.cats.s1.button5 }}</button>
+<button type="button" class="chip" data-filter="age" data-value="Kitten" aria-pressed="false" style="background:#ffffff;color:#333333;border:1.5px solid #6D788F">{{ text.cats.s1.button6 }}</button>
+<button type="button" class="chip" data-filter="age" data-value="Adult" aria-pressed="false" style="background:#ffffff;color:#333333;border:1.5px solid #6D788F">{{ text.cats.s1.button7 }}</button>
+<button type="button" class="chip" data-filter="age" data-value="Senior" aria-pressed="false" style="background:#ffffff;color:#333333;border:1.5px solid #6D788F">{{ text.cats.s1.button8 }}</button>
+</div>
+</div>
+<a class="btn btn-primary" href="#cats" data-show style="min-height:52px"><span data-show-label>Show {{ siteCats | length }} cats</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+{% endif %}
+<p style="margin:16px 0 0; font-size:14px; line-height:1.6; color:#4F596B">{{ text.cats.s1.p2 | rich({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' } }) | safe }}</p>
+</div>
+</section>
+
+<!-- Cats -->
+<section id="cats" aria-label="Cat list" style="background:#ffffff; scroll-margin-top:72px; padding-top:56px; padding-bottom:72px">
+<div class="wrap">
+{% if listing.widget %}
+<div class="l-widget" data-pawlytics-list>
+{{ listing.html | safe }}
+</div>
+<p class="l-widget-note">{{ text.cats.widget.note | rich({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' } }) | safe }}</p>
+{% elif not hasCats %}
+<div class="l-none">
+<h2 class="l-h2">{{ text.cats.empty.h2 }}</h2>
+<p class="l-none-p">{{ text.cats.empty.p | rich({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' } }) | safe }}</p>
+</div>
+{% else %}
+<div class="l-bar">
+<h2 class="l-h2" aria-live="polite" data-count>{{ siteCats | length | catCount }} looking for a home</h2>
+<button type="button" class="l-clear" data-clear hidden>Clear choices</button>
+</div>
+<div class="l-tiles" data-tiles>
+{% for cat in siteCats %}
+<a class="l-tile" href="/cats/{{ cat.slug }}/" data-age="{{ cat.age_band }}">
+<figure class="ph" style="aspect-ratio:5/6; background:{{ cat.bg }}"><img src="/images/{{ cat.photos[0].src }}" alt="{{ cat.photos[0].alt }}"{% if loop.index > 4 %} loading="lazy"{% endif %} decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:{{ cat.photos[0].pos }}; display:block">{% if cat.reserved %}<span class="l-flag">{{ text.cats.s2.text }}</span>{% endif %}</figure>
+<div style="margin-top:12px; display:flex; flex-direction:column; gap:2px">
+<span class="l-tn">{{ cat.name }}</span>
+<span class="l-tm">{{ cat.age_band }} · {{ cat.sex }}</span>
+</div>
+</a>
+{% endfor %}
+</div>
+<div data-empty hidden style="border-top:1px solid #C4CEDD; border-bottom:1px solid #D8DFEA; padding:28px 0; max-width:640px">
+<p style="margin:0 0 16px; font-size:16px; line-height:1.6">No cats match those choices right now. Cats arrive and find homes all the time, so try another age, or <a class="link-u" href="/news/#news-email" style="color:#CC1264; font-weight:500">sign up for updates</a>.</p>
+<button type="button" class="btn btn-outline btn-sm" data-clear>Show all cats</button>
+</div>
+{% endif %}
+{% if listing.widget or hasCats %}
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; align-items:center; gap:12px 28px; margin-top:48px; padding-top:28px; border-top:1px solid #D8DFEA">
+<span style="font-size:16px; line-height:1.5; font-weight:500">{{ text.cats.s2.text2 }}</span>
+<a class="btn btn-primary" href="/contact/">{{ text.cats.s2.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<span style="font-size:16px; line-height:1.5">{{ text.cats.s2.text3 | rich({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' } }) | safe }}</span>
+</div>
+{% endif %}
+</div>
+</section>
+
+<!-- Adopting from Happy Paws -->
+<section id="how" aria-labelledby="how-h" style="background:#E8EEF7; scroll-margin-top:72px; padding-top:72px; padding-bottom:72px">
+<div class="wrap">
+<div class="l-head" style="margin-bottom:40px">
+<h2 id="how-h" class="l-h2">{{ text.cats.s3.h2 }}</h2>
+<p class="l-lede">{{ text.cats.s3.p }}</p>
+</div>
+<div class="l-thead" aria-hidden="true"><span>Step</span><span>What happens</span><span>Good to know</span></div>
+{% for it in text.cats.s3.list %}<div class="l-trow"><h3>{{ it.h3 }}</h3><p>{{ it.p }}</p><p style="color:#4F596B">{{ it.p2 }}</p></div>{% if not loop.last %}
+{% endif %}{% endfor %}
+<div style="margin-top:32px"><a class="btn btn-primary" href="/adopting/">{{ text.cats.s3.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</div>
+</section>
+</main>

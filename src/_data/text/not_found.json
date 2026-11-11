@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": "Page not found",
+    "description": "We cannot find that page. Here are some places to start."
+  },
+  "s1": {
+    "h1": "We can’t find \n==that page==",
+    "p": "Error 404",
+    "p2": "The page may have moved, or the address may have been typed a little differently. Here are some good places to start.",
+    "img": "/images/cat-black.jpg",
+    "alt": "A black cat with amber eyes looking at the camera in low light"
+  },
+  "s2": {
+    "h2": "Try one \nof these",
+    "link": "Our cats",
+    "link2": "How adoption works",
+    "link3": "Ways to help",
+    "link4": "Contact us"
+  }
+}

@@ -1,0 +1,44 @@
+---
+layout: base.njk
+permalink: "/testimonials/"
+current: "about"
+appeal: true
+css: ["pages/testimonials"]
+js: []
+eleventyComputed:
+  title: "{{ text.testimonials.meta.title }}"
+  description: "{{ text.testimonials.meta.description }}"
+---
+<main id="main">
+<!-- Hero -->
+<section aria-labelledby="pg-h" class="ih">
+<div class="ih-copy pad-l">
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.testimonials.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:520px"><p class="lede" style="">{{ text.testimonials.s1.p }}</p></div>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/cats/" >{{ text.testimonials.s1.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</div>
+<div class="ih-photo"><figure class="ph " style="height:100%; background:#E4C9BF; position:absolute; inset:0"><img fetchpriority="high" decoding="async" src="{{ text.testimonials.s1.img }}" alt="{{ text.testimonials.s1.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:22% 50%; display:block"></figure></div>
+</section>
+
+<section class="sec sec-t on-dark" style="background:#1F3158; color:#E8EEF7; "><div class="wrap"><div class="qq">
+<blockquote class="big-q" style="margin:0; color:#ffffff; max-width:780px">{{ text.testimonials.s2.quote }}</blockquote>
+<div style="display:flex; flex-direction:column; gap:10px">
+<p style="margin:0; font-size:16px; line-height:1.6">{{ text.testimonials.s2.p | rich({strong: {'style': 'font-weight:700; color:#ffffff' } }) | safe }}</p>
+<p style="margin:0; font-size:16px; line-height:1.7; max-width:420px">{{ text.testimonials.s2.p2 }}</p>
+</div>
+</div></div></section>
+
+<section class="sec" style="background:#ffffff; padding-top:80px"><div class="wrap"><div class="q-cols">{% for it in text.testimonials.s3.list %}<figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">{{ it.quote }}</blockquote><figcaption class="q-name">{{ it.caption | rich({hl: 'font-weight:400; color:#4F596B' }) | safe }}</figcaption></figure>{% endfor %}</div></div></section>
+
+<section aria-labelledby="help-h" class="sec" style="background:#F5CDD6; padding-top:80px; padding-bottom:80px">
+<div class="wrap">
+<div class="two-grid" style="align-items:center">
+<h2 id="help-h" class="h2" style="color:#1F3158; font-size:clamp(30px,3.6vw,50px)">{{ text.testimonials.s4.h2 | rich | safe }}</h2>
+<div style="display:flex; flex-direction:column; gap:26px; align-items:flex-start; max-width:680px">
+<p class="lede" style="font-size:18px; max-width:560px">{{ text.testimonials.s4.p }}</p>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/contact/" >{{ text.testimonials.s4.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline" href="/cats/" >{{ text.testimonials.s4.btn2 }}</a></div>
+</div>
+</div>
+</div>
+</section>
+</main>
