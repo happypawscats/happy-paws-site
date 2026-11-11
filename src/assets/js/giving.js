@@ -38,6 +38,23 @@
   var field = document.querySelector('[data-custom-field]');
   var errorEl = document.querySelector('[data-custom-err]');
   var impactBox = document.querySelector('[data-impact]');
+
+  // The lines saying what each gift pays for are written in the editor and passed in a small JSON block.
+  var GT = {};
+  try {
+    var gtEl = document.getElementById('giving-text');
+    if (gtEl) GT = JSON.parse(gtEl.textContent) || {};
+  } catch (e) { GT = {}; }
+  function gt(key, fallback) { return typeof GT[key] === 'string' ? GT[key] : fallback; }
+  // What a gift of v covers. An empty line in the editor means "show nothing". Words in [square brackets]
+  // are still a reminder to replace them, and show in italics.
+  function coversLine(v, monthly) {
+    var group = GT[monthly ? 'monthly' : 'oneoff'];
+    if (group && Object.prototype.hasOwnProperty.call(group, String(v)) && typeof group[String(v)] === 'string') return group[String(v)].trim();
+    if (!monthly && v === 200) return 'About the average cost of rehoming one cat.';
+    return '[What ' + money(v) + (monthly ? ' a month' : '') + ' covers: add a real cost from Happy Paws]';
+  }
+  function isReminder(t) { return t.charAt(0) === '['; }
   var cta = document.querySelector('[data-cta]');
   var ctaLabel = document.querySelector('[data-cta-label]');
   var sumSub = document.querySelector('[data-summary-sub]');
@@ -66,8 +83,20 @@
   // A custom amount is possible for a one-off gift only: Stripe cannot take a custom monthly amount on a payment link.
   function linkFor() {
     var group = LINKS[state.freq] || {};
-    var url = state.custom !== '' ? (state.freq === 'oneoff' ? group.other : '') : group[String(state.amount)];
-    return typeof url === 'string' && /^https:\/\//.test(url) ? url : '';
+    var custom = state.custom !== '';
+    var url = custom ? (state.freq === 'oneoff' ? group.other : '') : group[String(state.amount)];
+    if (typeof url !== 'string' || !/^https:\/\//.test(url)) return '';
+    // Stripe's "choose what to pay" page can start from an amount given in pence (prefilled_amount).
+    // The donor can still change it there, and Stripe ignores a value outside the link's limits.
+    var eff = effective();
+    if (custom && eff) {
+      try {
+        var u = new URL(url);
+        u.searchParams.set('prefilled_amount', String(Math.round(eff * 100)));
+        return u.toString();
+      } catch (err) { return url; }
+    }
+    return url;
   }
 
   // Start from the address, so the homepage box can hand over to the donate page.
@@ -96,13 +125,9 @@
         style(el, on ? FIELD_ON : FIELD_OFF);
         el.querySelector('[data-row-label]').textContent = money(v);
         var impact = el.querySelector('[data-row-impact]');
-        if (!monthly && v === 200) {
-          impact.textContent = 'About the average cost of rehoming one cat.';
-          impact.setAttribute('style', IMPACT_BASE);
-        } else {
-          impact.textContent = '[What ' + money(v) + (monthly ? ' a month' : '') + ' covers: add a real cost from Happy Paws]';
-          impact.setAttribute('style', IMPACT_BASE + ' font-style:italic; opacity:.85');
-        }
+        var line = coversLine(v, monthly);
+        impact.textContent = line;
+        impact.setAttribute('style', isReminder(line) ? IMPACT_BASE + ' font-style:italic; opacity:.85' : IMPACT_BASE);
         el.querySelector('[data-row-dot]').setAttribute('style', on ? DOT_ON : DOT_OFF);
       } else {
         el.setAttribute('aria-pressed', on ? 'true' : 'false');
@@ -118,10 +143,11 @@
   }
 
   function homeImpact(eff) {
-    if (eff === null) return ['Choose an amount to see what it can do.', '#4F596B', 'normal'];
-    if (state.freq === 'oneoff' && state.custom === '' && eff === 200) return ['That is about the average cost of rehoming one cat.', '#333333', 'normal'];
-    if (state.custom !== '') return ['Every pound makes a difference, even £1 can help us save a life.', '#333333', 'normal'];
-    return ['[What ' + money(eff) + (state.freq === 'monthly' ? ' a month' : '') + ' covers: add a real cost from Happy Paws]', '#4F596B', 'italic'];
+    if (eff === null) return [gt('none', 'Choose an amount to see what it can do.'), '#4F596B', 'normal'];
+    if (state.freq === 'oneoff' && state.custom === '' && eff === 200) return [gt('home_average', 'That is about the average cost of rehoming one cat.'), '#333333', 'normal'];
+    if (state.custom !== '') return [gt('custom', 'Every pound makes a difference, even £1 can help us save a life.'), '#333333', 'normal'];
+    var line = coversLine(eff, state.freq === 'monthly');
+    return isReminder(line) ? [line, '#4F596B', 'italic'] : [line, '#333333', 'normal'];
   }
 
   function render() {
@@ -175,10 +201,10 @@
       if (isDonatePage) cta.setAttribute('href', (eff !== null && linkFor()) || '#top');
     }
     if (otherNote) {
-      // Stripe's "choose what to pay" page does not know the amount typed here, so say it will be asked again.
-      var again = isDonatePage && !monthly && state.custom !== '' && eff !== null;
-      otherNote.hidden = !again;
-      if (again) otherNote.textContent = "You'll be asked to enter " + money(eff) + ' again on the next page.';
+      // The amount typed here is passed to Stripe's page, which shows it and lets the donor change it.
+      var carried = isDonatePage && !monthly && state.custom !== '' && eff !== null;
+      otherNote.hidden = !carried;
+      if (carried) otherNote.textContent = 'The next page will show ' + money(eff) + '. You can check or change it there.';
     }
     if (notice) notice.hidden = true;
   }

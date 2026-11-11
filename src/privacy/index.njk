@@ -1,26 +1,33 @@
 ---
 layout: base.njk
-title: "Privacy policy"
-description: "How Happy Paws Cat Rescue collects, uses and protects your information."
 permalink: "/privacy/"
 current: ""
 appeal: true
 css: ["pages/privacy"]
 js: []
+eleventyComputed:
+  title: "{{ text.privacy.meta.title }}"
+  description: "{{ text.privacy.meta.description }}"
 ---
 <main id="main">
 <!-- Intro -->
 <section aria-labelledby="pg-h" style="background:#E8EEF7">
 <div class="wrap" style="padding-top:72px; padding-bottom:72px">
 <div class="head-grid">
-<h1 id="pg-h" class="display" style="color:#1F3158">Privacy <br><span style="color:#ED217C">policy</span></h1>
-<div style="display:flex; flex-direction:column; gap:14px; max-width:460px"><p class="lede" style="">How Happy Paws Cat Rescue collects and looks after your personal information.</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">Last updated: [date]</p></div>
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.privacy.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:460px"><p class="lede" style="">{{ text.privacy.s1.p }}</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">{{ text.privacy.s1.p2 }}</p></div>
 </div>
 </div>
 </section>
 
 <section class="sec" style="background:#ffffff; padding-top:72px"><div class="wrap"><div class="pol-grid">
-<nav aria-label="On this page"><div class="toc"><a href="#who">Who we are</a><a href="#collect">What information we collect</a><a href="#use">How we use it</a><a href="#share">Who we share it with</a><a href="#keep">How long we keep it</a><a href="#rights">Your rights</a><a href="#cookies">Cookies</a><a href="#changes">Changes to this policy</a><a href="#contact">Contact us</a></div></nav>
-<div class="pol" style="max-width:720px"><p style="margin:0 0 32px; padding:18px 20px; background:#F5CDD6; color:#333333; font-size:15px; line-height:1.65"><strong style="font-weight:700">Draft outline.</strong> The wording of this policy needs to be written or approved by Happy Paws. These are the headings it will cover.</p><section id="who"><h2>Who we are</h2><p>Happy Paws Cat Rescue is a registered charity in England and Wales. [Add the registered address, the area we cover and a contact address for privacy questions.]</p></section><section id="collect"><h2>What information we collect</h2><p>[List what we collect and when: adoption and foster applications (made on forms provided by Pawlytics), home checks, the contact form (sent to our email address), newsletter sign-ups, and donations (taken by Stripe).]</p></section><section id="use"><h2>How we use it</h2><p>[Explain what each piece of information is used for, and the lawful basis for using it.]</p></section><section id="share"><h2>Who we share it with</h2><p>[Name the services we use and say what each one receives: Pawlytics, which provides the adoption and foster forms and holds the applications (its forms are hosted by Airtable); Stripe, which takes donations; our website host, which handles contact form messages; and our email newsletter service.]</p></section><section id="keep"><h2>How long we keep it</h2><p>[State how long we keep each type of information, and why.]</p></section><section id="rights"><h2>Your rights</h2><p>[Describe the right to see, correct and delete your information, to object, and to complain to the Information Commissioner’s Office.]</p></section><section id="cookies"><h2>Cookies</h2><p>[State which cookies the site uses, if any, and how to control them. Include any set by the embedded application forms (Airtable) and by Stripe.]</p></section><section id="changes"><h2>Changes to this policy</h2><p>[Say how we will tell people when this policy changes.]</p></section><section id="contact"><h2>Contact us</h2><p>[Add the email address for privacy questions: info@happypawscatrescue.org.]</p></section></div>
+<nav aria-label="On this page"><div class="toc">{% for s in text.privacy.sections %}<a href="#{{ s.title | slugify }}">{{ s.title }}</a>{% endfor %}</div></nav>
+<div class="pol" style="max-width:720px">
+{% if text.privacy.draft %}<p class="draft">{{ text.privacy.draft | rich({strong: {'style': 'font-weight:700' } }) | safe }}</p>{% endif %}
+
+{% for s in text.privacy.sections %}<section id="{{ s.title | slugify }}"><h2>{{ s.title }}</h2>
+{{ s.body | markdown({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' }, strong: {'style': 'font-weight:700' } }) | safe }}</section>
+
+{% endfor %}</div>
 </div></div></section>
 </main>

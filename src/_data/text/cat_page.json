@@ -1,0 +1,30 @@
+{
+  "s1": {
+    "link": "All cats",
+    "dt": "Age",
+    "dt2": "Sex",
+    "dt3": "Colour",
+    "dt4": "Area",
+    "dt5": "Good with",
+    "dt6": "Health",
+    "dt7": "Adoption donation",
+    "btn": "Apply to adopt {name}",
+    "p": "All adoptions are subject to a home check and an adoption donation. [See how adoption works](/adopting/)"
+  },
+  "s2": {
+    "h2": "{name}'s \nstory"
+  },
+  "s3": {
+    "h2": "Apply for \n{name}",
+    "p": "Tell us a little about yourself and the home you could offer. You can ask us a question in the form too. We will reply [within X days].",
+    "btn": "Apply to adopt {name}",
+    "p2": "Would you rather talk first? [Get in touch](/contact/).",
+    "text": "We reply and answer your questions.",
+    "text2": "We chat, and check your home. [Add what this involves.]",
+    "text3": "{name} comes home."
+  },
+  "s4": {
+    "h2": "More cats looking \nfor a home",
+    "link": "See all cats"
+  }
+}

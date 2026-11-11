@@ -1,41 +1,42 @@
 ---
 layout: base.njk
-title: "Kind words from adopters"
-description: "What adopters and supporters say about Happy Paws Cat Rescue."
 permalink: "/testimonials/"
 current: "about"
 appeal: true
 css: ["pages/testimonials"]
 js: []
+eleventyComputed:
+  title: "{{ text.testimonials.meta.title }}"
+  description: "{{ text.testimonials.meta.description }}"
 ---
 <main id="main">
 <!-- Hero -->
 <section aria-labelledby="pg-h" class="ih">
 <div class="ih-copy pad-l">
-<h1 id="pg-h" class="display" style="color:#1F3158">Kind words <br>from <span style="color:#ED217C">adopters</span></h1>
-<div style="display:flex; flex-direction:column; gap:14px; max-width:520px"><p class="lede" style="">These are some of the lovely comments from our adopters and supporters.</p></div>
-<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/cats/" >See our cats<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.testimonials.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:520px"><p class="lede" style="">{{ text.testimonials.s1.p }}</p></div>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/cats/" >{{ text.testimonials.s1.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div>
-<div class="ih-photo"><figure class="ph " style="height:100%; background:#E4C9BF; position:absolute; inset:0"><img fetchpriority="high" decoding="async" src="/images/kitten-silver-tabby.jpg" alt="A silver tabby kitten with folded ears lying on a white windowsill beside a plant" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:22% 50%; display:block"></figure></div>
+<div class="ih-photo"><figure class="ph " style="height:100%; background:#E4C9BF; position:absolute; inset:0"><img fetchpriority="high" decoding="async" src="{{ text.testimonials.s1.img }}" alt="{{ text.testimonials.s1.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:22% 50%; display:block"></figure></div>
 </section>
 
 <section class="sec sec-t on-dark" style="background:#1F3158; color:#E8EEF7; "><div class="wrap"><div class="qq">
-<blockquote class="big-q" style="margin:0; color:#ffffff; max-width:780px">“What an AMAZING experience from start to finish we have had adopting our beautiful kittens. Such a professional and knowledgeable service.”</blockquote>
+<blockquote class="big-q" style="margin:0; color:#ffffff; max-width:780px">{{ text.testimonials.s2.quote }}</blockquote>
 <div style="display:flex; flex-direction:column; gap:10px">
-<p style="margin:0; font-size:16px; line-height:1.6"><strong style="font-weight:700; color:#ffffff">Megan Sobotowska</strong><br>Adopted two kittens</p>
-<p style="margin:0; font-size:16px; line-height:1.7; max-width:420px">“Every question I have asked has been answered in depth. Whatever time I message / call it’s always answered.”</p>
+<p style="margin:0; font-size:16px; line-height:1.6">{{ text.testimonials.s2.p | rich({strong: {'style': 'font-weight:700; color:#ffffff' } }) | safe }}</p>
+<p style="margin:0; font-size:16px; line-height:1.7; max-width:420px">{{ text.testimonials.s2.p2 }}</p>
 </div>
 </div></div></section>
 
-<section class="sec" style="background:#ffffff; padding-top:80px"><div class="wrap"><div class="q-cols"><figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">“Throughout this process, we were never rushed or pressured and so now feel confident that we can give these girls a happy long life.”</blockquote><figcaption class="q-name">Lucca Addy</figcaption></figure><figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">“After a video assessment of our living space, our adoption was approved and Sophie was ready to come home. She was brought to our house with everything she needed (bed, food etc) and settled in straight away.”</blockquote><figcaption class="q-name">Nichola Davey</figcaption></figure><figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">“Katrina Rose was amazing, very pleasant and responsive. Even set up a chat so I can get to know Milo, as I live a bit far.”</blockquote><figcaption class="q-name">Petra Kucerova</figcaption></figure><figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">“First time I’ve ever adopted a cat and Happy Paws made it so easy for me! They were extremely helpful and gave me so much advice for looking after my new baby.”</blockquote><figcaption class="q-name">Hannah Bunn</figcaption></figure><figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">“Penny was in beautiful condition a very loving cat so could tell she had been well looked after while in foster care and by previous owners.”</blockquote><figcaption class="q-name">Susan Scott</figcaption></figure><figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">“An absolutely wonderful team! It’s lovely to see the work they do for the kitties in their area, finding them their forever homes, providing foster care & offering help and advice to those that need it.”</blockquote><figcaption class="q-name">Purrs Cat Rescue<br><span style="font-weight:400; color:#4F596B">Fellow rescue</span></figcaption></figure><figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">“Katrina works tirelessly to ensure the best for every cat/ kitten that comes into her care.”</blockquote><figcaption class="q-name">Maggie Gilchrist</figcaption></figure><figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">“Katrina has offered support and advice on an elderly cat that had been kicked out and left to fend for itself for 2 years. She took it in, got emergency vet treatment, then found the perfect home for her.”</blockquote><figcaption class="q-name">Janice Peart<br><span style="font-weight:400; color:#4F596B">Pet Angels Wearside</span></figcaption></figure><figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">“Got two lovely little kittens. Communication was amazing from the start and Katrina and Vicki were really helpful.”</blockquote><figcaption class="q-name">Corinna Laurie</figcaption></figure></div></div></section>
+<section class="sec" style="background:#ffffff; padding-top:80px"><div class="wrap"><div class="q-cols">{% for it in text.testimonials.s3.list %}<figure class="q-item" style="margin:0"><blockquote class="q-text" style="margin-left:0; margin-right:0">{{ it.quote }}</blockquote><figcaption class="q-name">{{ it.caption | rich({hl: 'font-weight:400; color:#4F596B' }) | safe }}</figcaption></figure>{% endfor %}</div></div></section>
 
 <section aria-labelledby="help-h" class="sec" style="background:#F5CDD6; padding-top:80px; padding-bottom:80px">
 <div class="wrap">
 <div class="two-grid" style="align-items:center">
-<h2 id="help-h" class="h2" style="color:#1F3158; font-size:clamp(30px,3.6vw,50px)">Adopted <br>from us?</h2>
+<h2 id="help-h" class="h2" style="color:#1F3158; font-size:clamp(30px,3.6vw,50px)">{{ text.testimonials.s4.h2 | rich | safe }}</h2>
 <div style="display:flex; flex-direction:column; gap:26px; align-items:flex-start; max-width:680px">
-<p class="lede" style="font-size:18px; max-width:560px">We love hearing how our cats are getting on. Send us a message, and a photo if you have one.</p>
-<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/contact/" >Share your story<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline" href="/cats/" >See our cats</a></div>
+<p class="lede" style="font-size:18px; max-width:560px">{{ text.testimonials.s4.p }}</p>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/contact/" >{{ text.testimonials.s4.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline" href="/cats/" >{{ text.testimonials.s4.btn2 }}</a></div>
 </div>
 </div>
 </div>

@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Apply to adopt",
+    "description": "Apply to adopt a cat from Happy Paws Cat Rescue. Tell us about yourself and the home you could offer."
+  },
+  "s1": {
+    "h1": "Apply \n==to adopt==",
+    "p": "Tell us a little about yourself and the home you could offer. All adoptions are subject to a home check and an adoption donation.",
+    "p2": "[We usually reply within X days.] Not sure yet? [See how adoption works](/adopting/) or [ask us a question](/contact/)."
+  },
+  "form": {
+    "intro": "Fill in the form, including the name of the cat you would like to adopt. You can ask us a question in it too.",
+    "steps": [
+      "We reply and answer your questions.",
+      "We chat, and check your home. [Add what this involves.]",
+      "Your new family member comes home."
+    ]
+  }
+}

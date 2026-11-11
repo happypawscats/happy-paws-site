@@ -8,6 +8,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
   eleventyConfig.addPassthroughCopy({ 'src/images': 'images' });
   eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
+  // Files in src/static are copied as they are, never built as pages (the editor screen in src/static/admin is one).
+  eleventyConfig.ignores.add('src/static/**');
 
   // Reload the browser when styles or scripts change during `npm start`.
   eleventyConfig.addWatchTarget('src/assets/');
@@ -21,6 +23,21 @@ module.exports = function (eleventyConfig) {
     const open = ordered.filter((c) => !c.reserved);
     return (open.length >= count ? open : ordered).slice(0, count);
   });
+
+  // Page text written in the editor (see lib/rich.js). Used as {{ content.page.text | rich | safe }}.
+  const { rich, markdown, fill } = require('./lib/rich.js');
+  eleventyConfig.addFilter('rich', rich);
+  eleventyConfig.addFilter('markdown', markdown);
+  eleventyConfig.addFilter('fill', fill);
+
+  // News stories (src/news/items/*.md), newest first.
+  eleventyConfig.addCollection('newsLatest', (api) => api.getFilteredByTag('news').sort((a, b) => b.date - a.date));
+
+  // "More news" under a story: the other stories, newest first, up to `count`.
+  eleventyConfig.addFilter('otherNews', (items, url, count) => (Array.isArray(items) ? items : []).filter((i) => i.url !== url).slice(0, count));
+
+  // A value as JSON that is safe inside a <script> block.
+  eleventyConfig.addFilter('json', (v) => JSON.stringify(v).replace(/</g, '\\u003c'));
 
   // "1 cat" or "12 cats".
   eleventyConfig.addFilter('catCount', (n) => (n === 1 ? '1 cat' : n + ' cats'));

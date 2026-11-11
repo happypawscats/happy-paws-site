@@ -1,52 +1,50 @@
 ---
 layout: base.njk
-title: "Foster a cat"
-description: "Foster a cat with Happy Paws and give a rescue cat a safe, loving place while they wait for a home."
 permalink: "/foster/"
 current: "help"
 appeal: true
 css: []
 js: []
+eleventyComputed:
+  title: "{{ text.foster.meta.title }}"
+  description: "{{ text.foster.meta.description }}"
 ---
 <main id="main">
 <!-- Hero -->
 <section aria-labelledby="pg-h" class="ih">
 <div class="ih-copy pad-l">
-<h1 id="pg-h" class="display" style="color:#1F3158">Foster <br><span style="color:#ED217C">a cat</span></h1>
-<div style="display:flex; flex-direction:column; gap:14px; max-width:520px"><p class="lede" style="">Fostering is the vital stepping stone in our work. It gives our cats the chance to feel safe during what can be a very stressful time for them.</p><p style="margin:0; font-size:17px; line-height:1.7; color:#333333; ">Cats are sensitive creatures and not all settle in the rescue. Foster homes, where they can stay until they find their forever homes, are so important.</p></div>
-<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/foster/apply/" >Apply to foster<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.foster.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:520px"><p class="lede" style="">{{ text.foster.s1.p }}</p><p style="margin:0; font-size:17px; line-height:1.7; color:#333333; ">{{ text.foster.s1.p2 }}</p></div>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-primary" href="/foster/apply/" >{{ text.foster.s1.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div>
-<div class="ih-photo"><figure class="ph " style="height:100%; background:#E4C9BF; position:absolute; inset:0"><img fetchpriority="high" decoding="async" src="/images/cat-tabby-folded-ears.jpg" alt="A brown tabby cat with folded ears and closed eyes, resting against a white cushion" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 55%; display:block"></figure></div>
+<div class="ih-photo"><figure class="ph " style="height:100%; background:#E4C9BF; position:absolute; inset:0"><img fetchpriority="high" decoding="async" src="{{ text.foster.s1.img }}" alt="{{ text.foster.s1.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 55%; display:block"></figure></div>
 </section>
 
 <section aria-labelledby="inv-h" class="sec" style="background:#ffffff; "><div class="wrap"><div class="two-grid">
 <div style="display:flex; flex-direction:column; gap:24px">
-<h2 id="inv-h" class="h2" style="color:#ED217C">What fostering <br>involves</h2>
-<p class="lede" style="max-width:420px">You give a cat a safe, calm place to be themselves while we find their forever home. We are with you at every step.</p>
+<h2 id="inv-h" class="h2" style="color:#ED217C">{{ text.foster.s2.h2 | rich | safe }}</h2>
+<p class="lede" style="max-width:420px">{{ text.foster.s2.p }}</p>
 </div>
 <div style="max-width:680px"><dl class="dl-rules">
-<div class="fact"><dt>How long</dt><dd>[A few weeks to a few months: confirm]</dd></div>
-<div class="fact"><dt>We provide</dt><dd>[Food, litter, vet care and support: confirm]</dd></div>
-<div class="fact"><dt>You provide</dt><dd>[A quiet room, time and kindness]</dd></div>
-<div class="fact"><dt>Who can foster</dt><dd>[Requirements: age, space, other pets, experience]</dd></div>
-<div class="fact"><dt>Where</dt><dd>[Stockton, Birmingham, Banbury and nearby]</dd></div>
+{% for it in text.foster.s2.list %}<div class="fact"><dt>{{ it.dt }}</dt><dd>{{ it.dd }}</dd></div>{% if not loop.last %}
+{% endif %}{% endfor %}
 </dl></div>
 </div></div></section>
 
 <section class="sec sec-t" style="background:#E8EEF7; "><div class="wrap"><div class="qq">
-<blockquote class="big-q" style="margin:0; color:#1F3158; max-width:760px">“The care that the cats have had with their fosterer before reaching us has been super and we were spoilt by regular photos and videos.”</blockquote>
-<p style="margin:0; font-size:16px; line-height:1.6"><strong style="font-weight:700">Lucca Addy</strong><br>Adopted Kitty and Rosie</p>
+<blockquote class="big-q" style="margin:0; color:#1F3158; max-width:760px">{{ text.foster.s3.quote }}</blockquote>
+<p style="margin:0; font-size:16px; line-height:1.6">{{ text.foster.s3.p | rich({strong: {'style': 'font-weight:700' } }) | safe }}</p>
 </div></div></section>
 
 <section id="foster" aria-labelledby="foster-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7; scroll-margin-top:72px"><div class="wrap"><div class="two-f">
 <div style="display:flex; flex-direction:column; gap:28px">
-<h2 id="foster-h" class="h2" style="color:#ffffff">Interested? <br>Let’s talk</h2>
-<p style="margin:0; font-size:18px; line-height:1.7; max-width:440px">If you would like to help us by fostering, please fill in our application. We would love to talk to you.</p>
+<h2 id="foster-h" class="h2" style="color:#ffffff">{{ text.foster.s4.h2 | rich | safe }}</h2>
+<p style="margin:0; font-size:18px; line-height:1.7; max-width:440px">{{ text.foster.s4.p }}</p>
 <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start">
-<a class="btn btn-light" href="/foster/apply/" style="min-height:56px">Apply to foster<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<p style="margin:0; font-size:15px; line-height:1.6; color:#C7D2E6; max-width:440px">Would you rather talk first? <a href="/contact/" style="color:#ffffff; font-weight:500; text-decoration:underline; text-underline-offset:3px">Get in touch</a>.</p>
+<a class="btn btn-light" href="/foster/apply/" style="min-height:56px">{{ text.foster.s4.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<p style="margin:0; font-size:15px; line-height:1.6; color:#C7D2E6; max-width:440px">{{ text.foster.s4.p2 | rich({a: {'style': 'color:#ffffff; font-weight:500; text-decoration:underline; text-underline-offset:3px' } }) | safe }}</p>
 </div>
 </div>
-<div style="max-width:440px"><div class="estep"><span class="estep-n">1</span><span style="font-size:16px; line-height:1.6">You tell us a little about your home.</span></div><div class="estep"><span class="estep-n">2</span><span style="font-size:16px; line-height:1.6">We chat, and [describe the home visit or check].</span></div><div class="estep" style="border-bottom:1px solid rgba(232,238,247,.4)"><span class="estep-n">3</span><span style="font-size:16px; line-height:1.6">You meet your first foster cat.</span></div></div>
+<div style="max-width:440px"><div class="estep"><span class="estep-n">1</span><span style="font-size:16px; line-height:1.6">{{ text.foster.s4.text }}</span></div><div class="estep"><span class="estep-n">2</span><span style="font-size:16px; line-height:1.6">{{ text.foster.s4.text2 }}</span></div><div class="estep" style="border-bottom:1px solid rgba(232,238,247,.4)"><span class="estep-n">3</span><span style="font-size:16px; line-height:1.6">{{ text.foster.s4.text3 }}</span></div></div>
 </div></div></section>
 </main>

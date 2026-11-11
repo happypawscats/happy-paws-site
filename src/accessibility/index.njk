@@ -1,24 +1,31 @@
 ---
 layout: base.njk
-title: "Accessibility statement"
-description: "How easy the Happy Paws Cat Rescue website is to use, and what to do if you have a problem."
 permalink: "/accessibility/"
 current: ""
 appeal: true
 css: ["pages/privacy"]
 js: []
+eleventyComputed:
+  title: "{{ text.accessibility.meta.title }}"
+  description: "{{ text.accessibility.meta.description }}"
 ---
 <main id="main">
 <section aria-labelledby="pg-h" style="background:#E8EEF7">
 <div class="wrap" style="padding-top:72px; padding-bottom:72px">
 <div class="head-grid">
-<h1 id="pg-h" class="display" style="color:#1F3158">Accessibility <br><span style="color:#ED217C">statement</span></h1>
-<div style="display:flex; flex-direction:column; gap:14px; max-width:460px"><p class="lede" style="">How easy this website is to use, and what to do if you have a problem.</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">Last updated: [date]</p></div>
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.accessibility.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:460px"><p class="lede" style="">{{ text.accessibility.s1.p }}</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">{{ text.accessibility.s1.p2 }}</p></div>
 </div>
 </div>
 </section>
 <section class="sec" style="background:#ffffff; padding-top:72px"><div class="wrap"><div class="pol-grid">
-<nav aria-label="On this page"><div class="toc"><a href="#commitment">Our commitment</a><a href="#how">How accessible this website is</a><a href="#feedback">Feedback and contact information</a><a href="#complaints">Making a complaint</a><a href="#statement">About this statement</a></div></nav>
-<div class="pol" style="max-width:720px"><p style="margin:0 0 32px; padding:18px 20px; background:#F5CDD6; color:#333333; font-size:15px; line-height:1.65"><strong style="font-weight:700">Draft outline.</strong> This statement needs to be written once the site has been tested. These are the headings it will cover.</p><section id="commitment"><h2>Our commitment</h2><p>Happy Paws Cat Rescue wants everyone to be able to use this website. [Confirm the standard the site aims to meet, for example WCAG 2.2 level AA.]</p></section><section id="how"><h2>How accessible this website is</h2><p>[Describe how accessible the site is once it has been tested. List any known problems and say when they will be fixed.]</p></section><section id="feedback"><h2>Feedback and contact information</h2><p>If you find something hard to use, or you need information in another format, email <a class="link-u" href="mailto:info@happypawscatrescue.org" style="color:#1F3158; font-weight:500">info@happypawscatrescue.org</a>. [Say how quickly we will reply.]</p></section><section id="complaints"><h2>Making a complaint</h2><p>[Say how to complain, and who to contact if we do not reply.]</p></section><section id="statement"><h2>About this statement</h2><p>[Add the date the statement was written, and how the site was tested.]</p></section></div>
+<nav aria-label="On this page"><div class="toc">{% for s in text.accessibility.sections %}<a href="#{{ s.title | slugify }}">{{ s.title }}</a>{% endfor %}</div></nav>
+<div class="pol" style="max-width:720px">
+{% if text.accessibility.draft %}<p class="draft">{{ text.accessibility.draft | rich({strong: {'style': 'font-weight:700' } }) | safe }}</p>{% endif %}
+
+{% for s in text.accessibility.sections %}<section id="{{ s.title | slugify }}"><h2>{{ s.title }}</h2>
+{{ s.body | markdown({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' }, strong: {'style': 'font-weight:700' } }) | safe }}</section>
+
+{% endfor %}</div>
 </div></div></section>
 </main>

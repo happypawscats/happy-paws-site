@@ -1,12 +1,13 @@
 ---
 layout: base.njk
-title: "Donate to Happy Paws"
-description: "Give a one-off or monthly gift to help Happy Paws rescue, care for and rehome cats in need."
 permalink: "/donate/"
 current: ""
 appeal: false
 css: []
 js: ["giving"]
+eleventyComputed:
+  title: "{{ text.donate.meta.title }}"
+  description: "{{ text.donate.meta.description }}"
 ---
 <main id="main">
 <!-- Donate: intro + form -->
@@ -15,19 +16,18 @@ js: ["giving"]
 <div class="give-grid">
 
 <div class="area-copy" style="display:flex; flex-direction:column; gap:26px">
-<h1 id="give-h" class="display" style="color:#1F3158; font-size:clamp(40px,5.4vw,80px)">Donate to <br>Happy Paws</h1>
-<p class="lede" style="max-width:520px">Every donation brings us one step closer to rescuing and rehabilitating cats in need. Your support helps provide food, shelter and medical care to the most vulnerable.</p>
+<h1 id="give-h" class="display" style="color:#1F3158; font-size:clamp(40px,5.4vw,80px)">{{ text.donate.s1.h1 | rich | safe }}</h1>
+<p class="lede" style="max-width:520px">{{ text.donate.s1.p }}</p>
 </div>
 
 <div class="area-aside" style="max-width:540px">
 <div style="display:flex; align-items:baseline; gap:20px; padding:22px 0; border-top:1px solid #C4CEDD; border-bottom:1px solid #C4CEDD">
-<div style="flex:none; font-size:clamp(44px,5vw,64px); line-height:1; font-weight:500; letter-spacing:-0.03em; color:#ED217C">£200</div>
-<p style="margin:0; font-size:16px; line-height:1.6">is what it costs, on average, to rehome one cat. Cats who need medical attention can cost considerably more.</p>
+<div style="flex:none; font-size:clamp(44px,5vw,64px); line-height:1; font-weight:500; letter-spacing:-0.03em; color:#ED217C">{{ text.donate.s1.text }}</div>
+<p style="margin:0; font-size:16px; line-height:1.6">{{ text.donate.s1.p2 }}</p>
 </div>
 <ul style="list-style:none; margin:0; padding:0">
-<li style="padding:14px 0; border-bottom:1px solid #C4CEDD; font-size:15px; line-height:1.55">Secure payment by card, plus Apple Pay and Google Pay where your device supports them.</li>
-<li style="padding:14px 0; border-bottom:1px solid #C4CEDD; font-size:15px; line-height:1.55">A receipt is emailed to you after your gift.</li>
-<li style="padding:14px 0; border-bottom:1px solid #C4CEDD; font-size:15px; line-height:1.55">Happy Paws is a registered charity run by dedicated volunteers.</li>
+{% for it in text.donate.s1.list %}<li style="padding:14px 0; border-bottom:1px solid #C4CEDD; font-size:15px; line-height:1.55">{{ it.li }}</li>{% if not loop.last %}
+{% endif %}{% endfor %}
 </ul>
 </div>
 
@@ -38,43 +38,43 @@ js: ["giving"]
 <div style="display:flex; gap:6px; margin-bottom:12px" aria-hidden="true">
 <span style="flex:1; height:4px; background:#1F3158"></span><span style="flex:1; height:4px; background:#C4CEDD"></span><span style="flex:1; height:4px; background:#C4CEDD"></span>
 </div>
-<div style="font-size:14px; color:#4F596B; margin-bottom:10px">Step 1 of 3: your gift. Then secure payment, then done.</div>
-<h2 id="form-h" style="font-size:28px; line-height:1.15; letter-spacing:-0.01em">Make a gift</h2>
+<div style="font-size:14px; color:#4F596B; margin-bottom:10px">{{ text.donate.s1.text2 }}</div>
+<h2 id="form-h" style="font-size:28px; line-height:1.15; letter-spacing:-0.01em">{{ text.donate.s1.h2 }}</h2>
 </div>
 
 <div role="group" aria-labelledby="freq-l">
-<div id="freq-l" style="font-size:14px; font-weight:500; color:#4F596B; margin-bottom:10px">How often would you like to give?</div>
+<div id="freq-l" style="font-size:14px; font-weight:500; color:#4F596B; margin-bottom:10px">{{ text.donate.s1.text3 }}</div>
 <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px">
 <button type="button" class="choice" aria-pressed="true" data-freq="monthly" style="padding:14px 16px; min-height:88px; display:flex; flex-direction:column; gap:6px; background:#1F3158;border:1.5px solid #1F3158;color:#E8EEF7">
-<span style="font-size:18px; font-weight:500">Monthly</span>
-<span style="font-size:13px; line-height:1.45; opacity:.85">Regular support helps us plan ahead.</span>
+<span style="font-size:18px; font-weight:500">{{ text.donate.s1.text4 }}</span>
+<span style="font-size:13px; line-height:1.45; opacity:.85">{{ text.donate.s1.text5 }}</span>
 </button>
 <button type="button" class="choice" aria-pressed="false" data-freq="oneoff" style="padding:14px 16px; min-height:88px; display:flex; flex-direction:column; gap:6px; background:#ffffff;border:1.5px solid #76829A;color:#333333">
-<span style="font-size:18px; font-weight:500">One-off</span>
-<span style="font-size:13px; line-height:1.45; opacity:.85">Give once, whenever you like.</span>
+<span style="font-size:18px; font-weight:500">{{ text.donate.s1.text6 }}</span>
+<span style="font-size:13px; line-height:1.45; opacity:.85">{{ text.donate.s1.text7 }}</span>
 </button>
 </div>
 </div>
 
 <div role="radiogroup" aria-labelledby="amt-l">
-<div id="amt-l" style="font-size:14px; font-weight:500; color:#4F596B; margin-bottom:10px">Choose an amount</div>
+<div id="amt-l" style="font-size:14px; font-weight:500; color:#4F596B; margin-bottom:10px">{{ text.donate.s1.text8 }}</div>
 <div data-ladder="" style="display:flex; flex-direction:column; gap:10px">
 
 <button type="button" role="radio" class="choice" aria-checked="false" data-amount="3" style="display:flex; align-items:center; gap:16px; width:100%; padding:12px 16px; min-height:68px; background:#ffffff;border:1.5px solid #76829A;color:#333333">
-<span style="flex:none; min-width:60px; font-size:28px; line-height:1; font-weight:500; letter-spacing:-0.01em" data-row-label="">£3</span>
-<span style="flex:1; min-width:0; font-size:14px; line-height:1.5; font-style:italic;opacity:.85" data-row-impact="">[What £3 a month covers: add a real cost from Happy Paws]</span>
+<span style="flex:none; min-width:60px; font-size:28px; line-height:1; font-weight:500; letter-spacing:-0.01em" data-row-label="">{{ text.donate.s1.text9 }}</span>
+<span style="flex:1; min-width:0; font-size:14px; line-height:1.5; font-style:italic;opacity:.85" data-row-impact="">{{ text.donate.s1.text10 }}</span>
 <span data-row-dot="" style="width:20px;height:20px;flex:none;border-radius:50%;border:2px solid #76829A;background:#ffffff"></span>
 </button>
 
 <button type="button" role="radio" class="choice" aria-checked="true" data-amount="5" style="display:flex; align-items:center; gap:16px; width:100%; padding:12px 16px; min-height:68px; background:#1F3158;border:1.5px solid #1F3158;color:#E8EEF7">
-<span style="flex:none; min-width:60px; font-size:28px; line-height:1; font-weight:500; letter-spacing:-0.01em" data-row-label="">£5</span>
-<span style="flex:1; min-width:0; font-size:14px; line-height:1.5; font-style:italic;opacity:.85" data-row-impact="">[What £5 a month covers: add a real cost from Happy Paws]</span>
+<span style="flex:none; min-width:60px; font-size:28px; line-height:1; font-weight:500; letter-spacing:-0.01em" data-row-label="">{{ text.donate.s1.text11 }}</span>
+<span style="flex:1; min-width:0; font-size:14px; line-height:1.5; font-style:italic;opacity:.85" data-row-impact="">{{ text.donate.s1.text12 }}</span>
 <span data-row-dot="" style="width:20px;height:20px;flex:none;border-radius:50%;border:6px solid #E8EEF7;background:#1F3158"></span>
 </button>
 
 <button type="button" role="radio" class="choice" aria-checked="false" data-amount="10" style="display:flex; align-items:center; gap:16px; width:100%; padding:12px 16px; min-height:68px; background:#ffffff;border:1.5px solid #76829A;color:#333333">
-<span style="flex:none; min-width:60px; font-size:28px; line-height:1; font-weight:500; letter-spacing:-0.01em" data-row-label="">£10</span>
-<span style="flex:1; min-width:0; font-size:14px; line-height:1.5; font-style:italic;opacity:.85" data-row-impact="">[What £10 a month covers: add a real cost from Happy Paws]</span>
+<span style="flex:none; min-width:60px; font-size:28px; line-height:1; font-weight:500; letter-spacing:-0.01em" data-row-label="">{{ text.donate.s1.text13 }}</span>
+<span style="flex:1; min-width:0; font-size:14px; line-height:1.5; font-style:italic;opacity:.85" data-row-impact="">{{ text.donate.s1.text14 }}</span>
 <span data-row-dot="" style="width:20px;height:20px;flex:none;border-radius:50%;border:2px solid #76829A;background:#ffffff"></span>
 </button>
 
@@ -87,25 +87,25 @@ js: ["giving"]
 </div>
 <p id="custom-err" role="alert" hidden="" data-custom-err="" style="margin:8px 0 0; font-size:14px; line-height:1.4; color:#A60E50">Please enter £1 or more.</p>
 </div>
-<p data-monthly-note="" style="margin:12px 0 0; font-size:14px; line-height:1.6; color:#4F596B">Monthly gifts come in set amounts. For any other amount, choose a one-off gift.</p>
+<p data-monthly-note="" style="margin:12px 0 0; font-size:14px; line-height:1.6; color:#4F596B">{{ text.donate.s1.p3 }}</p>
 </div>
 
 <div style="display:flex; flex-direction:column; gap:16px">
 <div aria-live="polite" style="border-top:1px solid #C4CEDD; border-bottom:1px solid #C4CEDD; padding:16px 0; display:flex; align-items:center; justify-content:space-between; gap:16px">
 <div>
-<div style="font-size:14px; font-weight:500">Your gift</div>
-<div style="margin-top:2px; font-size:14px; line-height:1.4; color:#4F596B" data-summary-sub="">Taken every month</div>
+<div style="font-size:14px; font-weight:500">{{ text.donate.s1.text15 }}</div>
+<div style="margin-top:2px; font-size:14px; line-height:1.4; color:#4F596B" data-summary-sub="">{{ text.donate.s1.text16 }}</div>
 </div>
 <div style="text-align:right; white-space:nowrap">
-<div style="font-size:32px; line-height:1.1; font-weight:500; letter-spacing:-0.02em; color:#1F3158" data-summary-amount="">£5</div>
-<div style="font-size:13px; color:#4F596B" data-summary-period="">a month</div>
+<div style="font-size:32px; line-height:1.1; font-weight:500; letter-spacing:-0.02em; color:#1F3158" data-summary-amount="">{{ text.donate.s1.text17 }}</div>
+<div style="font-size:13px; color:#4F596B" data-summary-period="">{{ text.donate.s1.text18 }}</div>
 </div>
 </div>
 <p data-other-note="" hidden="" style="margin:0; font-size:14px; line-height:1.6; color:#4F596B"></p>
-<a class="btn btn-donate btn-block" href="{{ site.donate.links.monthly['5'] or '#top' }}" data-cta="" aria-disabled="false" style="min-height:60px; font-size:19px; "><span data-cta-label="">Give £5 a month</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-<p style="margin:0; font-size:13px; line-height:1.5; color:#4F596B; text-align:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="vertical-align:-3px; margin-right:8px"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>You'll complete your gift on a secure payment page.</p>
+<a class="btn btn-donate btn-block" href="{{ site.donate.links.monthly['5'] or '#top' }}" data-cta="" aria-disabled="false" style="min-height:60px; font-size:19px; "><span data-cta-label="">{{ text.donate.s1.text19 }}</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p style="margin:0; font-size:13px; line-height:1.5; color:#4F596B; text-align:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="vertical-align:-3px; margin-right:8px"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>{{ text.donate.s1.p4 }}</p>
 
-<p style="margin:0; font-size:13px; line-height:1.6; color:#4F596B; border-left:3px solid #CC1264; padding:2px 0 2px 14px">Payments are taken by Stripe, a secure payment provider. Your card details never pass through our website.</p>
+<p style="margin:0; font-size:13px; line-height:1.6; color:#4F596B; border-left:3px solid #CC1264; padding:2px 0 2px 14px">{{ text.donate.s1.p5 }}</p>
 
 </div>
 
@@ -120,25 +120,16 @@ js: ["giving"]
 <section aria-labelledby="goes-h" class="sec" style="background:#ffffff">
 <div class="wrap">
 <div class="two-grid" style="margin-bottom:56px">
-<h2 id="goes-h" class="h2" style="color:#ED217C">Where your <br>donations go</h2>
-<p class="lede" style="max-width:520px; align-self:end">Here is what your support makes possible. [Add a short, honest breakdown of how donations are spent.]</p>
+<h2 id="goes-h" class="h2" style="color:#ED217C">{{ text.donate.s2.h2 | rich | safe }}</h2>
+<p class="lede" style="max-width:520px; align-self:end">{{ text.donate.s2.p }}</p>
 </div>
 <div class="rules">
-<div class="rule-row">
-<h3>Food and everyday care</h3>
-<p>Good food, clean litter and a warm bed for every cat in our care.</p>
-<p class="act" style="font-style:italic; color:#4F596B; font-size:14px">[What £10 pays for: add a real cost]</p>
-</div>
-<div class="rule-row">
-<h3>A safe place to stay</h3>
-<p>Foster homes and shelter give cats somewhere safe to settle while they wait for their forever home.</p>
-<p class="act" style="font-style:italic; color:#4F596B; font-size:14px">[What £25 pays for: add a real cost]</p>
-</div>
-<div class="rule-row">
-<h3>Medical care</h3>
-<p>Vet checks and treatment for cats who arrive in need of medical attention. [Add what is covered.]</p>
-<p class="act" style="font-style:italic; color:#4F596B; font-size:14px">[What £50 pays for: add a real cost]</p>
-</div>
+{% for it in text.donate.s2.list %}<div class="rule-row">
+<h3>{{ it.h3 }}</h3>
+<p>{{ it.p }}</p>
+<p class="act" style="font-style:italic; color:#4F596B; font-size:14px">{{ it.p2 }}</p>
+</div>{% if not loop.last %}
+{% endif %}{% endfor %}
 </div>
 </div>
 </section>
@@ -147,37 +138,37 @@ js: ["giving"]
 <section id="other" aria-labelledby="other-h" class="sec" style="background:#F5CDD6; scroll-margin-top:72px">
 <div class="wrap">
 <div class="two-grid" style="margin-bottom:56px">
-<h2 id="other-h" class="h2" style="color:#1F3158">Other ways <br>to give</h2>
-<p class="lede" style="max-width:520px; align-self:end">Prefer not to give online? There are plenty of other ways to help.</p>
+<h2 id="other-h" class="h2" style="color:#1F3158">{{ text.donate.s3.h2 | rich | safe }}</h2>
+<p class="lede" style="max-width:520px; align-self:end">{{ text.donate.s3.p }}</p>
 </div>
 <div class="rules">
 <div class="rule-row">
-<h3>Bank transfer or standing order</h3>
+<h3>{{ text.donate.s3.h3 }}</h3>
 <div>
-<p style="margin-bottom:14px">Pay straight into our bank account, or set up a regular standing order.</p>
+<p style="margin-bottom:14px">{{ text.donate.s3.p2 }}</p>
 <dl style="margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 18px; font-size:15px; line-height:1.4">
-<dt style="color:#4F596B">Account name</dt><dd style="margin:0; font-style:italic; color:#4F596B">[add]</dd>
-<dt style="color:#4F596B">Sort code</dt><dd style="margin:0; font-style:italic; color:#4F596B">[add]</dd>
-<dt style="color:#4F596B">Account number</dt><dd style="margin:0; font-style:italic; color:#4F596B">[add]</dd>
-<dt style="color:#4F596B">Reference</dt><dd style="margin:0">Your name</dd>
+<dt style="color:#4F596B">{{ text.donate.s3.dt }}</dt><dd style="margin:0; font-style:italic; color:#4F596B">{{ text.donate.s3.dd }}</dd>
+<dt style="color:#4F596B">{{ text.donate.s3.dt2 }}</dt><dd style="margin:0; font-style:italic; color:#4F596B">{{ text.donate.s3.dd2 }}</dd>
+<dt style="color:#4F596B">{{ text.donate.s3.dt3 }}</dt><dd style="margin:0; font-style:italic; color:#4F596B">{{ text.donate.s3.dd3 }}</dd>
+<dt style="color:#4F596B">{{ text.donate.s3.dt4 }}</dt><dd style="margin:0">{{ text.donate.s3.dd4 }}</dd>
 </dl>
 </div>
 <span></span>
 </div>
 <div class="rule-row">
-<h3>Our Amazon wish list</h3>
-<p>We're always in need of supplies. Our wish list makes it easy to donate exactly what we need.</p>
-<a class="link act" href="{{ site.wishlist or "#" }}"{% if not site.wishlist %} data-placeholder="link to add"{% else %} target="_blank" rel="noopener"{% endif %}>Open the wish list<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+<h3>{{ text.donate.s3.h32 }}</h3>
+<p>{{ text.donate.s3.p3 }}</p>
+<a class="link act" href="{{ site.wishlist or "#" }}"{% if not site.wishlist %} data-placeholder="link to add"{% else %} target="_blank" rel="noopener"{% endif %}>{{ text.donate.s3.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
 </div>
 <div class="rule-row">
-<h3>Fundraise for us</h3>
-<p>A cake sale, car boot, quiz night or coffee morning. We'd be overjoyed to hear your idea.</p>
-<a class="link act" href="/ways-to-help/">Fundraising ideas<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<h3>{{ text.donate.s3.h33 }}</h3>
+<p>{{ text.donate.s3.p4 }}</p>
+<a class="link act" href="/ways-to-help/">{{ text.donate.s3.link2 }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 <div class="rule-row">
-<h3>Foster or volunteer</h3>
-<p>Give your time instead. Fostering gives cats a safe place to settle, and our volunteers keep everything running.</p>
-<a class="link act" href="/ways-to-help/">Get involved<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<h3>{{ text.donate.s3.h34 }}</h3>
+<p>{{ text.donate.s3.p5 }}</p>
+<a class="link act" href="/ways-to-help/">{{ text.donate.s3.link3 }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
 </div>
@@ -188,33 +179,19 @@ js: ["giving"]
 <div class="wrap">
 <div class="two-grid">
 <div>
-<h2 id="faq-h" class="h2" style="color:#ED217C; margin-bottom:20px">Questions <br>about giving</h2>
-<p style="margin:0; font-size:17px; line-height:1.6">Can't find what you need? Email us at <a class="link-u" href="mailto:info@happypawscatrescue.org" style="color:#CC1264; font-weight:500">info@happypawscatrescue.org</a>.</p>
+<h2 id="faq-h" class="h2" style="color:#ED217C; margin-bottom:20px">{{ text.donate.s4.h2 | rich | safe }}</h2>
+<p style="margin:0; font-size:17px; line-height:1.6">{{ text.donate.s4.p | rich({a: {'class': 'link-u', 'style': 'color:#CC1264; font-weight:500' } }) | safe }}</p>
 </div>
 <div style="border-top:1px solid #C4CEDD">
-<details class="faq" open="">
-<summary>Is my donation secure?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="chev"><path d="M6 9l6 6 6-6"></path></svg></summary>
-<p class="faq-a">Yes. Your payment is handled by a secure payment provider (Stripe), so your card details never pass through our website.</p>
-</details>
-<details class="faq">
-<summary>Can I change or cancel a monthly gift?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="chev"><path d="M6 9l6 6 6-6"></path></svg></summary>
-<p class="faq-a">Yes. Email us at info@happypawscatrescue.org and we will change or cancel it for you. [Once the Stripe customer portal is switched on, add that donors can also do this themselves from the link in their receipt email.]</p>
-</details>
-<details class="faq">
-<summary>Will I get a receipt?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="chev"><path d="M6 9l6 6 6-6"></path></svg></summary>
-<p class="faq-a">Yes. A receipt is emailed to you after your gift. If it doesn't arrive, check your spam folder or email us.</p>
-</details>
-<details class="faq">
-<summary>Who are Happy Paws?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="chev"><path d="M6 9l6 6 6-6"></path></svg></summary>
-<p class="faq-a">We're a registered charity run by dedicated volunteers, based in Stockton, with foster homes in Birmingham and Banbury too.</p>
-</details>
-<details class="faq">
-<summary>Can I give by bank transfer instead?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="chev"><path d="M6 9l6 6 6-6"></path></svg></summary>
-<p class="faq-a">Yes. You'll find our bank details under <a class="link-u" href="#other" style="color:#CC1264; font-weight:500">Other ways to give</a>.</p>
-</details>
+{% for it in text.donate.s4.list %}<details class="faq"{% if loop.first %} open=""{% endif %}>
+<summary>{{ it.question }}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="chev"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<p class="faq-a">{{ it.answer | rich({a: {'class': 'link-u', 'style': 'color:#CC1264; font-weight:500' } }) | safe }}</p>
+</details>{% if not loop.last %}
+{% endif %}{% endfor %}
 </div>
 </div>
 </div>
 </section>
 
+{% include "giving-text.njk" %}
 </main>

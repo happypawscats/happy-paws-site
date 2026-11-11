@@ -5,12 +5,20 @@
   "description": "Website for Happy Paws Cat Rescue, built with Eleventy",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "sync": "node --env-file=.env scripts/sync-pawlytics.mjs",
+    "sync:explore": "node --env-file=.env scripts/pawlytics-explore.mjs",
+    "test:sync": "node --test scripts/test/pawlytics.test.mjs scripts/test/sync.test.mjs scripts/test/transform.test.mjs",
+    "test:cms": "node --test scripts/test/cms.test.mjs",
+    "cms:local": "npx --yes decap-server@3.11.6",
+    "test": "node --test scripts/test/*.test.mjs"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.8"
+    "@11ty/eleventy": "^3.1.8",
+    "js-yaml": "^4.1.1",
+    "markdown-it": "^14.3.3"
   }
 }

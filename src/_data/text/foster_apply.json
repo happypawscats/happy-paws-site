@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Apply to foster",
+    "description": "Apply to foster a cat with Happy Paws Cat Rescue. Tell us about your home and we will be in touch."
+  },
+  "s1": {
+    "h1": "Apply \n==to foster==",
+    "p": "Tell us a little about your home and we will be in touch. Foster homes give our cats a safe, calm place to wait for their forever home.",
+    "p2": "Want to know more first? [Read about fostering](/foster/) or [ask us a question](/contact/)."
+  },
+  "form": {
+    "intro": "If you would like to help us by fostering, please fill in the form. We would love to talk to you.",
+    "steps": [
+      "You tell us a little about your home.",
+      "We chat, and [describe the home visit or check].",
+      "You meet your first foster cat."
+    ]
+  }
+}

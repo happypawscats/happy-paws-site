@@ -8,7 +8,7 @@ pagination:
 permalink: "/cats/{{ cat.slug }}/"
 eleventyComputed:
   title: "{{ cat.name }}, {{ 'an' if cat.age_band == 'Adult' else 'a' }} {{ cat.age_band | lower }} looking for a home"
-  description: "Meet {{ cat.name }}, {{ 'an' if cat.age_band == 'Adult' else 'a' }} {{ cat.age_band | lower }} looking for a home in {{ cat.area }}. Read their story and apply to adopt."
+  description: "Meet {{ cat.name }}, {{ 'an' if cat.age_band == 'Adult' else 'a' }} {{ cat.age_band | lower }} looking for a home{% if cat.area %} in {{ cat.area }}{% endif %}. Read their story and apply to adopt."
 current: "adopt"
 appeal: true
 css: ["pages/cat"]
@@ -18,7 +18,7 @@ js: []
 <!-- Cat hero -->
 <section aria-labelledby="cat-h" style="background:#ffffff">
 <div class="wrap" style="padding-top:14px; padding-bottom:6px">
-<a class="link" href="/cats/" style="margin-left:-2px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All cats</a>
+<a class="link" href="/cats/" style="margin-left:-2px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M19 12H5M11 6l-6 6 6 6"/></svg>{{ text.cat_page.s1.link }}</a>
 </div>
 <div class="prof-grid">
 <div class="prof-photo-cell">
@@ -28,17 +28,17 @@ js: []
 <h1 id="cat-h" class="display" style="color:#1F3158; font-size:clamp(48px,6.4vw,96px)">{{ cat.name }}</h1>
 <p class="lede" style="max-width:520px; font-size:20px">{{ cat.tagline }}</p>
 <dl class="dl-rules" style="max-width:600px">
-<div class="fact"><dt>Age</dt><dd>{{ cat.age_text }}</dd></div>
-<div class="fact"><dt>Sex</dt><dd>{{ cat.sex }}</dd></div>
-<div class="fact"><dt>Colour</dt><dd>{{ cat.colour }}</dd></div>
-<div class="fact"><dt>Area</dt><dd>{{ cat.area }}</dd></div>
-<div class="fact"><dt>Good with</dt><dd>{{ cat.good_with }}</dd></div>
-<div class="fact"><dt>Health</dt><dd>{{ cat.health }}</dd></div>
-<div class="fact"><dt>Adoption donation</dt><dd>{{ cat.donation }}</dd></div>
+<div class="fact"><dt>{{ text.cat_page.s1.dt }}</dt><dd>{{ cat.age_text }}</dd></div>
+<div class="fact"><dt>{{ text.cat_page.s1.dt2 }}</dt><dd>{{ cat.sex }}</dd></div>
+<div class="fact"><dt>{{ text.cat_page.s1.dt3 }}</dt><dd>{{ cat.colour }}</dd></div>
+{% if cat.area %}<div class="fact"><dt>{{ text.cat_page.s1.dt4 }}</dt><dd>{{ cat.area }}</dd></div>{% endif %}
+<div class="fact"><dt>{{ text.cat_page.s1.dt5 }}</dt><dd>{{ cat.good_with }}</dd></div>
+<div class="fact"><dt>{{ text.cat_page.s1.dt6 }}</dt><dd>{{ cat.health }}</dd></div>
+<div class="fact"><dt>{{ text.cat_page.s1.dt7 }}</dt><dd>{{ cat.donation }}</dd></div>
 </dl>
 <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start">
-<a class="btn btn-primary" href="/apply/?cat={{ cat.name | urlencode }}">Apply to adopt {{ cat.name }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<p style="margin:0; font-size:15px; line-height:1.6; color:#4F596B; max-width:460px">All adoptions are subject to a home check and an adoption donation. <a class="link-u" href="/adopting/" style="color:#1F3158; font-weight:500">See how adoption works</a></p>
+<a class="btn btn-primary" href="/apply/?cat={{ cat.name | urlencode }}">{{ text.cat_page.s1.btn | rich | fill({name: cat.name }) | safe }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<p style="margin:0; font-size:15px; line-height:1.6; color:#4F596B; max-width:460px">{{ text.cat_page.s1.p | rich({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' } }) | safe }}</p>
 </div>
 </div>
 </div>
@@ -48,7 +48,7 @@ js: []
 <section aria-labelledby="story-h" class="sec" style="background:#ffffff; padding-top:96px; padding-bottom:104px">
 <div class="wrap">
 <div class="two-grid" style="margin-bottom:64px">
-<h2 id="story-h" class="h2" style="color:#ED217C">{{ cat.name }}'s <br>story</h2>
+<h2 id="story-h" class="h2" style="color:#ED217C">{{ text.cat_page.s2.h2 | rich | fill({name: cat.name }) | safe }}</h2>
 <div style="display:flex; flex-direction:column; gap:20px; max-width:620px">
 {% for p in cat.story %}<p style="margin:0; font-size:{{ '19px' if loop.first else '17px' }}; line-height:{{ '1.7' if loop.first else '1.75' }}">{{ p }}</p>
 {% endfor %}</div>
@@ -66,17 +66,17 @@ js: []
 <div class="wrap">
 <div class="two-f">
 <div style="display:flex; flex-direction:column; gap:28px">
-<h2 id="ask-h" class="h2" style="color:#ffffff">Apply for <br>{{ cat.name }}</h2>
-<p style="margin:0; font-size:18px; line-height:1.7; max-width:440px">Tell us a little about yourself and the home you could offer. You can ask us a question in the form too. We will reply [within X days].</p>
+<h2 id="ask-h" class="h2" style="color:#ffffff">{{ text.cat_page.s3.h2 | rich | fill({name: cat.name }) | safe }}</h2>
+<p style="margin:0; font-size:18px; line-height:1.7; max-width:440px">{{ text.cat_page.s3.p }}</p>
 <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start">
-<a class="btn btn-light" href="/apply/?cat={{ cat.name | urlencode }}" style="min-height:56px">Apply to adopt {{ cat.name }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<p style="margin:0; font-size:15px; line-height:1.6; color:#C7D2E6; max-width:440px">Would you rather talk first? <a href="/contact/" style="color:#ffffff; font-weight:500; text-decoration:underline; text-underline-offset:3px">Get in touch</a>.</p>
+<a class="btn btn-light" href="/apply/?cat={{ cat.name | urlencode }}" style="min-height:56px">{{ text.cat_page.s3.btn | rich | fill({name: cat.name }) | safe }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<p style="margin:0; font-size:15px; line-height:1.6; color:#C7D2E6; max-width:440px">{{ text.cat_page.s3.p2 | rich({a: {'style': 'color:#ffffff; font-weight:500; text-decoration:underline; text-underline-offset:3px' } }) | safe }}</p>
 </div>
 </div>
 <div style="max-width:440px">
-<div class="estep"><span class="estep-n">1</span><span style="font-size:16px; line-height:1.6">We reply and answer your questions.</span></div>
-<div class="estep"><span class="estep-n">2</span><span style="font-size:16px; line-height:1.6">We chat, and check your home. [Add what this involves.]</span></div>
-<div class="estep" style="border-bottom:1px solid rgba(232,238,247,.4)"><span class="estep-n">3</span><span style="font-size:16px; line-height:1.6">{{ cat.name }} comes home.</span></div>
+<div class="estep"><span class="estep-n">1</span><span style="font-size:16px; line-height:1.6">{{ text.cat_page.s3.text }}</span></div>
+<div class="estep"><span class="estep-n">2</span><span style="font-size:16px; line-height:1.6">{{ text.cat_page.s3.text2 }}</span></div>
+<div class="estep" style="border-bottom:1px solid rgba(232,238,247,.4)"><span class="estep-n">3</span><span style="font-size:16px; line-height:1.6">{{ text.cat_page.s3.text3 | rich | fill({name: cat.name }) | safe }}</span></div>
 </div>
 </div>
 </div>
@@ -86,12 +86,12 @@ js: []
 <section aria-labelledby="more-h" class="sec" style="background:#ffffff; padding-top:96px; padding-bottom:104px">
 <div class="wrap">
 <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 48px; margin-bottom:56px">
-<h2 id="more-h" class="h2" style="color:#ED217C">More cats looking <br>for a home</h2>
-<a class="link" href="/cats/">See all cats<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<h2 id="more-h" class="h2" style="color:#ED217C">{{ text.cat_page.s4.h2 | rich | safe }}</h2>
+<a class="link" href="/cats/">{{ text.cat_page.s4.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
 <div class="cat-grid">
 {% for c in cats | othersThan(cat.slug, 3) %}
-<a class="cat " href="/cats/{{ c.slug }}/" style="display:block; text-decoration:none; color:#333333"><figure class="ph cat-img" style="background:{{ c.bg }}; "><img src="/images/{{ c.photos[0].src }}" alt="{{ c.photos[0].alt }}" loading="lazy" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:{{ c.photos[0].pos }}; display:block"></figure><div class="cat-row"><span class="cat-name">{{ c.name }}</span><span class="cat-meta">{{ c.age_band }} · {{ c.area }}</span></div></a>
+<a class="cat " href="/cats/{{ c.slug }}/" style="display:block; text-decoration:none; color:#333333"><figure class="ph cat-img" style="background:{{ c.bg }}; "><img src="/images/{{ c.photos[0].src }}" alt="{{ c.photos[0].alt }}" loading="lazy" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:{{ c.photos[0].pos }}; display:block"></figure><div class="cat-row"><span class="cat-name">{{ c.name }}</span><span class="cat-meta">{{ c.age_band }}{% if c.area %} · {{ c.area }}{% endif %}</span></div></a>
 {% endfor %}
 </div>
 </div>

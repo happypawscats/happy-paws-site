@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "About Happy Paws",
+    "description": "The story of Happy Paws Cat Rescue, a registered charity run by dedicated volunteers in Stockton, Birmingham and Banbury."
+  },
+  "s1": {
+    "h1": "About \n==Happy Paws==",
+    "p": "Happy Paws Cat Rescue is a registered charity run by dedicated volunteers, looking after cats in Stockton, Birmingham and Banbury.",
+    "btn": "See our cats",
+    "btn2": "Ways to help",
+    "img": "/images/story-woman-with-cat.jpg",
+    "alt": "A woman sitting on a rug holding a dark cat, with a second cat walking along the sofa behind her"
+  },
+  "s2": {
+    "h2": "Our story",
+    "p": "“I’ve had a passion for helping cats all my life. Ever since I was a little girl, I would always try to help cats in need. I always dreamed of opening my own rescue when I got older, and now that dream is a reality.”",
+    "p2": "Katrina, founder",
+    "p3": "Our team is made up of dedicated volunteers who work tirelessly to ensure that every cat in our care receives the love and support they deserve. From rescuing strays to rehabilitating and rehoming them, we are committed to making a difference in the lives of cats in need."
+  },
+  "s3": {
+    "h2": "What we do",
+    "h3": "Rescue",
+    "p": "We take in strays and cats in need. [Add a line on how cats come to us and where.]",
+    "h32": "Rehabilitate",
+    "p2": "We give every cat the care, time and quiet they need to recover. Foster homes are a vital part of this. [Add detail.]",
+    "link": "About fostering",
+    "h33": "Rehome",
+    "p3": "We match each cat with the right family, and stay in touch long after they have gone home.",
+    "link2": "How adoption works"
+  },
+  "s4": {
+    "h2": "Where we are",
+    "h3": "Stockton",
+    "p": "[Area covered, and a line on how we help cats there.]",
+    "h32": "Birmingham",
+    "p2": "[Area covered, and a line on how we help cats there.]",
+    "h33": "Banbury",
+    "p3": "[Area covered, and a line on how we help cats there.]"
+  },
+  "s5": {
+    "h2": "The people \nbehind it",
+    "p": "We are all volunteers, and every one of us is here for the cats.",
+    "list": [
+      {
+        "text": "Photo to come",
+        "p": "Katrina",
+        "p2": "Founder"
+      },
+      {
+        "text": "Photo to come",
+        "p": "Vicki",
+        "p2": "[Role]"
+      },
+      {
+        "text": "Photo to come",
+        "p": "[Name]",
+        "p2": "[Role]"
+      },
+      {
+        "text": "Photo to come",
+        "p": "[Name]",
+        "p2": "[Role]"
+      }
+    ]
+  },
+  "s6": {
+    "h2": "Kind words",
+    "link": "Read more testimonials",
+    "list": [
+      {
+        "quote": "“Katrina works tirelessly to ensure the best for every cat/ kitten that comes into her care.”",
+        "caption": "Maggie Gilchrist"
+      },
+      {
+        "quote": "“Got two lovely little kittens. Communication was amazing from the start and Katrina and Vicki were really helpful.”",
+        "caption": "Corinna Laurie"
+      }
+    ]
+  },
+  "s7": {
+    "p": "A word from our MP",
+    "h2": "Our MP has written to congratulate us",
+    "p2": "Happy Paws was Highly Commended in the BBC Radio Tees Make A Difference Awards, and Chris McDonald MP wrote to thank our volunteers.",
+    "img": "/images/mp-letter.jpg",
+    "alt": "Letter from Chris McDonald MP, Member of Parliament for Stockton North, to Happy Paws Cat Rescue, dated 14 October 2026. It congratulates the rescue on being Highly Commended in the BBC Radio Tees Make A Difference Awards.",
+    "caption": "Letter from Chris McDonald MP\n14 October 2026",
+    "quote": "“…dedication to such a worthwhile cause is absolutely invaluable.”",
+    "p3": "Chris McDonald MP\nMember of Parliament for Stockton North",
+    "link": "Read the full letter== (opens in a new tab)=="
+  }
+}

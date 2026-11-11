@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "News and events",
+    "description": "News and events from Happy Paws Cat Rescue."
+  },
+  "s1": {
+    "h1": "News and \n==events==",
+    "p": "Rescue stories, updates, and the events we are taking part in. Follow us on Facebook to see more.",
+    "link": "Follow us on Facebook"
+  },
+  "s2": {
+    "latest": "Latest",
+    "text": "Read the story"
+  },
+  "s3": {
+    "h2": "Earlier news"
+  },
+  "s4": {
+    "h2": "Where to \nfind us",
+    "p": "We are always holding events to raise awareness of our rescue. These are some of the ones we will be at over the next few months.",
+    "list": [
+      {
+        "text": "[Date]",
+        "text2": "[Event name]",
+        "text3": "[Place · Area]"
+      },
+      {
+        "text": "[Date]",
+        "text2": "[Event name]",
+        "text3": "[Place · Area]"
+      },
+      {
+        "text": "[Date]",
+        "text2": "[Event name]",
+        "text3": "[Place · Area]"
+      }
+    ]
+  }
+}

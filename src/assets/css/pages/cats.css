@@ -34,7 +34,8 @@
 .l-h1{font-size:clamp(34px,4.2vw,56px);line-height:1.06;letter-spacing:-0.02em;color:#1F3158}
 .l-h2{font-size:clamp(26px,2.6vw,36px);line-height:1.15;letter-spacing:-0.015em;color:#1F3158}
 .l-lede{font-size:17px;line-height:1.6;margin:0}
-.l-finder{background:#ffffff;border:1px solid #D8DFEA;border-radius:4px;padding:24px 28px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) auto;gap:20px 40px;align-items:end}
+.l-transport{margin:16px 0 0;padding-left:14px;border-left:3px solid #ED217C;font-size:16px;line-height:1.55;color:#1F3158}
+.l-finder{background:#ffffff;border:1px solid #D8DFEA;border-radius:4px;padding:24px 28px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:end}
 .l-fl{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4F596B;margin-bottom:10px}
 .l-bar{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 40px;margin-bottom:36px}
 .l-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 24px}

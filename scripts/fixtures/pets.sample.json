@@ -1,0 +1,146 @@
+[
+  {
+    "id": "fx-1001",
+    "name": "Poppy",
+    "status": "Adoptable",
+    "sex": "Female",
+    "colours": [
+      "Ginger",
+      "White"
+    ],
+    "dateOfBirth": "2026-06-02",
+    "adoptionFee": 85,
+    "description": "Poppy came to us as a tiny stray. She is playful and loves a lap.\n\nShe would suit a family with other cats.",
+    "goodWith": {
+      "dogs": null,
+      "cats": true,
+      "children": true
+    },
+    "health": {
+      "altered": false,
+      "vaccinated": true,
+      "microchipped": true
+    },
+    "location": "Test Foster One",
+    "photos": [
+      "file:src/images/kitten-ginger-white.jpg"
+    ],
+    "listedAt": "2026-09-20"
+  },
+  {
+    "id": "fx-1002",
+    "name": "Bramble",
+    "status": "Pending adoption",
+    "sex": "Male",
+    "colours": [
+      "Silver",
+      "Tabby"
+    ],
+    "dateOfBirth": "2023-01-10",
+    "adoptionFee": 70,
+    "description": "Bramble is a gentle boy who is happiest in a quiet home.",
+    "goodWith": {
+      "dogs": false,
+      "cats": true,
+      "children": null
+    },
+    "health": {
+      "altered": true,
+      "vaccinated": true,
+      "microchipped": true
+    },
+    "location": "Test Foster Two",
+    "photos": [
+      "file:src/images/kitten-silver-tabby.jpg",
+      "file:src/images/kitten-ginger-white.jpg"
+    ],
+    "listedAt": "2026-08-01"
+  },
+  {
+    "id": "fx-1003",
+    "name": "Old Smokey",
+    "status": "Adoptable",
+    "sex": "Male",
+    "colours": "Grey",
+    "dateOfBirth": "2014-02-20",
+    "adoptionFee": 40,
+    "description": "Smokey is a senior gentleman who wants a warm window seat.",
+    "goodWith": {
+      "dogs": null,
+      "cats": null,
+      "children": null
+    },
+    "health": {
+      "altered": true,
+      "vaccinated": null,
+      "microchipped": true
+    },
+    "location": "test foster three ",
+    "photos": [
+      "file:src/images/kitten-silver-tabby.jpg"
+    ],
+    "listedAt": "2026-07-01"
+  },
+  {
+    "id": "fx-1004",
+    "name": "Mystery",
+    "status": "Adoptable",
+    "sex": "Female",
+    "colours": [],
+    "dateOfBirth": null,
+    "stage": "Baby",
+    "adoptionFee": null,
+    "description": "",
+    "location": "A Foster Nobody Listed",
+    "photos": [
+      "file:src/images/kitten-ginger-white.jpg"
+    ]
+  },
+  {
+    "id": "fx-1005",
+    "name": "Ghost",
+    "status": "In foster",
+    "sex": "Female",
+    "colours": [
+      "Black"
+    ],
+    "dateOfBirth": "2022-05-05",
+    "description": "Not for the site.",
+    "location": "Test Foster One",
+    "photos": [
+      "file:src/images/kitten-ginger-white.jpg"
+    ]
+  },
+  {
+    "id": "fx-1006",
+    "name": "Camera Shy",
+    "status": "Adoptable",
+    "sex": "Male",
+    "colours": [
+      "Black"
+    ],
+    "dateOfBirth": "2021-03-03",
+    "adoptionFee": 60,
+    "description": "No photo yet.",
+    "location": "Test Foster Two",
+    "photos": []
+  },
+  {
+    "id": "fx-1007",
+    "name": "Poppy",
+    "status": "Adoptable",
+    "sex": "Female",
+    "colours": [
+      "Tortoiseshell"
+    ],
+    "dateOfBirth": "2020-09-09",
+    "adoptionFee": 60,
+    "description": "A second cat who is also called Poppy.",
+    "area": "Banbury",
+    "location": "Test Foster Four",
+    "photos": [
+      "file:src/images/kitten-silver-tabby.jpg"
+    ],
+    "listedAt": "2026-05-01"
+  }
+]

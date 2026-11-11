@@ -1,0 +1,2485 @@
+# Settings for the page editor at /admin/. Each file listed below is one JSON file in src/_data/text/,
+# and each field's name must match a key in that file (npm run test:cms checks this).
+# To make more wording editable, add the key to the JSON file and a field here. See README.md, "Editing page wording".
+backend:
+  name: github
+  repo: happypawscats/happy-paws-site
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  auth_scope: public_repo
+local_backend: true
+publish_mode: simple
+editor:
+  preview: false
+media_folder: src/images
+public_folder: /images
+locale: en
+slug:
+  encoding: ascii
+  clean_accents: true
+collections:
+- name: pages
+  label: Pages
+  description: The wording on each page of the website.
+  files:
+  - name: home
+    label: Home
+    file: src/_data/text/home.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Helping cats in need'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Helping cats in need”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Happy Paws Cat Rescue is dedicated to…”'
+        name: p
+        widget: text
+      - label: 'Button: “Meet our cats”'
+        name: btn
+        widget: string
+      - label: 'Button 2: “Donate”'
+        name: btn2
+        widget: string
+      - label: 'Paragraph 2: “All adoptions are subject to a home ch…”'
+        name: p2
+        widget: text
+        hint: Links are written as [words to click](https://address).
+      - label: 'Photo: “A grey cat with amber eyes looking…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 2: Cats looking for a home'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Cats looking for a home”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “These are some of our beautiful cats a…”'
+        name: p
+        widget: text
+      - label: 'Link: “See all cats”'
+        name: link
+        widget: string
+      - label: 'Photo: “A ginger-and-white kitten sitting…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Text: “Cat name”'
+        name: text
+        widget: string
+      - label: 'Text 2: “Age · Area”'
+        name: text2
+        widget: string
+      - label: 'Photo 2: “A fluffy calico cat with green eye…”'
+        name: img2
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers) 2
+        name: alt2
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Text 3: “Cat name”'
+        name: text3
+        widget: string
+      - label: 'Text 4: “Age · Area”'
+        name: text4
+        widget: string
+      - label: 'Text 5: “Also looking for a home”'
+        name: text5
+        widget: string
+      - label: Rows
+        name: list
+        widget: list
+        fields:
+        - label: Text
+          name: text
+          widget: string
+        - label: Text 2
+          name: text2
+          widget: string
+        summary: '{{fields.text}}'
+        allow_add: true
+        label_singular: row
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+    - label: 'Section 3: How adoption works'
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “How adoption works”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Four simple steps from meeting a cat t…”'
+        name: p
+        widget: string
+      - label: 'Button: “Ask about a cat”'
+        name: btn
+        widget: string
+      - label: Steps
+        name: list
+        widget: list
+        fields:
+        - label: Subheading
+          name: h3
+          widget: string
+        - label: Paragraph
+          name: p
+          widget: string
+        summary: '{{fields.h3}}'
+        allow_add: true
+        label_singular: step
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+    - label: 'Section 4: Help us save a life today'
+      name: s4
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Photo: “A black-and-white tuxedo cat sitti…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Heading: “Help us save a life today”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Every donation brings us one step clos…”'
+        name: p
+        widget: text
+      - label: 'Subheading: “Give to Happy Paws”'
+        name: h3
+        widget: string
+      - label: 'Button: “Monthly”'
+        name: button
+        widget: string
+      - label: 'Button 2: “One-off”'
+        name: button2
+        widget: string
+      - label: 'Button 3: “£3”'
+        name: button3
+        widget: string
+      - label: 'Button 4: “£5”'
+        name: button4
+        widget: string
+      - label: 'Button 5: “£10”'
+        name: button5
+        widget: string
+      - label: 'Paragraph 2: “Monthly gifts come in set amounts. For…”'
+        name: p2
+        widget: string
+      - label: 'Text: “What £5 a month covers: add a real cos…”'
+        name: text
+        widget: string
+      - label: 'Text 2: “Give £5 a month”'
+        name: text2
+        widget: string
+      - label: 'Paragraph 3: “You''ll complete your gift on a secure…”'
+        name: p3
+        widget: string
+      - label: 'Paragraph 4: “£200 is what it costs, on average, to…”'
+        name: p4
+        widget: text
+        hint: Links are written as [words to click](https://address). Bold is written as **bold words**.
+    - label: 'Section 5: More ways to help'
+      name: s5
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “More ways to help”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Adoption isn''t the only way to support…”'
+        name: p
+        widget: text
+      - label: 'Subheading: “Foster a cat”'
+        name: h3
+        widget: string
+      - label: 'Paragraph 2: “Fostering is the vital stepping stone…”'
+        name: p2
+        widget: text
+      - label: 'Link: “Find out about fostering”'
+        name: link
+        widget: string
+      - label: 'Subheading 2: “Fundraise for us”'
+        name: h32
+        widget: string
+      - label: 'Paragraph 3: “A cake sale, car boot, quiz night or c…”'
+        name: p3
+        widget: string
+      - label: 'Link 2: “Fundraising ideas”'
+        name: link2
+        widget: string
+      - label: 'Subheading 3: “Our wish list”'
+        name: h33
+        widget: string
+      - label: 'Paragraph 4: “We''re always in need of supplies. Our…”'
+        name: p4
+        widget: text
+      - label: 'Link 3: “Open the wish list”'
+        name: link3
+        widget: string
+      - label: 'Subheading 4: “Volunteer”'
+        name: h34
+        widget: string
+      - label: 'Paragraph 5: “Join our team and make a difference in…”'
+        name: p5
+        widget: string
+      - label: 'Link 4: “Get involved”'
+        name: link4
+        widget: string
+    - label: 'Section 6: Happy Paws Cat Rescue began with a simple '
+      name: s6
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Photo: “A woman sitting on a rug holding a…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Heading: “Happy Paws Cat Rescue began with a sim…”'
+        name: h2
+        widget: text
+      - label: 'Paragraph: “It was founded by Katrina, who has wan…”'
+        name: p
+        widget: text
+      - label: 'Paragraph 2: “Stockton · Birmingham · Banbury”'
+        name: p2
+        widget: string
+      - label: 'Button: “Read our full story”'
+        name: btn
+        widget: string
+    - label: 'Section 7: Being with the this rescue and adopting '
+      name: s7
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Quote: “Being with the this rescue and adoptin…”'
+        name: quote
+        widget: text
+      - label: 'Text: “Kathleen Lily Arnold”'
+        name: text
+        widget: string
+      - label: 'Link: “Read more from our adopters and suppor…”'
+        name: link
+        widget: string
+    - label: 'Section 8: Our MP has written to congratulate us'
+      name: s8
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Paragraph: “A word from our MP”'
+        name: p
+        widget: string
+      - label: 'Heading: “Our MP has written to congratulate us”'
+        name: h2
+        widget: string
+      - label: 'Paragraph 2: “Happy Paws was Highly Commended in the…”'
+        name: p2
+        widget: text
+      - label: 'Photo: “Letter from Chris McDonald MP, Mem…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Caption: “Letter from Chris McDonald MP 14 Octob…”'
+        name: caption
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Quote: ““…dedication to such a worthwhile caus…”'
+        name: quote
+        widget: string
+      - label: 'Paragraph 3: “Chris McDonald MP Member of Parliament…”'
+        name: p3
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Link: “Read the full letter (opens in a new t…”'
+        name: link
+        widget: string
+        hint: Words in ==double equals signs== show in colour.
+    - label: 'Section 9: Stay connected with Happy Paws'
+      name: s9
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Stay connected with Happy Paws”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Join our newsletter to receive heartwa…”'
+        name: p
+        widget: text
+      - label: 'Label: “Email address”'
+        name: label
+        widget: string
+      - label: 'Button: “Sign up”'
+        name: button
+        widget: string
+      - label: 'Paragraph 2: “Short privacy note: how we''ll use your…”'
+        name: p2
+        widget: string
+  - name: about
+    label: About us
+    file: src/_data/text/about.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: About Happy Paws'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “About Happy Paws”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Happy Paws Cat Rescue is a registered…”'
+        name: p
+        widget: text
+      - label: 'Button: “See our cats”'
+        name: btn
+        widget: string
+      - label: 'Button 2: “Ways to help”'
+        name: btn2
+        widget: string
+      - label: 'Photo: “A woman sitting on a rug holding a…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 2: Our story'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Our story”'
+        name: h2
+        widget: string
+      - label: 'Paragraph: ““I’ve had a passion for helping cats a…”'
+        name: p
+        widget: text
+      - label: 'Paragraph 2: “Katrina, founder”'
+        name: p2
+        widget: string
+      - label: 'Paragraph 3: “Our team is made up of dedicated volun…”'
+        name: p3
+        widget: text
+    - label: 'Section 3: What we do'
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “What we do”'
+        name: h2
+        widget: string
+      - label: 'Subheading: “Rescue”'
+        name: h3
+        widget: string
+      - label: 'Paragraph: “We take in strays and cats in need. Ad…”'
+        name: p
+        widget: string
+      - label: 'Subheading 2: “Rehabilitate”'
+        name: h32
+        widget: string
+      - label: 'Paragraph 2: “We give every cat the care, time and q…”'
+        name: p2
+        widget: text
+      - label: 'Link: “About fostering”'
+        name: link
+        widget: string
+      - label: 'Subheading 3: “Rehome”'
+        name: h33
+        widget: string
+      - label: 'Paragraph 3: “We match each cat with the right famil…”'
+        name: p3
+        widget: string
+      - label: 'Link 2: “How adoption works”'
+        name: link2
+        widget: string
+    - label: 'Section 4: Where we are'
+      name: s4
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Where we are”'
+        name: h2
+        widget: string
+      - label: 'Subheading: “Stockton”'
+        name: h3
+        widget: string
+      - label: 'Paragraph: “Area covered, and a line on how we hel…”'
+        name: p
+        widget: string
+      - label: 'Subheading 2: “Birmingham”'
+        name: h32
+        widget: string
+      - label: 'Paragraph 2: “Area covered, and a line on how we hel…”'
+        name: p2
+        widget: string
+      - label: 'Subheading 3: “Banbury”'
+        name: h33
+        widget: string
+      - label: 'Paragraph 3: “Area covered, and a line on how we hel…”'
+        name: p3
+        widget: string
+    - label: 'Section 5: The people behind it'
+      name: s5
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “The people behind it”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “We are all volunteers, and every one o…”'
+        name: p
+        widget: string
+      - label: List
+        name: list
+        widget: list
+        fields:
+        - label: Text
+          name: text
+          widget: string
+        - label: Paragraph
+          name: p
+          widget: string
+        - label: Paragraph 2
+          name: p2
+          widget: string
+        summary: '{{fields.text}}'
+        allow_add: true
+        label_singular: item
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+    - label: 'Section 6: Kind words'
+      name: s6
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Kind words”'
+        name: h2
+        widget: string
+      - label: 'Link: “Read more testimonials”'
+        name: link
+        widget: string
+      - label: Testimonials
+        name: list
+        widget: list
+        fields:
+        - label: Quote
+          name: quote
+          widget: text
+        - label: Caption
+          name: caption
+          widget: string
+        summary: '{{fields.quote}}'
+        allow_add: true
+        label_singular: testimonial
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+    - label: 'Section 7: Our MP has written to congratulate us'
+      name: s7
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Paragraph: “A word from our MP”'
+        name: p
+        widget: string
+      - label: 'Heading: “Our MP has written to congratulate us”'
+        name: h2
+        widget: string
+      - label: 'Paragraph 2: “Happy Paws was Highly Commended in the…”'
+        name: p2
+        widget: text
+      - label: 'Photo: “Letter from Chris McDonald MP, Mem…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Caption: “Letter from Chris McDonald MP 14 Octob…”'
+        name: caption
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Quote: ““…dedication to such a worthwhile caus…”'
+        name: quote
+        widget: string
+      - label: 'Paragraph 3: “Chris McDonald MP Member of Parliament…”'
+        name: p3
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Link: “Read the full letter (opens in a new t…”'
+        name: link
+        widget: string
+        hint: Words in ==double equals signs== show in colour.
+  - name: adopting
+    label: How adoption works
+    file: src/_data/text/adopting.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: How adoption works'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “How adoption works”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Every cat in our care is looked after…”'
+        name: p
+        widget: text
+      - label: 'Paragraph 2: “All adoptions are subject to a home ch…”'
+        name: p2
+        widget: string
+      - label: 'Button: “See our cats”'
+        name: btn
+        widget: string
+      - label: 'Button 2: “Ask us a question”'
+        name: btn2
+        widget: string
+      - label: 'Photo: “A woman sitting on a rug holding a…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 2: Five steps to a new family member'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Five steps to a new family member”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “We take our time to match every cat wi…”'
+        name: p
+        widget: string
+      - label: 'Subheading: “Choose a cat”'
+        name: h3
+        widget: string
+      - label: 'Paragraph 2: “Browse our cats and kittens. When some…”'
+        name: p2
+        widget: text
+      - label: 'Link: “See our cats”'
+        name: link
+        widget: string
+      - label: 'Subheading 2: “Apply to adopt”'
+        name: h32
+        widget: string
+      - label: 'Paragraph 3: “Use the Apply button on the cat''s page…”'
+        name: p3
+        widget: text
+      - label: 'Subheading 3: “Chat with us”'
+        name: h33
+        widget: string
+      - label: 'Paragraph 4: “We get to know you and the kind of cat…”'
+        name: p4
+        widget: text
+      - label: 'Subheading 4: “Home check”'
+        name: h34
+        widget: string
+      - label: 'Paragraph 5: “Every adoption is subject to a home ch…”'
+        name: p5
+        widget: text
+      - label: 'Subheading 5: “Welcome them home”'
+        name: h35
+        widget: string
+      - label: 'Paragraph 6: “Once the home check is approved and th…”'
+        name: p6
+        widget: text
+    - label: 'Section 3: The adoption donation'
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “The adoption donation”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Every adoption comes with an adoption…”'
+        name: p
+        widget: text
+      - label: Facts
+        name: list
+        widget: list
+        fields:
+        - label: Label
+          name: dt
+          widget: string
+        - label: Text
+          name: dd
+          widget: string
+        summary: '{{fields.dt}}'
+        allow_add: true
+        label_singular: fact
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+      - label: 'Paragraph 2: “How we take the payment: method. Add r…”'
+        name: p2
+        widget: string
+    - label: 'Section 4: “Throughout this process, we were never '
+      name: s4
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Quote: ““Throughout this process, we were neve…”'
+        name: quote
+        widget: text
+      - label: 'Paragraph: “Lucca Addy Adopted Kitty and Rosie”'
+        name: p
+        widget: text
+        hint: Bold is written as **bold words**. A new line starts a new line on the page.
+      - label: 'Link: “Read more kind words”'
+        name: link
+        widget: string
+    - label: 'Section 5: Questions you might have'
+      name: s5
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Questions you might have”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: Questions and answers
+        name: list
+        widget: list
+        fields:
+        - label: Question
+          name: question
+          widget: string
+        - label: Answer
+          name: answer
+          widget: string
+        summary: '{{fields.question}}'
+        allow_add: true
+        label_singular: question
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+    - label: 'Section 6: Ready to meet your cat?'
+      name: s6
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Ready to meet your cat?”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Browse the cats and kittens looking fo…”'
+        name: p
+        widget: text
+      - label: 'Button: “See our cats”'
+        name: btn
+        widget: string
+      - label: 'Button 2: “Contact us”'
+        name: btn2
+        widget: string
+  - name: cats
+    label: Cats list page
+    file: src/_data/text/cats.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: Introduction and cat finder
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Cats looking for a home”'
+        name: h1
+        widget: string
+      - label: 'Paragraph: “Cats and kittens looking for a home in…”'
+        name: p
+        widget: text
+      - label: 'Line under the paragraph: “Not near us? We can transport a cat anywhere for the right home.”'
+        name: transport
+        widget: text
+        hint: Bold is written as **bold words**.
+      - label: 'Text 2: “Age”'
+        name: text2
+        widget: string
+      - label: 'Button 5: “Any”'
+        name: button5
+        widget: string
+      - label: 'Button 6: “Kitten”'
+        name: button6
+        widget: string
+      - label: 'Button 7: “Adult”'
+        name: button7
+        widget: string
+      - label: 'Button 8: “Senior”'
+        name: button8
+        widget: string
+      - label: 'Paragraph 2: “All adoptions are subject to a home ch…”'
+        name: p2
+        widget: text
+        hint: Links are written as [words to click](https://address).
+    - label: Cat grid
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Text: “Reserved”'
+        name: text
+        widget: string
+      - label: 'Text 2: “Can''t see the right cat?”'
+        name: text2
+        widget: string
+      - label: 'Button: “Tell us what you''re looking for”'
+        name: btn
+        widget: string
+      - label: 'Text 3: “or sign up for updates when someone ne…”'
+        name: text3
+        widget: text
+        hint: Links are written as [words to click](https://address).
+    - label: How adopting works (strip at the bottom)
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Adopting from Happy Paws”'
+        name: h2
+        widget: string
+      - label: 'Paragraph: “Four steps from meeting a cat to bring…”'
+        name: p
+        widget: text
+      - label: Steps
+        name: list
+        widget: list
+        fields:
+        - label: Subheading
+          name: h3
+          widget: string
+        - label: Paragraph
+          name: p
+          widget: string
+        - label: Paragraph 2
+          name: p2
+          widget: string
+        summary: '{{fields.h3}}'
+        allow_add: true
+        label_singular: step
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+      - label: 'Button: “Read the full guide”'
+        name: btn
+        widget: string
+  - name: apply
+    label: Apply to adopt page
+    file: src/_data/text/apply.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Apply to adopt'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Apply to adopt”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Tell us a little about yourself and th…”'
+        name: p
+        widget: text
+      - label: 'Paragraph 2: “We usually reply within X days. Not su…”'
+        name: p2
+        widget: text
+        hint: Links are written as [words to click](https://address).
+    - label: 'The form section: introduction and steps'
+      name: form
+      widget: object
+      collapsed: true
+      fields:
+      - label: Introduction
+        name: intro
+        widget: text
+      - label: Three steps
+        name: steps
+        widget: list
+        field:
+          label: Step
+          name: step
+          widget: string
+        min: 3
+        max: 3
+        collapsed: false
+        label_singular: step
+        hint: Three short lines, in order.
+  - name: foster
+    label: Foster a cat
+    file: src/_data/text/foster.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Foster a cat'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Foster a cat”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Fostering is the vital stepping stone…”'
+        name: p
+        widget: text
+      - label: 'Paragraph 2: “Cats are sensitive creatures and not a…”'
+        name: p2
+        widget: text
+      - label: 'Button: “Apply to foster”'
+        name: btn
+        widget: string
+      - label: 'Photo: “A brown tabby cat with folded ears…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 2: What fostering involves'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “What fostering involves”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “You give a cat a safe, calm place to b…”'
+        name: p
+        widget: text
+      - label: Facts
+        name: list
+        widget: list
+        fields:
+        - label: Label
+          name: dt
+          widget: string
+        - label: Text
+          name: dd
+          widget: string
+        summary: '{{fields.dt}}'
+        allow_add: true
+        label_singular: fact
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+    - label: 'Section 3: “The care that the cats have had with th'
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Quote: ““The care that the cats have had with…”'
+        name: quote
+        widget: text
+      - label: 'Paragraph: “Lucca Addy Adopted Kitty and Rosie”'
+        name: p
+        widget: text
+        hint: Bold is written as **bold words**. A new line starts a new line on the page.
+    - label: 'Section 4: Interested? Let’s talk'
+      name: s4
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Interested? Let’s talk”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “If you would like to help us by foster…”'
+        name: p
+        widget: text
+      - label: 'Button: “Apply to foster”'
+        name: btn
+        widget: string
+      - label: 'Paragraph 2: “Would you rather talk first? Get in to…”'
+        name: p2
+        widget: string
+        hint: Links are written as [words to click](https://address).
+      - label: 'Text: “You tell us a little about your home.”'
+        name: text
+        widget: string
+      - label: 'Text 2: “We chat, and describe the home visit o…”'
+        name: text2
+        widget: string
+      - label: 'Text 3: “You meet your first foster cat.”'
+        name: text3
+        widget: string
+  - name: foster_apply
+    label: Apply to foster page
+    file: src/_data/text/foster_apply.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Apply to foster'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Apply to foster”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Tell us a little about your home and w…”'
+        name: p
+        widget: text
+      - label: 'Paragraph 2: “Want to know more first? Read about fo…”'
+        name: p2
+        widget: text
+        hint: Links are written as [words to click](https://address).
+    - label: 'The form section: introduction and steps'
+      name: form
+      widget: object
+      collapsed: true
+      fields:
+      - label: Introduction
+        name: intro
+        widget: text
+      - label: Three steps
+        name: steps
+        widget: list
+        field:
+          label: Step
+          name: step
+          widget: string
+        min: 3
+        max: 3
+        collapsed: false
+        label_singular: step
+        hint: Three short lines, in order.
+  - name: ways_to_help
+    label: Ways to help
+    file: src/_data/text/ways_to_help.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Ways to help'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Ways to help”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Adoption isn’t the only way you can su…”'
+        name: p
+        widget: string
+      - label: 'Paragraph 2: “If you would like to help us but are n…”'
+        name: p2
+        widget: text
+      - label: 'Button: “Donate”'
+        name: btn
+        widget: string
+      - label: 'Button 2: “Foster a cat”'
+        name: btn2
+        widget: string
+      - label: 'Photo: “A black-and-white tuxedo cat sitti…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 2: Four ways to give'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Four ways to give”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Subheading: “Donate”'
+        name: h3
+        widget: string
+      - label: 'Paragraph: “It costs, on average, £200 to rehome a…”'
+        name: p
+        widget: text
+      - label: 'Button: “Donate”'
+        name: btn
+        widget: string
+      - label: 'Subheading 2: “Foster”'
+        name: h32
+        widget: string
+      - label: 'Paragraph 2: “Fostering is the vital stepping stone…”'
+        name: p2
+        widget: text
+      - label: 'Link: “About fostering”'
+        name: link
+        widget: string
+      - label: 'Subheading 3: “Fundraise”'
+        name: h33
+        widget: string
+      - label: 'Paragraph 3: “As a registered charity we rely on fun…”'
+        name: p3
+        widget: text
+      - label: 'Link 2: “Talk to us”'
+        name: link2
+        widget: string
+      - label: 'Subheading 4: “Wish list”'
+        name: h34
+        widget: string
+      - label: 'Paragraph 4: “We are always in need of supplies, so…”'
+        name: p4
+        widget: text
+      - label: 'Link 3: “Open our Wish List”'
+        name: link3
+        widget: string
+    - label: 'Section 3: £200 is what it costs us, on average, to r'
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “£200 is what it costs us, on average,…”'
+        name: h2
+        widget: string
+        hint: Words in ==double equals signs== show in colour.
+      - label: 'Paragraph: “If a cat needs medical attention, it c…”'
+        name: p
+        widget: text
+      - label: 'Button: “Donate now”'
+        name: btn
+        widget: string
+  - name: donate
+    label: Donate
+    file: src/_data/text/donate.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Donate to Happy Paws'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Donate to Happy Paws”'
+        name: h1
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Every donation brings us one step clos…”'
+        name: p
+        widget: text
+      - label: 'Text: “£200”'
+        name: text
+        widget: string
+      - label: 'Paragraph 2: “is what it costs, on average, to rehom…”'
+        name: p2
+        widget: text
+      - label: List
+        name: list
+        widget: list
+        fields:
+        - label: List item
+          name: li
+          widget: string
+        summary: '{{fields.li}}'
+        allow_add: true
+        label_singular: item
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+      - label: 'Text 2: “Step 1 of 3: your gift. Then secure pa…”'
+        name: text2
+        widget: string
+      - label: 'Heading: “Make a gift”'
+        name: h2
+        widget: string
+      - label: 'Text 3: “How often would you like to give?”'
+        name: text3
+        widget: string
+      - label: 'Text 4: “Monthly”'
+        name: text4
+        widget: string
+      - label: 'Text 5: “Regular support helps us plan ahead.”'
+        name: text5
+        widget: string
+      - label: 'Text 6: “One-off”'
+        name: text6
+        widget: string
+      - label: 'Text 7: “Give once, whenever you like.”'
+        name: text7
+        widget: string
+      - label: 'Text 8: “Choose an amount”'
+        name: text8
+        widget: string
+      - label: 'Text 9: “£3”'
+        name: text9
+        widget: string
+      - label: 'Text 10: “What £3 a month covers: add a real cos…”'
+        name: text10
+        widget: string
+      - label: 'Text 11: “£5”'
+        name: text11
+        widget: string
+      - label: 'Text 12: “What £5 a month covers: add a real cos…”'
+        name: text12
+        widget: string
+      - label: 'Text 13: “£10”'
+        name: text13
+        widget: string
+      - label: 'Text 14: “What £10 a month covers: add a real co…”'
+        name: text14
+        widget: string
+      - label: 'Paragraph 3: “Monthly gifts come in set amounts. For…”'
+        name: p3
+        widget: string
+      - label: 'Text 15: “Your gift”'
+        name: text15
+        widget: string
+      - label: 'Text 16: “Taken every month”'
+        name: text16
+        widget: string
+      - label: 'Text 17: “£5”'
+        name: text17
+        widget: string
+      - label: 'Text 18: “a month”'
+        name: text18
+        widget: string
+      - label: 'Text 19: “Give £5 a month”'
+        name: text19
+        widget: string
+      - label: 'Paragraph 4: “You''ll complete your gift on a secure…”'
+        name: p4
+        widget: string
+      - label: 'Paragraph 5: “Payments are taken by Stripe, a secure…”'
+        name: p5
+        widget: text
+    - label: 'Section 2: Where your donations go'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Where your donations go”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Here is what your support makes possib…”'
+        name: p
+        widget: text
+      - label: Rows
+        name: list
+        widget: list
+        fields:
+        - label: Subheading
+          name: h3
+          widget: string
+        - label: Paragraph
+          name: p
+          widget: string
+        - label: Paragraph 2
+          name: p2
+          widget: string
+        summary: '{{fields.h3}}'
+        allow_add: true
+        label_singular: row
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+    - label: 'Section 3: Other ways to give'
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Other ways to give”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Prefer not to give online? There are p…”'
+        name: p
+        widget: string
+      - label: 'Subheading: “Bank transfer or standing order”'
+        name: h3
+        widget: string
+      - label: 'Paragraph 2: “Pay straight into our bank account, or…”'
+        name: p2
+        widget: string
+      - label: 'Label: “Account name”'
+        name: dt
+        widget: string
+      - label: 'Text: “add”'
+        name: dd
+        widget: string
+      - label: 'Label 2: “Sort code”'
+        name: dt2
+        widget: string
+      - label: 'Text 2: “add”'
+        name: dd2
+        widget: string
+      - label: 'Label 3: “Account number”'
+        name: dt3
+        widget: string
+      - label: 'Text 3: “add”'
+        name: dd3
+        widget: string
+      - label: 'Label 4: “Reference”'
+        name: dt4
+        widget: string
+      - label: 'Text 4: “Your name”'
+        name: dd4
+        widget: string
+      - label: 'Subheading 2: “Our Amazon wish list”'
+        name: h32
+        widget: string
+      - label: 'Paragraph 3: “We''re always in need of supplies. Our…”'
+        name: p3
+        widget: text
+      - label: 'Link: “Open the wish list”'
+        name: link
+        widget: string
+      - label: 'Subheading 3: “Fundraise for us”'
+        name: h33
+        widget: string
+      - label: 'Paragraph 4: “A cake sale, car boot, quiz night or c…”'
+        name: p4
+        widget: string
+      - label: 'Link 2: “Fundraising ideas”'
+        name: link2
+        widget: string
+      - label: 'Subheading 4: “Foster or volunteer”'
+        name: h34
+        widget: string
+      - label: 'Paragraph 5: “Give your time instead. Fostering give…”'
+        name: p5
+        widget: text
+      - label: 'Link 3: “Get involved”'
+        name: link3
+        widget: string
+    - label: 'Section 4: Questions about giving'
+      name: s4
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Questions about giving”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Can''t find what you need? Email us at…”'
+        name: p
+        widget: text
+        hint: Links are written as [words to click](https://address).
+      - label: Questions and answers
+        name: list
+        widget: list
+        fields:
+        - label: Question
+          name: question
+          widget: string
+        - label: Answer
+          name: answer
+          widget: text
+        summary: '{{fields.question}}'
+        allow_add: true
+        label_singular: question
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+  - name: thank_you
+    label: Thank you (after a gift)
+    file: src/_data/text/thank_you.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Thank you for helping cats in need'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Thank you for helping cats in need”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Your gift of £5 a month means we can k…”'
+        name: p
+        widget: text
+        hint: Bold is written as **bold words**.
+      - label: 'Paragraph 2: “A receipt is on its way to your inbox.”'
+        name: p2
+        widget: string
+      - label: 'Button: “Meet our cats”'
+        name: btn
+        widget: string
+      - label: 'Button 2: “Back to the homepage”'
+        name: btn2
+        widget: string
+      - label: 'Photo: “A ginger kitten nestled in a soft…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 2: Three more ways to help'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Three more ways to help”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “Your gift matters. If you''d like to do…”'
+        name: p
+        widget: string
+      - label: 'Subheading: “Spread the word”'
+        name: h3
+        widget: string
+      - label: 'Paragraph 2: “Tell your friends and family about Hap…”'
+        name: p2
+        widget: string
+      - label: 'Button: “Facebook”'
+        name: btn
+        widget: string
+      - label: 'Button 2: “WhatsApp”'
+        name: btn2
+        widget: string
+      - label: 'Subheading 2: “Stay in the loop”'
+        name: h32
+        widget: string
+      - label: 'Paragraph 3: “Get rescue stories and adoption update…”'
+        name: p3
+        widget: text
+      - label: 'Label: “Email address”'
+        name: label
+        widget: string
+      - label: 'Button: “Sign up”'
+        name: button
+        widget: string
+      - label: 'Subheading 3: “Fundraise for us”'
+        name: h33
+        widget: string
+      - label: 'Paragraph 4: “A cake sale, car boot, quiz night or c…”'
+        name: p4
+        widget: string
+      - label: 'Link: “Fundraising ideas”'
+        name: link
+        widget: string
+  - name: testimonials
+    label: Testimonials
+    file: src/_data/text/testimonials.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Kind words from adopters'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Kind words from adopters”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “These are some of the lovely comments…”'
+        name: p
+        widget: string
+      - label: 'Button: “See our cats”'
+        name: btn
+        widget: string
+      - label: 'Photo: “A silver tabby kitten with folded…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 2: “What an AMAZING experience from start t'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Quote: ““What an AMAZING experience from start…”'
+        name: quote
+        widget: text
+      - label: 'Paragraph: “Megan Sobotowska Adopted two kittens”'
+        name: p
+        widget: text
+        hint: Bold is written as **bold words**. A new line starts a new line on the page.
+      - label: 'Paragraph 2: ““Every question I have asked has been…”'
+        name: p2
+        widget: text
+    - label: 'Section 3: “Throughout this process, we were never '
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: Testimonials
+        name: list
+        widget: list
+        fields:
+        - label: Quote
+          name: quote
+          widget: text
+        - label: Caption
+          name: caption
+          widget: string
+        summary: '{{fields.quote}}'
+        allow_add: true
+        label_singular: testimonial
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+    - label: 'Section 4: Adopted from us?'
+      name: s4
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Adopted from us?”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “We love hearing how our cats are getti…”'
+        name: p
+        widget: text
+      - label: 'Button: “Share your story”'
+        name: btn
+        widget: string
+      - label: 'Button 2: “See our cats”'
+        name: btn2
+        widget: string
+  - name: news
+    label: News and events page
+    file: src/_data/text/news.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: News and events'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “News and events”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Rescue stories, updates, and the event…”'
+        name: p
+        widget: text
+      - label: 'Link: “Follow us on Facebook”'
+        name: link
+        widget: string
+    - label: 'Section 2: Latest story box (the story itself is written under News stories)'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: Word before the date
+        name: latest
+        widget: string
+      - label: Link wording
+        name: text
+        widget: string
+    - label: 'Section 3: Earlier news heading (the stories are listed automatically)'
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: Heading
+        name: h2
+        widget: string
+    - label: 'Section 4: Where to find us'
+      name: s4
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Where to find us”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “We are always holding events to raise…”'
+        name: p
+        widget: text
+      - label: Events
+        name: list
+        widget: list
+        fields:
+        - label: Text
+          name: text
+          widget: string
+        - label: Text 2
+          name: text2
+          widget: string
+        - label: Text 3
+          name: text3
+          widget: string
+        summary: '{{fields.text}}'
+        allow_add: true
+        label_singular: event
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+  - name: contact
+    label: Contact
+    file: src/_data/text/contact.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Say hello'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Say hello”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “We love to hear from our wonderful sup…”'
+        name: p
+        widget: text
+      - label: 'Paragraph 2: “We usually reply within X days.”'
+        name: p2
+        widget: string
+    - label: The contact form and contact details
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Label: “First name”'
+        name: label
+        widget: string
+      - label: 'Label 2: “Last name”'
+        name: label2
+        widget: string
+      - label: 'Label 3: “Email”'
+        name: label3
+        widget: string
+      - label: 'Label 4: “Phone (optional)”'
+        name: label4
+        widget: string
+      - label: 'Label 5: “What would you like to talk about?”'
+        name: label5
+        widget: string
+      - label: 'Option: “Choose a topic”'
+        name: option
+        widget: string
+      - label: 'Option 2: “Adopting a cat”'
+        name: option2
+        widget: string
+      - label: 'Option 3: “Fostering”'
+        name: option3
+        widget: string
+      - label: 'Option 4: “Fundraising or donating”'
+        name: option4
+        widget: string
+      - label: 'Option 5: “Something else”'
+        name: option5
+        widget: string
+      - label: 'Label 6: “Name of the cat (if you are asking abo…”'
+        name: label6
+        widget: string
+      - label: 'Text: “This helps us pass your message to the…”'
+        name: text
+        widget: string
+      - label: 'Label 7: “Tell us a little about yourself, and t…”'
+        name: label7
+        widget: text
+      - label: 'Text 2: “I would like to receive the Happy Paws…”'
+        name: text2
+        widget: string
+      - label: 'Button: “Send message”'
+        name: button
+        widget: string
+      - label: 'Paragraph: “We use your details only to reply to y…”'
+        name: p
+        widget: text
+        hint: Links are written as [words to click](https://address).
+      - label: 'Label: “Email”'
+        name: dt
+        widget: string
+      - label: 'Link: “info@happypawscatrescue.org”'
+        name: link
+        widget: string
+      - label: 'Label 2: “Stockton”'
+        name: dt2
+        widget: string
+      - label: 'Text: “Area covered”'
+        name: dd
+        widget: string
+      - label: 'Label 3: “Birmingham”'
+        name: dt3
+        widget: string
+      - label: 'Text 2: “Area covered”'
+        name: dd2
+        widget: string
+      - label: 'Label 4: “Banbury”'
+        name: dt4
+        widget: string
+      - label: 'Text 3: “Area covered”'
+        name: dd3
+        widget: string
+      - label: 'Label 5: “Follow us”'
+        name: dt5
+        widget: string
+      - label: 'Text 4: “Facebook add link Instagram add link T…”'
+        name: dd4
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Photo: “A black cat with amber eyes lookin…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 3: Before you get in touch'
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Before you get in touch”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: Questions and answers
+        name: list
+        widget: list
+        fields:
+        - label: Question
+          name: question
+          widget: string
+        - label: Answer
+          name: answer
+          widget: text
+          hint: Links are written as [words to click](https://address).
+        summary: '{{fields.question}}'
+        allow_add: true
+        label_singular: question
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+  - name: enquiry_sent
+    label: Message sent (after the contact form)
+    file: src/_data/text/enquiry_sent.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Thank you, [First name]'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Thank you, First name”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “We have your message and will reply to…”'
+        name: p
+        widget: string
+      - label: 'Paragraph 2: “Here is what happens next.”'
+        name: p2
+        widget: string
+      - label: 'Photo: “A silver tabby kitten with folded…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 2: What happens next'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “What happens next”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: Steps
+        name: list
+        widget: list
+        fields:
+        - label: Subheading
+          name: h3
+          widget: string
+        - label: Paragraph
+          name: p
+          widget: string
+        summary: '{{fields.h3}}'
+        allow_add: true
+        label_singular: step
+        hint: 'Use the Add button to add another, drag the two short lines at the top of an item to reorder, and the × to remove one. The page lays them out for you.'
+    - label: 'Section 3: While you wait'
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “While you wait”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Link: “Meet more cats”'
+        name: link
+        widget: string
+      - label: 'Link 2: “How adoption works”'
+        name: link2
+        widget: string
+      - label: 'Link 3: “Follow us on Facebook”'
+        name: link3
+        widget: string
+  - name: not_found
+    label: Page not found (404)
+    file: src/_data/text/not_found.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: We can’t find that page'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “We can’t find that page”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “Error 404”'
+        name: p
+        widget: string
+      - label: 'Paragraph 2: “The page may have moved, or the addres…”'
+        name: p2
+        widget: text
+      - label: 'Photo: “A black cat with amber eyes lookin…”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+    - label: 'Section 2: Try one of these'
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Try one of these”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Link: “Our cats”'
+        name: link
+        widget: string
+      - label: 'Link 2: “How adoption works”'
+        name: link2
+        widget: string
+      - label: 'Link 3: “Ways to help”'
+        name: link3
+        widget: string
+      - label: 'Link 4: “Contact us”'
+        name: link4
+        widget: string
+- name: shared
+  label: Menu, footer and shared wording
+  description: Wording that appears on many pages or is part of every page.
+  files:
+  - name: header
+    label: Top bar and menu
+    file: src/_data/text/header.json
+    fields:
+    - label: Appeal bar at the very top
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Text: “Our rescue is in crisis. We''re low on…”'
+        name: text
+        widget: text
+        hint: Bold is written as **bold words**.
+      - label: 'Link: “Donate now”'
+        name: link
+        widget: string
+      - label: 'Text 2: “Registered charity no. 1220228”'
+        name: text2
+        widget: string
+    - label: Header and menu
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Photo: “Happy Paws Cat Rescue”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Text: “Registered charity no. 1220228”'
+        name: text
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Link: “Adopt a cat”'
+        name: link
+        widget: string
+      - label: 'Link 2: “Ways to help”'
+        name: link2
+        widget: string
+      - label: 'Link 3: “About us”'
+        name: link3
+        widget: string
+      - label: 'Link 4: “Contact”'
+        name: link4
+        widget: string
+      - label: 'Button: “Donate”'
+        name: btn
+        widget: string
+  - name: footer
+    label: Footer
+    file: src/_data/text/footer.json
+    fields:
+    - label: Footer
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Photo: “Happy Paws Cat Rescue”'
+        name: img
+        widget: image
+        choose_url: false
+        hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+      - label: Photo description (for screen readers)
+        name: alt
+        widget: text
+        hint: Describe the photo in one short sentence, for people who cannot see it.
+      - label: 'Paragraph: “Happy Paws Cat Rescue is a registered…”'
+        name: p
+        widget: string
+      - label: 'Link: “info@happypawscatrescue.org”'
+        name: link
+        widget: string
+      - label: 'Text: “Adopt”'
+        name: text
+        widget: string
+      - label: 'Link 2: “Our cats”'
+        name: link2
+        widget: string
+      - label: 'Link 3: “How adoption works”'
+        name: link3
+        widget: string
+      - label: 'Link 4: “Ask about a cat”'
+        name: link4
+        widget: string
+      - label: 'Text 2: “Support us”'
+        name: text2
+        widget: string
+      - label: 'Link 5: “Donate”'
+        name: link5
+        widget: string
+      - label: 'Link 6: “Other ways to give”'
+        name: link6
+        widget: string
+      - label: 'Link 7: “Foster a cat”'
+        name: link7
+        widget: string
+      - label: 'Link 8: “Fundraise for us”'
+        name: link8
+        widget: string
+      - label: 'Text 3: “About”'
+        name: text3
+        widget: string
+      - label: 'Link 9: “Our story”'
+        name: link9
+        widget: string
+      - label: 'Link 10: “Testimonials”'
+        name: link10
+        widget: string
+      - label: 'Link 11: “News”'
+        name: link11
+        widget: string
+      - label: 'Link 12: “Contact us”'
+        name: link12
+        widget: string
+      - label: 'Text 4: “Follow us”'
+        name: text4
+        widget: string
+      - label: 'Text 5: “© 2026 Happy Paws Cat Rescue. Register…”'
+        name: text5
+        widget: string
+      - label: 'Link 13: “Privacy policy”'
+        name: link13
+        widget: string
+      - label: 'Link 14: “Accessibility”'
+        name: link14
+        widget: string
+  - name: newsletter
+    label: Newsletter sign-up box
+    file: src/_data/text/newsletter.json
+    fields:
+    - label: 'Heading: “Stay connected with Happy Paws”'
+      name: h2
+      widget: text
+      hint: A new line starts a new line on the page.
+    - label: 'Paragraph: “Join our newsletter to receive heartwa…”'
+      name: p
+      widget: text
+    - label: 'Label: “Email address”'
+      name: label
+      widget: string
+    - label: 'Button: “Sign up”'
+      name: button
+      widget: string
+    - label: 'Paragraph 2: “Short privacy note: how we''ll use your…”'
+      name: p2
+      widget: string
+  - name: giving
+    label: What each gift pays for
+    file: src/_data/text/giving.json
+    fields:
+    - label: Monthly gifts
+      name: monthly
+      widget: object
+      collapsed: false
+      fields:
+      - label: 'Monthly gift of £3: what it pays for'
+        name: '3'
+        widget: string
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
+      - label: 'Monthly gift of £5: what it pays for'
+        name: '5'
+        widget: string
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
+      - label: 'Monthly gift of £10: what it pays for'
+        name: '10'
+        widget: string
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
+    - label: One-off gifts
+      name: oneoff
+      widget: object
+      collapsed: false
+      fields:
+      - label: 'One-off gift of £10: what it pays for'
+        name: '10'
+        widget: string
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
+      - label: 'One-off gift of £25: what it pays for'
+        name: '25'
+        widget: string
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
+      - label: 'One-off gift of £50: what it pays for'
+        name: '50'
+        widget: string
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
+      - label: 'One-off gift of £200: what it pays for'
+        name: '200'
+        widget: string
+        hint: Shown beside the amount. Words in [square brackets] show in italics as a reminder to replace them; leave the
+          brackets off once it is real.
+    - label: 'Homepage box: line for a one-off £200'
+      name: home_average
+      widget: string
+    - label: Line shown for any other amount typed in
+      name: custom
+      widget: string
+    - label: 'Homepage box: line before an amount is chosen'
+      name: none
+      widget: string
+  - name: apply_form
+    label: Application form wording (both apply pages)
+    file: src/_data/text/apply_form.json
+    fields:
+    - label: 'Section 1: Your application'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Your application”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Paragraph: “The form is provided by Pawlytics, the…”'
+        name: p
+        widget: text
+        hint: Links are written as [words to click](https://address).
+  - name: cat_page
+    label: 'A cat''s page: fixed wording'
+    file: src/_data/text/cat_page.json
+    fields:
+    - label: 'Top of the page: facts and Apply button'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Link: “All cats”'
+        name: link
+        widget: string
+      - label: 'Label: “Age”'
+        name: dt
+        widget: string
+      - label: 'Label 2: “Sex”'
+        name: dt2
+        widget: string
+      - label: 'Label 3: “Colour”'
+        name: dt3
+        widget: string
+      - label: 'Label 4: “Area”'
+        name: dt4
+        widget: string
+      - label: 'Label 5: “Good with”'
+        name: dt5
+        widget: string
+      - label: 'Label 6: “Health”'
+        name: dt6
+        widget: string
+      - label: 'Label 7: “Adoption donation”'
+        name: dt7
+        widget: string
+      - label: 'Button: “Apply to adopt {name}”'
+        name: btn
+        widget: string
+        hint: 'Keep {name} as it is: the page puts the cat''s name there.'
+      - label: 'Paragraph: “All adoptions are subject to a home ch…”'
+        name: p
+        widget: text
+        hint: Links are written as [words to click](https://address).
+    - label: Heading above the cat's story
+      name: s2
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “{name}''s story”'
+        name: h2
+        widget: text
+        hint: 'A new line starts a new line on the page. Keep {name} as it is: the page puts the cat''s name there.'
+    - label: Apply section
+      name: s3
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “Apply for {name}”'
+        name: h2
+        widget: text
+        hint: 'A new line starts a new line on the page. Keep {name} as it is: the page puts the cat''s name there.'
+      - label: 'Paragraph: “Tell us a little about yourself and th…”'
+        name: p
+        widget: text
+      - label: 'Button: “Apply to adopt {name}”'
+        name: btn
+        widget: string
+        hint: 'Keep {name} as it is: the page puts the cat''s name there.'
+      - label: 'Paragraph 2: “Would you rather talk first? Get in to…”'
+        name: p2
+        widget: string
+        hint: Links are written as [words to click](https://address).
+      - label: 'Text: “We reply and answer your questions.”'
+        name: text
+        widget: string
+      - label: 'Text 2: “We chat, and check your home. Add what…”'
+        name: text2
+        widget: string
+      - label: 'Text 3: “{name} comes home.”'
+        name: text3
+        widget: string
+        hint: 'Keep {name} as it is: the page puts the cat''s name there.'
+    - label: More cats
+      name: s4
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Heading: “More cats looking for a home”'
+        name: h2
+        widget: text
+        hint: A new line starts a new line on the page.
+      - label: 'Link: “See all cats”'
+        name: link
+        widget: string
+  - name: news_article
+    label: 'News story pages: fixed wording'
+    file: src/_data/text/news_article.json
+    fields:
+    - label: Link back to the news page
+      name: back
+      widget: string
+    - label: '"Share this story" label'
+      name: share
+      widget: string
+    - label: Facebook share link
+      name: facebook
+      widget: string
+    - label: Copy link wording
+      name: copy
+      widget: string
+    - label: Heading above the other stories
+      name: more
+      widget: string
+    - label: Link to all stories
+      name: all
+      widget: string
+- name: legal
+  label: Privacy and accessibility
+  description: Draft policy pages for the charity to approve.
+  files:
+  - name: privacy
+    label: Privacy policy
+    file: src/_data/text/privacy.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Privacy policy'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Privacy policy”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “How Happy Paws Cat Rescue collects and…”'
+        name: p
+        widget: string
+      - label: 'Paragraph 2: “Last updated: date”'
+        name: p2
+        widget: string
+    - label: Pink "draft" notice at the top
+      name: draft
+      required: false
+      widget: markdown
+      buttons:
+      - bold
+      - italic
+      - link
+      editor_components: []
+      modes:
+      - rich_text
+      hint: 'Leave this box empty to remove the notice. '
+    - label: Sections of the page
+      name: sections
+      widget: list
+      fields:
+      - label: Section title
+        name: title
+        widget: string
+      - label: Text of the section
+        name: body
+        widget: markdown
+        buttons:
+        - bold
+        - italic
+        - link
+        - heading-three
+        - bulleted-list
+        - numbered-list
+        editor_components: []
+        modes:
+        - rich_text
+      summary: '{{fields.title}}'
+      label_singular: section
+      hint: Each section has a title and its text. The contents list beside the page is built from the titles. Use the Add button at the top right of the list to add a section.
+  - name: accessibility
+    label: Accessibility statement
+    file: src/_data/text/accessibility.json
+    fields:
+    - label: Page title and search description
+      name: meta
+      widget: object
+      collapsed: true
+      fields:
+      - label: Page title (browser tab and search results)
+        name: title
+        widget: string
+      - label: Short description (search results)
+        name: description
+        widget: text
+    - label: 'Section 1: Accessibility statement'
+      name: s1
+      widget: object
+      collapsed: true
+      fields:
+      - label: 'Main heading: “Accessibility statement”'
+        name: h1
+        widget: text
+        hint: Words in ==double equals signs== show in colour. A new line starts a new line on the page.
+      - label: 'Paragraph: “How easy this website is to use, and w…”'
+        name: p
+        widget: string
+      - label: 'Paragraph 2: “Last updated: date”'
+        name: p2
+        widget: string
+    - label: Pink "draft" notice at the top
+      name: draft
+      required: false
+      widget: markdown
+      buttons:
+      - bold
+      - italic
+      - link
+      editor_components: []
+      modes:
+      - rich_text
+      hint: 'Leave this box empty to remove the notice. '
+    - label: Sections of the page
+      name: sections
+      widget: list
+      fields:
+      - label: Section title
+        name: title
+        widget: string
+      - label: Text of the section
+        name: body
+        widget: markdown
+        buttons:
+        - bold
+        - italic
+        - link
+        - heading-three
+        - bulleted-list
+        - numbered-list
+        editor_components: []
+        modes:
+        - rich_text
+      summary: '{{fields.title}}'
+      label_singular: section
+      hint: Each section has a title and its text. The contents list beside the page is built from the titles. Use the Add button at the top right of the list to add a section.
+- name: news
+  label: News stories
+  label_singular: News story
+  description: Each story gets its own page and appears on the News page. The newest story is shown first and largest.
+  folder: src/news/items
+  create: true
+  extension: md
+  format: frontmatter
+  slug: '{{slug}}'
+  identifier_field: title
+  summary: '{{title}} · {{date_text}}'
+  sortable_fields:
+  - date
+  - title
+  fields:
+  - label: Headline
+    name: title
+    widget: string
+  - label: Date (used to put the stories in order)
+    name: date
+    widget: datetime
+    date_format: YYYY-MM-DD
+    time_format: false
+    format: YYYY-MM-DD
+    picker_utc: true
+  - label: Date as it should appear on the page
+    name: date_text
+    widget: string
+    hint: 'For example: 14 October 2026'
+  - label: Written by
+    name: author
+    widget: string
+    required: false
+  - label: Short summary
+    name: summary
+    widget: text
+    hint: One or two sentences. Shown in the news list and in search results.
+  - label: Main photo
+    name: image
+    widget: image
+    choose_url: false
+    hint: Use a photo under 1 MB if you can (the editing guide shows how to shrink one).
+  - label: Describe the photo
+    name: image_alt
+    widget: string
+    hint: One short sentence saying what is in the photo, for people who cannot see it.
+  - label: The story
+    name: body
+    widget: markdown
+    buttons:
+    - bold
+    - italic
+    - link
+    - heading-two
+    - heading-three
+    - quote
+    - bulleted-list
+    - numbered-list
+    editor_components:
+    - image
+    modes:
+    - rich_text
+    hint: The first paragraph is shown larger, so make it the opening line. A quote is a paragraph that starts with >. Photos
+      use the image button.

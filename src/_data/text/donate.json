@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "Donate to Happy Paws",
+    "description": "Give a one-off or monthly gift to help Happy Paws rescue, care for and rehome cats in need."
+  },
+  "s1": {
+    "h1": "Donate to \nHappy Paws",
+    "p": "Every donation brings us one step closer to rescuing and rehabilitating cats in need. Your support helps provide food, shelter and medical care to the most vulnerable.",
+    "text": "£200",
+    "p2": "is what it costs, on average, to rehome one cat. Cats who need medical attention can cost considerably more.",
+    "list": [
+      {
+        "li": "Secure payment by card, plus Apple Pay and Google Pay where your device supports them."
+      },
+      {
+        "li": "A receipt is emailed to you after your gift."
+      },
+      {
+        "li": "Happy Paws is a registered charity run by dedicated volunteers."
+      }
+    ],
+    "text2": "Step 1 of 3: your gift. Then secure payment, then done.",
+    "h2": "Make a gift",
+    "text3": "How often would you like to give?",
+    "text4": "Monthly",
+    "text5": "Regular support helps us plan ahead.",
+    "text6": "One-off",
+    "text7": "Give once, whenever you like.",
+    "text8": "Choose an amount",
+    "text9": "£3",
+    "text10": "[What £3 a month covers: add a real cost from Happy Paws]",
+    "text11": "£5",
+    "text12": "[What £5 a month covers: add a real cost from Happy Paws]",
+    "text13": "£10",
+    "text14": "[What £10 a month covers: add a real cost from Happy Paws]",
+    "p3": "Monthly gifts come in set amounts. For any other amount, choose a one-off gift.",
+    "text15": "Your gift",
+    "text16": "Taken every month",
+    "text17": "£5",
+    "text18": "a month",
+    "text19": "Give £5 a month",
+    "p4": "You'll complete your gift on a secure payment page.",
+    "p5": "Payments are taken by Stripe, a secure payment provider. Your card details never pass through our website."
+  },
+  "s2": {
+    "h2": "Where your \ndonations go",
+    "p": "Here is what your support makes possible. [Add a short, honest breakdown of how donations are spent.]",
+    "list": [
+      {
+        "h3": "Food and everyday care",
+        "p": "Good food, clean litter and a warm bed for every cat in our care.",
+        "p2": "[What £10 pays for: add a real cost]"
+      },
+      {
+        "h3": "A safe place to stay",
+        "p": "Foster homes and shelter give cats somewhere safe to settle while they wait for their forever home.",
+        "p2": "[What £25 pays for: add a real cost]"
+      },
+      {
+        "h3": "Medical care",
+        "p": "Vet checks and treatment for cats who arrive in need of medical attention. [Add what is covered.]",
+        "p2": "[What £50 pays for: add a real cost]"
+      }
+    ]
+  },
+  "s3": {
+    "h2": "Other ways \nto give",
+    "p": "Prefer not to give online? There are plenty of other ways to help.",
+    "h3": "Bank transfer or standing order",
+    "p2": "Pay straight into our bank account, or set up a regular standing order.",
+    "dt": "Account name",
+    "dd": "[add]",
+    "dt2": "Sort code",
+    "dd2": "[add]",
+    "dt3": "Account number",
+    "dd3": "[add]",
+    "dt4": "Reference",
+    "dd4": "Your name",
+    "h32": "Our Amazon wish list",
+    "p3": "We're always in need of supplies. Our wish list makes it easy to donate exactly what we need.",
+    "link": "Open the wish list",
+    "h33": "Fundraise for us",
+    "p4": "A cake sale, car boot, quiz night or coffee morning. We'd be overjoyed to hear your idea.",
+    "link2": "Fundraising ideas",
+    "h34": "Foster or volunteer",
+    "p5": "Give your time instead. Fostering gives cats a safe place to settle, and our volunteers keep everything running.",
+    "link3": "Get involved"
+  },
+  "s4": {
+    "h2": "Questions \nabout giving",
+    "p": "Can't find what you need? Email us at [info@happypawscatrescue.org](mailto:info@happypawscatrescue.org).",
+    "list": [
+      {
+        "question": "Is my donation secure?",
+        "answer": "Yes. Your payment is handled by a secure payment provider (Stripe), so your card details never pass through our website."
+      },
+      {
+        "question": "Can I change or cancel a monthly gift?",
+        "answer": "Yes. Email us at info@happypawscatrescue.org and we will change or cancel it for you. [Once the Stripe customer portal is switched on, add that donors can also do this themselves from the link in their receipt email.]"
+      },
+      {
+        "question": "Will I get a receipt?",
+        "answer": "Yes. A receipt is emailed to you after your gift. If it doesn't arrive, check your spam folder or email us."
+      },
+      {
+        "question": "Who are Happy Paws?",
+        "answer": "We're a registered charity run by dedicated volunteers, based in Stockton, with foster homes in Birmingham and Banbury too."
+      },
+      {
+        "question": "Can I give by bank transfer instead?",
+        "answer": "Yes. You'll find our bank details under [Other ways to give](#other)."
+      }
+    ]
+  }
+}

@@ -1,55 +1,37 @@
 ---
 layout: base.njk
-title: "Ways to help"
-description: "Other ways to help Happy Paws Cat Rescue: foster a cat, fundraise, give from our wish list or volunteer."
 permalink: "/ways-to-help/"
 current: "help"
 appeal: true
 css: []
 js: []
+eleventyComputed:
+  title: "{{ text.ways_to_help.meta.title }}"
+  description: "{{ text.ways_to_help.meta.description }}"
 ---
 <main id="main">
 <!-- Hero -->
 <section aria-labelledby="pg-h" class="ih">
 <div class="ih-copy pad-l">
-<h1 id="pg-h" class="display" style="color:#1F3158">Ways to <br><span style="color:#ED217C">help</span></h1>
-<div style="display:flex; flex-direction:column; gap:14px; max-width:520px"><p class="lede" style="">Adoption isn’t the only way you can support our rescue.</p><p style="margin:0; font-size:17px; line-height:1.7; color:#333333; ">If you would like to help us but are not in a position to adopt, here are some alternatives.</p></div>
-<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-donate" href="/donate/" >Donate<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline" href="/foster/" >Foster a cat</a></div>
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.ways_to_help.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:520px"><p class="lede" style="">{{ text.ways_to_help.s1.p }}</p><p style="margin:0; font-size:17px; line-height:1.7; color:#333333; ">{{ text.ways_to_help.s1.p2 }}</p></div>
+<div class="stack-sm" style="display:flex; flex-wrap:wrap; gap:12px"><a class="btn btn-donate" href="/donate/" >{{ text.ways_to_help.s1.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-outline" href="/foster/" >{{ text.ways_to_help.s1.btn2 }}</a></div>
 </div>
-<div class="ih-photo"><figure class="ph " style="height:100%; background:#E4C9BF; position:absolute; inset:0"><img fetchpriority="high" decoding="async" src="/images/cat-tuxedo.jpg" alt="A black-and-white tuxedo cat sitting on a wooden floor, looking up" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 38%; display:block"></figure></div>
+<div class="ih-photo"><figure class="ph " style="height:100%; background:#E4C9BF; position:absolute; inset:0"><img fetchpriority="high" decoding="async" src="{{ text.ways_to_help.s1.img }}" alt="{{ text.ways_to_help.s1.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 38%; display:block"></figure></div>
 </section>
 
-<section aria-labelledby="ways-h" class="sec" style="background:#ffffff; "><div class="wrap"><h2 id="ways-h" class="h2" style="color:#ED217C; margin-bottom:56px">Four ways <br>to give</h2>
-<div class="rules"><div class="rule-row"><h3>Donate</h3><p>It costs, on average, £200 to rehome a cat. Donations help us to keep helping the cats that need us. Give once, or every month.</p><div class="act"><a class="btn btn-donate btn-sm" href="/donate/" >Donate</a></div></div><div class="rule-row"><h3>Foster</h3><p>Fostering is the vital stepping stone in our work. It gives our cats the chance to feel safe during what can be a very stressful time for them.</p><div class="act"><a class="link" href="/foster/">About fostering<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div><div class="rule-row"><h3>Fundraise</h3><p>As a registered charity we rely on fundraising and donations. If you fancy holding a fundraising event for us, we would be overjoyed. A cake sale, car boot sale, quiz night or coffee morning would all be wonderful.</p><div class="act"><a class="link" href="/contact/">Talk to us<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div><div class="rule-row"><h3>Wish list</h3><p>We are always in need of supplies, so we have set up a Wish List on Amazon. It is an easy way for our supporters to donate the products we really need.</p><div class="act"><a class="link" href="{{ site.wishlist or "#" }}"{% if not site.wishlist %} data-placeholder="link to add"{% else %} target="_blank" rel="noopener"{% endif %}>Open our Wish List<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div></div></div></div></section>
+<section aria-labelledby="ways-h" class="sec" style="background:#ffffff; "><div class="wrap"><h2 id="ways-h" class="h2" style="color:#ED217C; margin-bottom:56px">{{ text.ways_to_help.s2.h2 | rich | safe }}</h2>
+<div class="rules"><div class="rule-row"><h3>{{ text.ways_to_help.s2.h3 }}</h3><p>{{ text.ways_to_help.s2.p }}</p><div class="act"><a class="btn btn-donate btn-sm" href="/donate/" >{{ text.ways_to_help.s2.btn }}</a></div></div><div class="rule-row"><h3>{{ text.ways_to_help.s2.h32 }}</h3><p>{{ text.ways_to_help.s2.p2 }}</p><div class="act"><a class="link" href="/foster/">{{ text.ways_to_help.s2.link }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div><div class="rule-row"><h3>{{ text.ways_to_help.s2.h33 }}</h3><p>{{ text.ways_to_help.s2.p3 }}</p><div class="act"><a class="link" href="/contact/">{{ text.ways_to_help.s2.link2 }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div><div class="rule-row"><h3>{{ text.ways_to_help.s2.h34 }}</h3><p>{{ text.ways_to_help.s2.p4 }}</p><div class="act"><a class="link" href="{{ site.wishlist or "#" }}"{% if not site.wishlist %} data-placeholder="link to add"{% else %} target="_blank" rel="noopener"{% endif %}>{{ text.ways_to_help.s2.link3 }}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div></div></div></div></section>
 
 <section aria-labelledby="stat-h" class="sec on-dark" style="background:#1F3158; color:#E8EEF7; "><div class="wrap"><div class="two-grid" style="align-items:center">
 <p aria-hidden="true" style="margin:0; font-size:clamp(72px,11vw,164px); line-height:.9; letter-spacing:-0.05em; font-weight:500; color:#F5CDD6">£200</p>
 <div style="display:flex; flex-direction:column; gap:26px; align-items:flex-start; max-width:560px">
-<h2 id="stat-h" class="h2" style="color:#ffffff; font-size:clamp(28px,3.3vw,46px)"><span style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap">£200 is </span>what it costs us, on average, to rehome one cat</h2>
-<p style="margin:0; font-size:18px; line-height:1.7">If a cat needs medical attention, it can cost considerably more. Whatever you can give goes straight to the cats in our care.</p>
-<a class="btn btn-light" href="/donate/" >Donate now<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<h2 id="stat-h" class="h2" style="color:#ffffff; font-size:clamp(28px,3.3vw,46px)">{{ text.ways_to_help.s3.h2 | rich({hl: 'position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap' }) | safe }}</h2>
+<p style="margin:0; font-size:18px; line-height:1.7">{{ text.ways_to_help.s3.p }}</p>
+<a class="btn btn-light" href="/donate/" >{{ text.ways_to_help.s3.btn }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" ><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
 </div></div></section>
 
 <!-- Newsletter -->
-<section aria-labelledby="news-h" class="sec" style="background:#E8EEF7; padding-top:80px; padding-bottom:80px">
-<div class="wrap">
-<div class="two-grid" style="align-items:center">
-<div>
-<h2 id="news-h" style="font-size:clamp(28px,3vw,40px); line-height:1.1; letter-spacing:-0.02em; color:#1F3158; margin-bottom:14px">Stay connected <br>with Happy Paws</h2>
-<p style="margin:0; font-size:17px; line-height:1.65; max-width:460px">Join our newsletter to receive heartwarming rescue stories, adoption updates, and ways you can help cats in need, right in your inbox.</p>
-</div>
-<form method="post" name="newsletter" data-form="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap:12px; max-width:560px"><input type="hidden" name="form-name" value="newsletter"><p hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-<label for="news-email" style="font-size:15px; font-weight:500">Email address</label>
-<div class="stack-sm" style="display:flex; gap:12px">
-<div class="field" style="flex:1; min-width:0; display:flex; align-items:center; padding:0 18px; min-height:56px">
-<input id="news-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" style="flex:1; min-width:0; min-height:48px; border:0; outline:none; background:transparent; font-family:Montserrat,system-ui,sans-serif; font-size:17px; font-weight:500; color:#333333">
-</div>
-<button class="btn btn-primary" type="submit" style="min-height:56px">Sign up</button>
-</div>
-<p style="margin:0; font-size:13px; line-height:1.5; color:#4F596B">[Short privacy note: how we'll use your email and how to unsubscribe.]</p>
-</form>
-</div>
-</div>
-</section>
+{% include "newsletter.njk" %}
 </main>

@@ -1,20 +1,21 @@
 ---
 layout: base.njk
-title: "Apply to foster"
-description: "Apply to foster a cat with Happy Paws Cat Rescue. Tell us about your home and we will be in touch."
 permalink: "/foster/apply/"
 current: "help"
 appeal: true
 css: ["pages/apply"]
 js: []
+eleventyComputed:
+  title: "{{ text.foster_apply.meta.title }}"
+  description: "{{ text.foster_apply.meta.description }}"
 ---
 <main id="main">
 <!-- Intro -->
 <section aria-labelledby="pg-h" style="background:#E8EEF7">
 <div class="wrap" style="padding-top:72px; padding-bottom:72px">
 <div class="head-grid">
-<h1 id="pg-h" class="display" style="color:#1F3158">Apply <br><span style="color:#ED217C">to foster</span></h1>
-<div style="display:flex; flex-direction:column; gap:14px; max-width:460px"><p class="lede" style="">Tell us a little about your home and we will be in touch. Foster homes give our cats a safe, calm place to wait for their forever home.</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">Want to know more first? <a class="link-u" href="/foster/" style="color:#1F3158; font-weight:500">Read about fostering</a> or <a class="link-u" href="/contact/" style="color:#1F3158; font-weight:500">ask us a question</a>.</p></div>
+<h1 id="pg-h" class="display" style="color:#1F3158">{{ text.foster_apply.s1.h1 | rich({hl: 'color:#ED217C' }) | safe }}</h1>
+<div style="display:flex; flex-direction:column; gap:14px; max-width:460px"><p class="lede" style="">{{ text.foster_apply.s1.p }}</p><p style="margin:0; font-size:15px; line-height:1.7; color:#4F596B; ">{{ text.foster_apply.s1.p2 | rich({a: {'class': 'link-u', 'style': 'color:#1F3158; font-weight:500' } }) | safe }}</p></div>
 </div>
 </div>
 </section>
@@ -22,7 +23,7 @@ js: []
 {% set ap_form = site.applications.foster %}
 {% set ap_title = "Foster application form" %}
 {% set ap_cat = false %}
-{% set ap_intro = "If you would like to help us by fostering, please fill in the form. We would love to talk to you." %}
-{% set ap_steps = ["You tell us a little about your home.", "We chat, and [describe the home visit or check].", "You meet your first foster cat."] %}
+{% set ap_intro = text.foster_apply.form.intro %}
+{% set ap_steps = text.foster_apply.form.steps %}
 {% include "apply-embed.njk" %}
 </main>

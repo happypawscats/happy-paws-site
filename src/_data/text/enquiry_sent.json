@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Thank you for getting in touch",
+    "description": "We have your message and will be in touch."
+  },
+  "s1": {
+    "h1": "Thank you, \n==[First name]==",
+    "p": "We have your message and will reply to [email address] [within X days].",
+    "p2": "Here is what happens next.",
+    "img": "/images/kitten-silver-tabby.jpg",
+    "alt": "A silver tabby kitten with folded ears lying on a white windowsill beside a plant"
+  },
+  "s2": {
+    "h2": "What happens \nnext",
+    "list": [
+      {
+        "h3": "We read it",
+        "p": "One of our volunteers reads your message and gets back to you."
+      },
+      {
+        "h3": "We chat",
+        "p": "If you are asking about a cat, we get to know you and the home you could offer."
+      },
+      {
+        "h3": "We take it from there",
+        "p": "[Describe the home check and what comes next.]"
+      }
+    ]
+  },
+  "s3": {
+    "h2": "While you \nwait",
+    "link": "Meet more cats",
+    "link2": "How adoption works",
+    "link3": "Follow us on Facebook"
+  }
+}

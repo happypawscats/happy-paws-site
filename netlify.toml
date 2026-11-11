@@ -14,3 +14,10 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     # TEMPORARY: keeps the review site out of search engines. Delete this line on launch day.
     X-Robots-Tag = "noindex"
+
+# The page editor is for the charity only and must stay out of search results, whatever happens to the line above.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
