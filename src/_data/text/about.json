@@ -18,15 +18,15 @@
     "p3": "Our team is made up of dedicated volunteers who work tirelessly to ensure that every cat in our care receives the love and support they deserve. From rescuing strays to rehabilitating and rehoming them, we are committed to making a difference in the lives of cats in need."
   },
   "s3": {
+    "p2": "We give every cat the care, time and quiet they need to recover. Foster homes are a vital part of this. [Add detail.]",
+    "p3": "We match each cat with the right family, and stay in touch long after they have gone home.",
+    "h32": "Rehabilitate",
+    "h33": "Rehome",
     "h2": "What we do",
     "h3": "Rescue",
     "p": "We take in strays and cats in need. [Add a line on how cats come to us and where.]",
-    "h32": "Rehabilitate",
-    "p2": "We give every cat the care, time and quiet they need to recover. Foster homes are a vital part of this. [Add detail.]",
-    "link": "About fostering",
-    "h33": "Rehome",
-    "p3": "We match each cat with the right family, and stay in touch long after they have gone home.",
-    "link2": "How adoption works"
+    "link2": "How adoption works",
+    "link": "About fostering"
   },
   "s4": {
     "h2": "Where we are",
@@ -45,11 +45,6 @@
         "text": "Photo to come",
         "p": "Katrina",
         "p2": "Founder"
-      },
-      {
-        "text": "Photo to come",
-        "p": "Vicki",
-        "p2": "[Role]"
       },
       {
         "text": "Photo to come",
@@ -78,14 +73,14 @@
     ]
   },
   "s7": {
-    "p": "A word from our MP",
-    "h2": "Our MP has written to congratulate us",
     "p2": "Happy Paws was Highly Commended in the BBC Radio Tees Make A Difference Awards, and Chris McDonald MP wrote to thank our volunteers.",
-    "img": "/images/mp-letter.jpg",
-    "alt": "Letter from Chris McDonald MP, Member of Parliament for Stockton North, to Happy Paws Cat Rescue, dated 14 October 2026. It congratulates the rescue on being Highly Commended in the BBC Radio Tees Make A Difference Awards.",
-    "caption": "Letter from Chris McDonald MP\n14 October 2026",
-    "quote": "“…dedication to such a worthwhile cause is absolutely invaluable.”",
     "p3": "Chris McDonald MP\nMember of Parliament for Stockton North",
-    "link": "Read the full letter== (opens in a new tab)=="
+    "img": "/images/mp-letter.jpg",
+    "caption": "Letter from Chris McDonald MP\n14 October 2026",
+    "alt": "Letter from Chris McDonald MP, Member of Parliament for Stockton North, to Happy Paws Cat Rescue, dated 14 October 2026. It congratulates the rescue on being Highly Commended in the BBC Radio Tees Make A Difference Awards.",
+    "h2": "Our MP has written to congratulate us",
+    "p": "A word from our MP",
+    "link": "Read the full letter== (opens in a new tab)==",
+    "quote": "“…dedication to such a worthwhile cause is absolutely invaluable.”"
   }
 }
